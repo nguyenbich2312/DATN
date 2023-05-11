@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Đăng nhập</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <link rel="stylesheet" th:href="@{/css/login.css}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+        <script src="https://code.jquery.com/jquery-latest.js"></script>
+        <link rel="icon" href="/image/p.png" type="image/x-icon">
+    </head>
+    <body>
+        <section class="header" id="header">
+            <th:block layout:insert="~{fragments/client/header}"/>
+        </section>
+        <div class="main">
+        <div class="col-main">
+            <div class="login-container">
+                <div class="login-container-inner">
+                    <div class="fhs_login_form">
+                        <div class="fhs_login_form_content">
+                            <div class="youama-login-window">
+                                <div>
+                                    <ul th:if="${!form.contains('forgot')}" id="popup-login-tab_list" class="popup-login-tab">
+                                        <li class="popup-login-tab-item popup-login-tab-login"><a th:href="@{/login}">Đăng nhập</a><hr></li>
+                                        <li class="popup-login-tab-item popup-login-tab-register"><a th:href="@{/signup}">Đăng ký</a><hr></li>
+                                    </ul>
+                                    <div th:if="${form.contains('forgot')}" class="popup-change-title popup-login-title" style="">
+                                        Khôi phục mật khẩu
+                                    </div>
+                                </div>
+                                <div th:if="${form.equals('signup')}">
+                                    <div class="popup-register-content" style="display: block;">
+                                        <form action="#" th:action="@{/signup/otp}" th:object="${user}" method="post">
+                                            <div class="fhs-input-box fhs-input-send">
+                                                <label>Email</label>
+                                                <div class="fhs-input-group">
+                                                    <input th:field="*{email}" class="fhs-textbox" type="email" placeholder="Nhập email" name="email">
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>
+
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box fhs-input-display">
+                                                <div class="clear space"></div>
+                                                <label>Mật khẩu</label>
+                                                <div class="fhs-input-group">
+                                                    <input th:field="*{password}" class="fhs-textbox" type="password" placeholder="Nhập mật khẩu" name="password">
+<!--                                                    <span class="fhs-input-icon fhs-textbox-showtext">Hiện </span>-->
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:each="err : ${#fields.errors('password')}" th:text="${err}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box fhs-input-display">
+                                                <div class="clear space"></div>
+                                                <label>Nhập lại mật khẩu</label>
+                                                <div class="fhs-input-group">
+                                                    <input class="fhs-textbox" type="password" placeholder="Nhập lại mật khẩu" name="cf_password">
+<!--                                                    <span class="fhs-input-icon fhs-textbox-showtext">Hiện </span>-->
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:text="${cf_password}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box">
+                                                <div class="fhs-btn-box">
+                                                    <button type="submit" title="Đăng ký" class="fhs-btn-register"><span>Đăng ký</span></button>
+                                                    <button type="button" title="Bỏ qua " class="fhs-btn-cancel lg-close" style="display: none;"><span>Bỏ qua </span></button>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-popup-msg fhs-register-msg"></div>
+                                            <div class="fhs-register-term">
+                                                Bằng việc đăng ký, bạn đã đồng ý với BZone về<br>
+                                                <a href="#" target="_blank" style=""> Điều khoản dịch vụ</a>
+                                                &nbsp;&amp;&nbsp;
+                                                <a href="#" target="_blank" style="">Chính sách bảo mật</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div th:if="${form.equals('check') || form.equals('resent')}">
+                                    <div class="popup-register-content" style="display: block;">
+                                        <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
+                                            <div class="fhs-input-box fhs-input-send">
+                                                <label>OTP</label>
+                                                <div class="fhs-input-group">
+                                                    <input class="fhs-textbox" type="number" placeholder="Nhập OTP" name="otp">
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:text="${otp_message}"></p>
+
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box">
+                                                <div class="fhs-btn-box">
+                                                    <button th:if="${form.equals('check')}" type="submit" title="Xác nhận" class="fhs-btn-register"><span>Xác nhận</span></button>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-popup-msg fhs-register-msg"></div>
+                                            <div class="fhs-register-term">
+                                                Bằng việc đăng ký, bạn đã đồng ý với BZone.com về<br>
+                                                <a href="/dieu-khoan-su-dung" target="_blank" style=""> Điều khoản dịch vụ</a>
+                                                &nbsp;&amp;&nbsp;
+                                                <a href="/chinh-sach-bao-mat" target="_blank" style="">Chính sách bảo mật</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div th:if="${form.equals('login')}">
+                                    <div class="popup-login-content">
+                                        <form th:action="@{/login}" th:object="${user}" method="post">
+                                            <div class="fhs-input-box">
+                                                <label>Email</label>
+                                                <div class="fhs-input-group">
+                                                    <input th:field="*{email}" class="fhs-textbox" type="email" placeholder="Nhập địa chỉ email">
+                                                    <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box fhs-input-display">
+                                                <div class="clear space"></div>
+                                                <label>Mật khẩu</label>
+                                                <div class="fhs-input-group">
+                                                    <input th:field="*{password}" class="fhs-textbox" type="password" placeholder="Nhập mật khẩu">
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:each="err : ${#fields.errors('password')}" th:text="${err}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box">
+                                                <div class="fhs-forget-pass"><span>Quên mật khẩu?</span></div>
+                                            </div>
+
+                                            <div class="fhs-input-box">
+                                                <div class="fhs-btn-box">
+                                                    <button type="submit" title="Đăng nhập" class="fhs-btn-login"><span>Đăng nhập</span></button>
+                                                    <button type="button" title="Bỏ qua " class="fhs-btn-cancel lg-close" style="display: none;"><span>Bỏ qua </span></button>
+<!--                                                    <button type="button" title="Đăng nhập bằng facebook" class="fhs-btn-fb"><span class="fa fa-facebook"></span><span>Đăng nhập bằng facebook</span></button>-->
+                                                </div>
+                                            </div>
+                                            <div class="fhs-popup-msg fhs-login-msg">
+                                                <p th:text="${message}"></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div th:if="${form.equals('forgot')}">
+                                    <div class="popup-recovery-content">
+                                        <form th:action="@{/forgot-password/otp}" th:object="${user}" method="post">
+                                            <div class="fhs-input-box">
+                                                <label>Email</label>
+                                                <div class="fhs-input-group">
+                                                    <input th:field="*{email}" class="fhs-textbox" type="email" placeholder="Nhập địa chỉ email">
+                                                    <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box">
+                                                <div class="fhs-btn-box">
+                                                    <button type="submit" title="Gửi" class="fhs-btn-login"><span>Gửi OTP</span></button>
+                                                    <button type="button" title="Bỏ qua " class="fhs-btn-cancel lg-close" style="display: none;"><span>Bỏ qua </span></button>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-popup-msg fhs-forgot-msg"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div th:if="${form.contains('forgot_')}">
+                                    <div class="popup-recovery-content">
+                                        <form th:action="@{/forgot-password}" th:object="${user}" method="post">
+                                            <div class="fhs-input-box">
+                                                <label>OTP</label>
+                                                <div class="fhs-input-group">
+                                                    <input class="fhs-textbox" type="number" placeholder="Nhập OTP" name="otp">
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:text="${otp_message}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box fhs-input-display">
+                                                <div class="clear space"></div>
+                                                <label>Mật khẩu</label>
+                                                <div class="fhs-input-group">
+                                                    <input th:field="*{password}" class="fhs-textbox" type="password" placeholder="Nhập mật khẩu" name="password">
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:each="err : ${#fields.errors('password')}" th:text="${err}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box fhs-input-display">
+                                                <div class="clear space"></div>
+                                                <label>Nhập lại mật khẩu</label>
+                                                <div class="fhs-input-group">
+                                                    <input class="fhs-textbox" type="password" placeholder="Nhập lại mật khẩu" name="cf_password">
+                                                </div>
+                                                <div class="fhs-input-alert">
+                                                    <p th:text="${cf_password}"></p>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-input-box">
+                                                <div class="fhs-btn-box">
+                                                    <button type="submit" title="Gửi" class="fhs-btn-login"><span>Reset Password</span></button>
+                                                    <button type="button" title="Bỏ qua " class="fhs-btn-cancel lg-close" style="display: none;"><span>Bỏ qua </span></button>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-popup-msg fhs-forgot-msg"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <th:block layout:insert="~{fragments/client/footer}" />
+        <th:block layout:insert="~{fragments/client/scriptTag}"/>
+        <script>
+            var regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\S+$).{8,}$/;
+            let item = document.getElementsByClassName("fhs-forget-pass")[0];
+            if(item != null){
+                document.getElementsByClassName("popup-login-tab-login")[0].classList.add("active");
+            }
+            else {
+                document.getElementsByClassName("popup-login-tab-register")[0].classList.add("active");
+            }
+            if(item!=null)
+            item.addEventListener("click", function () {
+                window.location.href = "/forgot-password";
+            });
+
+            //prevent submit form when cf_password is not match
+            // let formSignUp = document.getElementsByTagName("form")[1];
+            // formSignUp.addEventListener("submit", function (e) {
+            //     let password = document.getElementsByName("password")[0];
+            //     let cf_password = document.getElementsByName("cf_password")[0];
+            //     if(cf_password!= null && password.value != cf_password.value){
+            //         e.preventDefault();
+            //         document.getElementsByClassName("fhs-input-alert")[2].innerHTML = "<p>Không khớp mật khẩu</p>";
+            //     }
+            //     //check regex password
+            //     if(!regex.test(password.value)){
+            //         e.preventDefault();
+            //         document.getElementsByClassName("fhs-input-alert")[1].innerHTML = "<p>Mật khẩu phải có ít nhất 8 ký tự, chứa ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt</p>";
+            //     }
+            // });
+        </script>
+    </body>
+</html>

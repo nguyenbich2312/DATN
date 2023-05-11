@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{client-layout}">
+<th:block layout:fragment="content">
+    <th:block layout:insert="~{fragments/client/header}"/>
+    <th:block layout:insert="~{pages/client/header-breadcrumbs}"/>
+    <th:block>
+        <div class="main">
+            <div>
+                <div class="container" style="background-color : transparent!important;">
+                </div>
+            </div>
+            <div class="container">
+                <div class="container-inner">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-left sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-left: 0px;">
+
+                            <div class="block block-account">
+                                <div class="block-title">
+                                    <strong><span>Tài khoản</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a th:href="@{/user/account/profile}">Thông tin tài
+                                            khoản</a>
+                                        </li>
+                                        <li class="current"><a th:href="@{/user/account/history}">Đơn hàng của tôi</a>
+                                        </li>
+                                        <li><a
+                                                th:href="@{/user/account/notify}">Thông
+                                            Báo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-main col-lg-9 col-md-9 col-sm-12 col-xs-12 col-fhs-main-body">
+                            <ul id="admin_messages"></ul>
+                            <style>
+                                .fhs-input-box .fhs-input-group.checked-error .fhs-textbox-alert,
+                                .fhs-input-box.checked-error .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_fail.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+
+                                .fhs-input-box.checked-pass .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_success.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+                            </style>
+                            <div class="youama-ajaxlogin-loader"></div>
+
+                            <div class="my-account">
+                                <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">-->
+                                <style>
+                                    /* start css for main template*/
+                                    .my-account {
+                                        padding: 0px 0px;
+                                    }
+
+                                    .main {
+                                        margin-top: 10px;
+                                    }
+
+                                    .col-fhs-main-body {
+                                        padding: 0;
+                                    }
+
+                                    .price {
+                                        font-family: sans-serif !important;
+                                    }
+
+                                    /* end css for main template*/
+                                </style>
+                                <div class="order-view-content-info">
+                                    <div class="order-view-title">Chi tiết đơn hàng</div>
+                                    <div>
+                                        <div class="order-view-status"
+                                             style="background:#F3B4AF;color:#A90000;border-color:#F3B4AF;"
+                                             th:text="${last_status.get(last_status.size() - 1).orderStatus}">
+                                        </div>
+                                        <div class="order-view-id"><span>Mã đơn hàng: </span><span
+                                                th:text="${order.orderId}"></span>
+                                        </div>
+                                        <div class="order-view-date"><span>Ngày mua: </span><span
+                                                th:text="${order.orderDate}"></span>
+                                        </div>
+                                        <div class="order-view-total"><span>Tổng Tiền: </span><span><span class="price"
+                                                                                                          th:text="${#numbers.formatDecimal(order.totalPrice,0,'COMMA',0,'POINT')}"></span><span
+                                                class="sym-totals">đ</span></span></div>
+                                    </div>
+                                    <div style="text-align:center;" class="order-view-buttons-color">
+                                        <div class="order-view-buttons-color-child">
+                                            <a th:href="@{/user/cart}"
+                                               class="link-reorder order-view-buy-again-btn">Đặt hàng lại</a>
+                                            <th:block th:each="o : ${order.orderStatuses}">
+                                                <a th:if="${o.orderStatus.trim().equals('Chờ xác nhận') && order.orderStatuses.size() == 1}"
+                                                   th:onclick="|cancelOrder('${order.orderId}')|"
+                                                   class="order-view-review-btn" style="cursor: pointer">Cancel</a>
+                                            </th:block>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="order-info-border-block"></div>
+                                <div class="order-view-content-details">
+                                    <div class="order-view-content-box1">
+                                        <div class="order-view-box">
+                                            <div class="order-box-title">
+                                                <div class="order-view-title">Thông tin người nhận</div>
+                                            </div>
+                                            <div class="order-box-info">
+                                                <address>
+                                                    <th:block
+                                                            th:text="${order.name}">
+                                                    </th:block>
+                                                    <br>
+                                                    <th:block
+                                                            th:text="${order.address}">
+                                                    </th:block>
+                                                    <br>
+                                                    <th:block th:text="'Tel ' + ${order.phoneNumber}"></th:block>
+                                                </address>
+                                            </div>
+                                        </div>
+                                        <div class="order-view-box">
+                                            <div class="order-info-shipping-description">
+                                                <div class="order-box-title">
+                                                    <div class="order-view-title">Phương thức vận chuyển</div>
+                                                </div>
+                                                <div class="order-box-info">
+                                                    Giao hàng tiêu chuẩn
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-view-box">
+                                            <div class="order-box-title">
+                                                <div class="order-view-title">Phương thức thanh toán</div>
+                                            </div>
+
+                                            <div class="order-box-info">
+                                                <div class="order-box-info-historypayment">
+                                                    <div><p><strong>Thanh toán bằng tiền mặt khi nhận hàng</strong></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-block-mobile"></div>
+                                    <div class="order-view-status-container">
+                                        <th:block th:each="o : ${last_status}" th:if="${last_status.size() > 1}">
+                                            <th:block th:if="${last_status.get(last_status.size() - 1).orderStatus.equals('Giao hàng thành công')}">
+                                                <div class="order-view-status-new-order"
+                                                     th:if="${oStat.index > 0 && oStat.index < last_status.size() - 1}">
+                                                    <div class="order-view-icon-container">
+                                                        <div style="height: 60px;width: 60px;align-self: center;">
+                                                            <div class="order-view-icon-img"
+                                                                 style="background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/order/ico_donhangmoi_green.svg) no-repeat center;border-color:#29a72a;"></div>
+                                                        </div>
+                                                        <div class="order-view-icon-content"><p
+                                                                th:text="${o.orderStatus}"></p>
+                                                            <p th:text="${o.statusDate}"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="order-view-progress-bar"
+                                                         style="background:#29a72a;"></div>
+                                                </div>
+                                            </th:block>
+                                            <th:block th:if="${!last_status.get(last_status.size() - 1).orderStatus.equals('Giao hàng thành công')}">
+                                                <div class="order-view-status-new-order"
+                                                     th:if="${oStat.index > 0 && oStat.index < last_status.size() - 1}">
+                                                    <div class="order-view-icon-container">
+                                                        <div style="height: 60px;width: 60px;align-self: center;">
+                                                            <div class="order-view-icon-img"
+                                                                 style="background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/order/ico_donhangmoi_red.svg) no-repeat center;border-color:#fa0001;"></div>
+                                                        </div>
+                                                        <div class="order-view-icon-content"><p
+                                                                th:text="${o.orderStatus}"></p>
+                                                            <p th:text="${o.statusDate}"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="order-view-progress-bar"
+                                                         style="background:#fa0001;"></div>
+                                                </div>
+                                            </th:block>
+                                        </th:block>
+                                        <div class="order-view-status-new-order" th:if="${last_status.get(last_status.size() - 1).orderStatus.equals('Giao hàng thành công')}">
+                                            <div class="order-view-icon-container">
+                                                <div style="height: 60px;width: 60px;align-self: center;">
+                                                    <div class="order-view-icon-img"
+                                                         style="background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/order/ico_hoantat_green.svg) no-repeat center;border-color:#29a72a;"></div>
+                                                </div>
+                                                <div class="order-view-icon-content"><p
+                                                        th:text="${last_status.get(last_status.size() - 1).orderStatus}"></p>
+                                                    <p th:text="${last_status.get(last_status.size() - 1).statusDate}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-view-status-new-order" th:if="${last_status.get(last_status.size() - 1).orderStatus.equals('Đã hủy') || last_status.get(last_status.size() - 1).orderStatus.equals('Chờ xác nhận') }">
+                                            <div class="order-view-icon-container">
+                                                <div style="height: 60px;width: 60px;align-self: center;">
+                                                    <div class="order-view-icon-img"
+                                                         style="background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/order/ico_huy_red.svg) no-repeat center;border-color:#fa0001;"></div>
+                                                </div>
+                                                <div class="order-view-icon-content"><p
+                                                        th:text="${last_status.get(last_status.size() - 1).orderStatus}"></p>
+                                                    <p th:text="${last_status.get(last_status.size() - 1).statusDate}"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="order-details-items">
+                                    <style>
+                                        .fhs_suborder_button_box {
+                                            padding-bottom: 10px;
+                                        }
+
+                                        @media (max-width: 768px) {
+                                            .fhs_suborder_button_box {
+                                                -webkit-justify-content: center;
+                                                justify-content: center;
+                                            }
+
+                                            .fhs_suborder_button_box > a {
+                                                flex-grow: 1;
+                                            }
+                                        }
+
+                                        @media (max-width: 390px) {
+                                            .fhs_suborder_button_box > a {
+                                                font-size: 13px;
+                                            }
+                                        }
+                                    </style>
+                                    <style>.label-stock-availabel {
+                                        display: none;
+                                    }</style>
+                                    <div class="border-block-mobile-desktop"></div>
+                                    <div class="order-subOrder-container">
+                                        <div class="order-subOrder-items">
+                                            <div class="order-subOrder-info-status">
+                                                <div class="order-subOrder-info" id="103012956"
+                                                     onclick="showOnProductDetails(this.id);">
+                                                    <div><span>Đơn hàng:</span><span>103012956</span></div>
+                                                    <div class="subOder-progress-bar"
+                                                         style="background:#F3B4AF;color:#A90000;border-color:#F3B4AF;"
+                                                         th:text="${last_status.get(last_status.size() - 1).orderStatus}">
+                                                    </div>
+                                                    <div><span>Tổng tiền:</span><span><span
+                                                            class="price"
+                                                            th:text="${#numbers.formatDecimal(order.totalPrice,0,'COMMA',0,'POINT')}"></span><span>đ</span></span>
+                                                    </div>
+                                                    <div class="order-subOrder-quantity">
+                                                        <span>Số lượng:</span><span
+                                                            th:text="${order.orderDetails.size()}"></span></div>
+                                                    <div class="order-subOrder-arrow"><i class="fa fa-chevron-right"
+                                                                                         aria-hidden="true"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-subOrder-products id-list-products-103012956">
+                                            <div class="table-subOrder-container">
+                                                <div class="table-subOrder-header-and-img">
+                                                    <div class="table-subOrder-title-product order-view-title">Sản
+                                                        phẩm
+                                                    </div>
+                                                    <div class="table-subOrder-row table-subOrder-header">
+                                                        <div class="table-subOrder-cell" style="width:100px">Hình ảnh
+                                                        </div>
+                                                        <div class="table-subOrder-cell">Tên sản phẩm</div>
+                                                        <div class="table-subOrder-cell" style="flex-basis: 15%">Giá
+                                                            bán
+                                                        </div>
+                                                        <div class="table-subOrder-cell">SL</div>
+                                                        <div class="table-subOrder-cell">Thành tiền</div>
+                                                    </div>
+                                                </div>
+                                                <!-- Check if Buffet Combo Event is Active -->
+                                                <div class="table-subOrder-parent-img-and-cell"
+                                                     th:each="k : ${order.orderDetails}">
+                                                    <div class="table-subOrder-row">
+                                                        <div class="table-subOrder-cell table-subOrder-img-web">
+                                                            <img th:src="${k.product.image}"
+                                                                 th:if="${k.product.image.startsWith('http')}">
+                                                            <img th:src="@{'/image/' + ${product.image}}"
+                                                                 th:unless="${k.product.image.startsWith('http')}">
+                                                        </div>
+                                                        <div class="table-subOrder-cell table-subOrder-name-product">
+                                                            <div class="table-subOrder-name-tag-a">
+                                                                <a th:href="@{/product(id=${k.product.id})}"
+                                                                   style="height: auto;"
+                                                                   th:text="${k.product.productName}"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="table-subOrder-cell" style="flex-basis: 15%">
+                                                            <span>
+		    		    		    			<span class="cart-price"><div class="cart-orderHs-price"><div><span
+                                                        class="price"
+                                                        th:text="${#numbers.formatDecimal(k.product.price * (100 - k.product.discount) / 100,0,'COMMA',0,'POINT')}"></span> đ</div>
+				 								    <div><span class="orderHs-price-old"><span
+                                                            class="price" th:text="${k.product.price}"></span> đ</span></div></div>
+                                                    <!--</span>--></span></span>
+                                                        </div>
+                                                        <div class="table-subOrder-cell">
+                                                            <span><strong th:text="${k.quantity}"></strong><br>
+		    		    		    		    		</span>
+                                                        </div>
+                                                        <div class="table-subOrder-cell">
+                                                            <span>
+		    		    		    			<span class="cart-price">
+		    						    <span class="price"
+                                              th:text="${#numbers.formatDecimal(k.quantity * k.product.price * (100 - k.product.discount) / 100,0,'COMMA',0,'POINT')}"></span> đ</span></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-subOrder-total id-total-103012956">
+                                            <div class="order-subOrder-total-desktop">
+                                                <div>
+
+                                                    <p><span>Thành tiền: </span></p>
+
+
+                                                    <p><span>Phí vận chuyển: </span></p>
+
+                                                    <p><span>Tổng Số Tiền (gồm VAT): </span></p>
+
+                                                </div>
+                                                <div>
+
+                                                    <p class="order-totals-price"><span class="price"
+                                                                                        th:text="${#numbers.formatDecimal(sum * 1000 ,0,'COMMA',0,'POINT')}"></span>&nbsp;<span
+                                                            class="sym-totals">đ</span></p>
+
+
+                                                    <p class="order-totals-price"><span class="price"
+                                                                                        th:text="${#numbers.formatDecimal(30000,0,'COMMA',0,'POINT')}"></span>&nbsp;<span
+                                                            class="sym-totals">đ</span></p>
+
+                                                    <p class="order-totals-price"><span class="price"
+                                                                                        th:text="${#numbers.formatDecimal(order.totalPrice,0,'COMMA',0,'POINT')}"></span>&nbsp;<span
+                                                            class="sym-totals">đ</span></p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <script>
+                                        $jq(document).ready(function () {
+                                            $jq('.order-subOrder-products').each(function () {
+                                                let ww = $jq(window).width();
+                                                addClassSrocll(ww);
+                                            });
+                                            $jq(window).resize(function () {
+                                                let ww = $jq(window).width();
+                                                addClassSrocll(ww);
+                                            });
+                                        });
+
+                                        /*
+                                         * resize or reload will add/remove class srcoll-table-subOrder
+                                         */
+                                        function addClassSrocll(ww) {
+                                            if (ww > 768) {
+                                                $jq('.order-subOrder-products').each(function () {
+                                                    if ($jq(this).children(".table-subOrder-container").find('.table-subOrder-row').length > 6 && !$jq(this).children(".table-subOrder-container").hasClass("srcoll-table-subOrder")) {
+                                                        $jq(this).children(".table-subOrder-container").addClass("srcoll-table-subOrder");
+                                                    }
+                                                });
+                                            } else {
+                                                $jq('.order-subOrder-products').each(function () {
+                                                    if ($jq(this).children(".table-subOrder-container").find('.table-subOrder-row').length > 6 && $jq(this).children(".table-subOrder-container").hasClass("srcoll-table-subOrder")) {
+                                                        $jq(this).children(".table-subOrder-container").removeClass("srcoll-table-subOrder");
+                                                    }
+                                                });
+                                            }
+                                        }
+
+                                        function showOnProductDetails(id) {
+                                            let ww = $jq(window).width();
+                                            if (ww <= 768) {
+                                                if ($jq(".id-status-" + id + ",.id-list-products-" + id + ",.id-total-" + id).is(':hidden')) {
+                                                    $jq(".id-status-" + id + ",.id-list-products-" + id + ",.id-total-" + id).show();
+                                                    $jq("#" + id).find(".order-subOrder-arrow").html('<i class="fa fa-chevron-down" aria-hidden="true"></i>');
+                                                } else {
+                                                    $jq(".id-status-" + id + ",.id-list-products-" + id + ",.id-total-" + id).css('display', '');
+                                                    $jq("#" + id).find(".order-subOrder-arrow").html('<i class="fa fa-chevron-right" aria-hidden="true"></i>');
+                                                }
+                                            }
+
+                                        }
+
+                                        function cancelOrder(j) {
+                                            var i = confirm("Do you want to cancel???");
+                                            if (i === true) {
+                                                window.location.href = "/user/cancelOrder?id=" + j;
+                                                location.reload();
+                                            }
+                                        }
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+    <th:block layout:insert="~{fragments/client/footer}"/>
+</th:block>
+</html>

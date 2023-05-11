@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BZone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/hieu_search.css}">
+    <style>
+        .rating-box {
+            background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_gray.svg) repeat-x;
+            background-size: 16px 16px;
+            margin: 0px 0px 0px 10px;
+            position: relative;
+            float: left;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<section class="header" id="header">
+    <th:block layout:insert="~{fragments/client/header}"/>
+</section>
+<section class="container" id="content">
+    <div class="container-inner">
+        <ul class="list-group list-group-horizontal search-navigation">
+            <li>
+                <a href="/">TRANG CHỦ</a>
+            </li>
+            <th:block th:if="${category.parentCategory.parentCategory.getId() != category.parentCategory.getId()}">
+                <li>
+                    <a th:href="@{/category(id=${category.parentCategory.parentCategory.getId()})}"><span
+                            th:text="${category.parentCategory.parentCategory.categoryName}"></span></a>
+                </li>
+            </th:block>
+            <th:block th:if="${category.parentCategory.getId() != category.parentCategory.getId()}">
+                <li>
+                    <a th:href="@{/category(id=${category.parentCategory.getId()})}"><span
+                            th:text="${category.parentCategory.categoryName}"></span></a>
+                </li>
+            </th:block>
+            <li>
+                <a th:href="@{/category(id=${category.getId()})}" class="colorText"><span
+                        th:text="${category.categoryName}"></span></a>
+            </li>
+        </ul>
+    </div>
+    <form>
+        <div class="row">
+            <div class="cold-md-3 col-ld-3 left">
+                <th:block th:if="${category != null}">
+                    <input type="text" name="id" th:value="${category.getId()}" hidden>
+                </th:block>
+                <dl>
+<!--                    <dt class="left_category left_filter_title">-->
+<!--                        NHÓM SẢN PHẨM-->
+<!--                    </dt>-->
+<!--                    <dd class="left_category" th:if="${category != null}">-->
+<!--                        <div class="main-category" th:with="check = 'true'">-->
+<!--                            <span href="#" style="margin-left: 0">Tất cả nhóm sản phẩm</span>-->
+<!--                        </div>-->
+<!--                        <div style="margin-left: 10px" class="main-category"-->
+<!--                             th:if="${category.parentCategory.parentCategory.getId() != category.parentCategory.getId()}">-->
+<!--                            <a th:href="@{/category(id=${category.parentCategory.parentCategory.getId()})}">-->
+<!--                                <span th:text="${category.parentCategory.parentCategory.categoryName}"></span>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <th:block th:if="${category.parentCategory.getId() != category.getId()}">-->
+<!--                            <div style="margin-left: 20px" class="main-category">-->
+<!--                                <a th:href="@{/category(id=${category.parentCategory.getId()})}">-->
+<!--                                    <span th:text="${category.parentCategory.categoryName}"></span>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <ul class="list-group">-->
+<!--                                <li th:each="tmp : ${category.parentCategory.getChildCategories()}"-->
+<!--                                    th:if="${tmp.getId() != 1 && tmp.getId() != 2}">-->
+<!--                                    <a th:href="@{/category(id=${tmp.getId()})}"-->
+<!--                                       th:class="${category.categoryName == tmp.categoryName}?colorText">-->
+<!--                                        <span th:text="${tmp.categoryName}"></span>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </th:block>-->
+<!--                        <th:block th:if="${category.parentCategory.getId() == category.getId()}">-->
+<!--                            <div style="margin-left: 20px; margin-bottom: 10px">-->
+<!--                                <a class="colorText"-->
+<!--                                   th:href="@{/category(id=${category.getId()})}">-->
+<!--                                    <span th:text="${category.categoryName}"></span>-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                        </th:block>-->
+<!--                    </dd>-->
+<!--                    <dd class="left_category" th:if="${category == null}">-->
+<!--                        <ul class="list-group">-->
+<!--                            <li class="">-->
+<!--                                <a th:href="@{/category(id=1)}" style="margin-left: 0">Sách trong nước</a>-->
+<!--                            </li>-->
+<!--                            <li class="">-->
+<!--                                <a th:href="@{/category(id=2)}" style="margin-left: 0">Foreign books</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </dd>-->
+                    <dt class="left_category left_filter_title">
+                        Màu sắc
+                    </dt>
+                    <dd class="left_filter">
+                        <ul class="list-group">
+                            <li>
+                                <input id="bia-cung" type="checkbox" name="book-layout" onclick="this.form.submit()"
+                                       value="1" th:checked="${bookLayoutsArr[1] == true}?'checked'">
+                                <label for="bia-cung">Đen</label>
+                            </li>
+                            <li>
+                                <input id="bia-mem" type="checkbox" name="book-layout" onclick="this.form.submit()"
+                                       value="2" th:checked="${bookLayoutsArr[2] == true}?'checked'">
+                                <label for="bia-mem">Trắng</label>
+
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt class="left_filter">
+                        GIÁ
+                    </dt>
+                    <dd class="left_filter">
+                        <ul class="list-group">
+                            <li>
+                                <input type="checkbox" id="priceRange1" name="price" onclick="this.form.submit()"
+                                       value="1"
+                                       th:checked="${pricesArr[1] == true}?'checked'">
+                                <label for="priceRange1"></label> 0đ - 150.000đ
+                            </li>
+                            <li>
+                                <input type="checkbox" id="priceRange2" name="price" onclick="this.form.submit()"
+                                       value="2"
+                                       th:checked="${pricesArr[2] == true}?'checked'">
+                                <label for="priceRange2"></label> 150.000đ - 300.000đ
+                            </li>
+                            <li>
+                                <input type="checkbox" id="priceRange3" name="price" onclick="this.form.submit()"
+                                       value="3"
+                                       th:checked="${pricesArr[3] == true}?'checked'">
+                                <label for="priceRange3"></label> 300.000đ - 500.000đ
+                            </li>
+                            <li>
+                                <input type="checkbox" id="priceRange4" name="price" onclick="this.form.submit()"
+                                       value="4"
+                                       th:checked="${pricesArr[4] == true}?'checked'">
+                                <label for="priceRange4"></label> 500.000đ - 750.000đ
+                            </li>
+                            <li>
+                                <input type="checkbox" id="priceRange5" name="price" onclick="this.form.submit()"
+                                       value="5"
+                                       th:checked="${pricesArr[5] == true}?'checked'">
+                                <label for="priceRange5"></label> 750.000đ - trở lên
+                            </li>
+                        </ul>
+                    </dd>
+                    <dd></dd>
+                    <dt class="left_filter">
+                        Sản phẩm
+                    </dt>
+                    <dd class="left_filter">
+                        <ul class="list-group">
+                            <li>
+                                <input type="checkbox" name="lang" onclick="this.form.submit()"
+                                       value="1"
+                                       th:checked="${langsArr[1] == true}?'checked'"
+                                >Máy ảnh
+                            </li>
+                            <li>
+                                <input type="checkbox" name="lang" onclick="this.form.submit()"
+                                       value="2"
+                                       th:checked="${langsArr[2] == true}?'checked'"
+                                >Máy quay
+                            </li>
+                            <li>
+                                <input type="checkbox" name="lang" onclick="this.form.submit()"
+                                       value="3"
+                                       th:checked="${langsArr[3] == true}?'checked'"
+                                >Ống kính
+                            </li>
+                            <li>
+                                <input type="checkbox" name="lang" onclick="this.form.submit()"
+                                       value="4"
+                                       th:checked="${langsArr[4] == true}?'checked'"
+                                >Phụ kiện máy ảnh
+                            </li>
+                            <li>
+                                <input type="checkbox" name="lang" onclick="this.form.submit()"
+                                       value="4"
+                                       th:checked="${langsArr[5] == true}?'checked'"
+                                >Thiết bị Studio
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-md-8 col-lg-8 right">
+                <div class="result-search-block" style="padding-bottom: 15px;">
+                    <div class="right_filter">
+                        <ul class="list-group list-group-horizontal">
+                            <li class="">Sắp xếp theo</li>
+                            <li>
+                                <div class="form-group">
+                                    <select class="form-select" aria-label="Default select"
+                                            name="sortBy" onchange="this.form.submit()">
+                                        <option selected disabled>   </option>
+                                        <option value="1">Tên sản phẩm</option>
+                                        <option value="2">Giá tăng dần</option>
+                                        <option value="3">Giá giảm dần</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <select class="form-select" aria-label="Default select" name="exists"
+                                        onchange="this.form.submit()">
+                                    <option value="1" th:selected="${exists == 1}">Tất cả</option>
+                                    <option value="2" th:selected="${exists == 2}">Còn hàng</option>
+                                </select>
+                            </li>
+                            <li>
+                                <div class="form-group">
+                                    <select class="form-select"
+                                            aria-label="Default select"
+                                            name="size" id="size" onchange="this.form.submit()">
+                                        <option th:selected="${size == 12}" value="12">12 sản phẩm</option>
+                                        <option th:selected="${size == 24}" value="24">24 sản phẩm</option>
+                                        <option th:selected="${size == 48}" value="48">48 sản phẩm</option>
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list_books">
+                        <div class="books-grid" th:if="${products}">
+                            <th:block th:each="book, iStat:${products}">
+                                <div class="book">
+                                    <a th:href="@{/product(id=${book.id})}" th:title="${book.productName}">
+                                        <img class="card-img img-book"
+                                             th:src="${book.image}" alt="">
+                                        <div class="book-name">
+                                            <p class="hideText" th:text="${book.productName}"></p>
+                                        </div>
+                                        <div class="price">
+                                            <p class="sale-price currency" th:text="${book.getFormattedDiscountPrice()}">đ</p>
+                                            <p class="origin-price currency" th:text="${book.getFormattedPrice()}">đ</p>
+                                        </div>
+                                        <div class="rate">
+                                            <div class="rating-box">
+                                                <div class="rating" th:if="${book.rateCount > 0}"
+                                                     th:style="${'width: ' + book.rateSum*1000/book.rateCount/50 + '%'}"></div>
+                                                <div class="rating" th:if="${book.rateCount == 0}"
+                                                     style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </th:block>
+                        </div>
+                    </div>
+                    <div style="text-align: center;font-size: 200%;margin-top: 4%" th:if="${!products.isEmpty()}">
+                        <ul>
+                            <li th:each="i : ${#numbers.sequence(1,endPage)}"
+                                class="paginaging"
+                                th:classappend="${i==cuPage}?'paginaging-add'">
+                                <a th:href="@{|${url}|(page=${i})}"
+                                   th:text="${i}" th:style="${i==cuPage}?'color:white'"></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div th:if="${products.isEmpty()}">
+                        <h1 style="text-align: center">Không tìm thấy sản phẩm</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+<th:block layout:insert="~{fragments/client/footer}"/>
+<th:block layout:insert="~{fragments/client/scriptTag}"/>
+<script>
+    var childrent = document.getElementsByClassName('send-page');
+    var parents = document.getElementsByClassName('paginaging');
+    for (let i = 0; i < parents.length; i++) {
+        childrent[i].setAttribute('disabled', '');
+    }
+    for (let i = 0; i < parents.length; i++) {
+        parents[i].onclick = (e) => {
+            childrent[i].removeAttribute('disabled');
+        };
+    }
+    let x = document.querySelectorAll(".currency");
+    for (let i = 0, len = x.length; i < len; i++) {
+        let num = Number(x[i].innerHTML)
+            .toLocaleString('da-DK');
+        x[i].innerHTML = num;
+    }
+</script>
+</body>
+</html>

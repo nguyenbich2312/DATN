@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BZone</title>
+    <link rel="stylesheet" th:href="@{/css/shipper/style.css}"/>
+    <!-- Favicon -->
+    <link href="img/icons8-admin-settings-male-16.png" rel="icon"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <aside style="width: 110%;">
+        <div class="navbar-top">
+            <div class="profile">
+                <div class="info" style="margin: 30px;">
+                    <h2>Welcome, </h2>
+                    <p class="text-muted"
+                       th:text="${authen_user.firstName + ' ' + (authen_user.lastName == null ? '' : authen_user.lastName)}"></p>
+                </div>
+            </div>
+            <div class="btn-close">
+                <span class="material-symbols-outlined"> close </span>
+            </div>
+        </div>
+
+        <div class="navbar-content">
+            <a th:href="@{/shipper}" class="active">
+                <span class="material-symbols-outlined"> grid_view </span>
+                <h3>Trang chủ</h3>
+            </a>
+            <a th:href="@{/shipper/history}">
+                <span class="material-symbols-outlined"> grid_view </span>
+                <h3>Xem lịch sử giao hàng</h3>
+            </a>
+            <a href="/perform_logout" class="logout">
+                <span class="material-symbols-outlined"> logout </span>
+                <h3>Đăng xuất</h3>
+            </a>
+        </div>
+    </aside>
+    <main style="margin-left: 20px;">
+        <h2>Chi tiết đơn hàng <span th:text="${order.orderId}"></span></h2>
+        <table>
+            <tr>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Tổng tiền</th>
+            </tr>
+            <tbody th:each="i : ${order.orderDetails}">
+            <tr>
+                <td th:text="${i.product.productName}"></td>
+                <td th:text="${i.quantity}"></td>
+                <td th:text="${i.price  + ' đ'}"></td>
+                <td th:text="${i.price*i.quantity + ' đ'}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <button th:onclick="|window.location.href = '@{${url}}'|"
+                style="width: 8%;padding: 1%;text-align: center;margin-left: 44%;">Trở về
+        </button>
+    </main>
+</div>
+</body>
+</html>

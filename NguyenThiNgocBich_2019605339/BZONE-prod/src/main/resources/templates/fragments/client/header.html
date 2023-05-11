@@ -1,0 +1,228 @@
+<th:block xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <section id="header" class="header">
+        <div class="container">
+            <div class="fhs-header-top-second-bar" style="position: relative;">
+                <div class="icon_fahasa_logo fhs_mouse_point" onclick="location.href='/'" title="BZone.com"></div>
+                <div th:onmouseover="|open_noti(1,'.catalog_menu_dropdown')|"
+                     th:onmouseout="|open_noti(0,'.catalog_menu_dropdown')|"
+                     class="fhs_center_right fhs_mouse_point fhs_dropdown_hover fhs_dropdown_click"
+                     style="cursor: pointer;">
+                    <span class="icon_menu"></span>
+                    <span class="icon_seemore"></span>
+                    <div class="catalog_menu_dropdown fhs_dropdown" style="display: none;">
+                        <div class="fhs_stretch_stretch">
+                            <div>
+                                <div
+                                        style="font-weight: bold;font-size: 1.7em;color: #7A7E7F; text-align: left;padding: 0 12px;margin-bottom: 16px;">
+                                    Danh mục sản phẩm
+                                </div>
+                                <ul class="nav navbar-nav verticalmenu" th:each="cate : ${session.list_cate}">
+                                    <li class="parent dropdown aligned-left"
+                                        th:onmouseover="|showCategory(${cate.id})|"><span
+                                            class="open-child hidden-md hidden-lg">(open)</span><a
+                                            th:href="@{category(id=${cate.id})}" class=""
+                                            th:title="${cate.categoryName}" data-clickable="1"><i
+                                            class="ico_sachtrongnuoc"></i><span class="menu-title"
+                                                                                th:text="${cate.categoryName}">
+                                    </span><b class="caret"></b></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div></div>
+                            <div class="fhs_column_stretch" style="padding-right: 12px;height: 600px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fhs_center_left">
+                    <div class="box search_box">
+                        <form id="search_mini_form_desktop" th:action="@{search}">
+                            <div class="search pull-left">
+                                <div class="form-search fhs_dropdown_hover_out">
+                                    <input type="text" id="search_desktop" autocomplete="off"
+                                           placeholder="Tìm kiếm sản phẩm mong muốn..." name="name">
+                                    <button style="width: 12%;position: absolute;padding: 0;border: 0;top: 21%;height: 50%;left: 87%;" class="fhs_btn_default active button-search">
+                                        <span class="ico_search_white"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="fhs_center_space" style="padding-left: 24px;">
+                    <div class="noti-top fhs_dropdown_hover no_cover"
+                         th:onmouseover="|open_noti(1,'.top-notification-menu')|"
+                         th:onmouseout="|open_noti(0,'.top-notification-menu')|">
+                        <div
+                                class="top-notification-button fhs_mouse_point">
+                            <a style="cursor:pointer;display:flex;flex-direction: column;">
+                                <div class="fhs_center_center" style="margin-bottom:3px;">
+                                    <div class="icon_nofi_gray">
+                                        <div class="top-notification-button-unseen top_menu_unseen fhs_center_center"
+                                             th:style="${session.list_notification.isEmpty()}?'display:none'"
+                                             th:text="${!session.list_notification.isEmpty()}?${session.list_notification.size()}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="fhs_top_center">
+                                    <div class="top_menu_label">Thông Báo</div>
+                                </div>
+                            </a>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div id="top-notification-menu-render">
+                            <div class="top-notification-menu fhs_top_noti_dropdown fhs_dropdown "
+                                 style="display: none;" sec:authorize="!isAuthenticated()">
+                                <div style="padding:16px;border-bottom: 1px solid #F2F4F5; font-weight: bold;"
+                                     class="fhs_center_space">
+                                    <div class="fhs_center_left" style="font-size: 1.23em; color: #0D0E0F;">
+                                        <span class="icon_nofi_black"
+                                              style="width:16px;height:16px;margin-right: 8px;"></span>
+                                        <span>Thông báo</span>
+                                        <span class="fhs_notification_unseen" style="margin-left:4px;"></span>
+                                    </div>
+                                </div>
+                                <div class="fhs_center_center" style="padding: 24px;"><span class="ico_notlogin"></span>
+                                </div>
+                                <div class="fhs_center_center" style="color: #0D0E0F; font-size: 1.23em;">Vui lòng đăng
+                                    nhập để
+                                </div>
+                                <div class="fhs_center_center"
+                                     style="color: #0D0E0F; padding-bottom:24px; font-size: 1.23em;">xem thông báo
+                                </div>
+                                <div style="padding:0 16px 8px 16px; ">
+                                    <button type="button" title="Đăng nhập" onclick="window.location.href='/login'"
+                                            class="fhs_btn_default active" style="height: 40px;"><span>Đăng
+                                            nhập</span></button>
+                                </div>
+                                <div style="padding:0 16px 16px 16px;">
+                                    <button type="button" title="Đăng ký" onclick="window.location.href='/signup'"
+                                            class="fhs_btn_default" style="height: 40px;"><span>Đăng ký</span></button>
+                                </div>
+                            </div>
+                            <div class="top-notification-menu fhs_top_noti_dropdown fhs_dropdown "
+                                 style="display: none;" sec:authorize="isAuthenticated()">
+                                <div style="padding:16px;border-bottom: 1px solid #F2F4F5; font-weight: bold;"
+                                     class="fhs_center_space">
+                                    <div class="fhs_center_left" style="font-size: 1.23em; color: #0D0E0F;">
+                                        <span class="icon_nofi_black"
+                                              style="width:16px;height:16px;margin-right: 8px;"></span>
+                                        <span>Thông báo</span>
+                                        <span class="fhs_notification_unseen" style="margin-left:4px;"
+                                              th:text="${session.list_notification.size()}"></span>
+                                    </div>
+                                    <a th:href="@{/user/account/notify}" class="fhs_center_left"
+                                       style="color: #2489F4; font-size: 1.1em;">Xem tất cả</a>
+                                </div>
+                                <div class="top-notification-loading fhs_center_center"
+                                     style="padding: 16px; display: none;">
+                                    <div class="ico_loading_cirle"></div>
+                                </div>
+                                <div class="top-notification-list fhs_scrollbar" style="display: block; margin: 5px"
+                                     th:each="i : ${session.list_notification}">
+                                    <a class="top-notification-item fhs_column_left fhs_mouse_point clear"
+                                       th:href="@{/user/account/notify}">
+                                        <div class="fhs_top_stretch" style="width:100%;">
+                                            <div class="fhs_top_left" style="margin:8px;">
+                                                <div class="ico_noti_bill"></div>
+                                            </div>
+                                            <div class="fhs_column_stretch"
+                                                 style="width:calc(100% - 44px); text-align: left;">
+                                                <div class="fhs_top_left fhs_nowrap_one" style="font-weight:bold;"
+                                                     th:text="${i.title}">
+                                                </div>
+                                                <div class="fhs_top_left fhs_nowrap_two" th:text="${i.description}">
+                                                </div>
+                                                <div style="color:#7A7E7F;"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="top-notification-footer" style="height: 16px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-top no_cover fhs_dropdown_hover">
+                        <div class="fhs_top_cart">
+                            <a href="/user/cart">
+                                <div class="heading heading-custom">
+                                    <div class="fhs_center_center" style="margin-bottom: 3px;">
+                                        <div class="icon_cart_gray">
+                                            <div sec:authorize="isAuthenticated()" th:if="${authen_user.cart.cartDetails.size() > 0}" class="top_menu_unseen fhs_center_center" style="visibility: visible;">
+                                                <span  th:text="${authen_user.cart.cartDetails.size()}" style="visibility: visible;" class="cartmini_qty"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="top-cart-button-label fhs_top_center">
+                                        <div class="top_menu_label">Giỏ Hàng</div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div id="cartmini_page_content" class="fhs_top_cart_dropdown fhs_dropdown center"
+                                 style="visibility: hidden; display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fhs_top_account no_cover fhs_dropdown_hover" id="fhs_top_account_hover"
+                         th:onmouseover="|open_noti(1,'.fhs_top_account_dropdown')|"
+                         th:onmouseout="|open_noti(0,'.fhs_top_account_dropdown')|">
+                        <a onclick="checkLogin(/*[[${user_login}]]*/)">
+                            <div class="fhs_top_account_button">
+                                <div class="icon_account_gray" style="margin-bottom:3px;"></div>
+                                <div sec:authorize="isAuthenticated()"
+                                     th:text="${authen_user.firstName + ' ' + (authen_user.lastName == null ? '' : authen_user.lastName)}"
+                                     class="top_menu_label fhs_top_center fhs_nowrap_one" id="fhs_top_account_title">
+                                </div>
+                                <div th:if="${authen_user == null}"
+                                     class="top_menu_label fhs_top_center fhs_nowrap_one" id="fhs_top_account_title">Tài
+                                    khoản
+                                </div>
+                            </div>
+                        </a>
+                        <div th:if="${authen_user == null}"
+                             class="fhs_top_account_dropdown fhs_dropdown right guest"
+                             style="display: none;min-width: 120px">
+                            <div>
+                                <a th:href="@{/login}">
+                                    <button type="button" title="Đăng nhập" class="fhs_btn_default active"
+                                            style="height: 40px;"><span>Đăng nhập</span></button>
+                                </a>
+                            </div>
+                            <div>
+                                <a th:href="@{/signup}">
+                                    <button type="button" title="Đăng ký" class="fhs_btn_default"
+                                            style="height: 40px;"><span>Đăng ký</span></button>
+                                </a>
+                            </div>
+                        </div>
+                        <div sec:authorize="isAuthenticated()" class="fhs_top_account_dropdown fhs_dropdown right min"
+                             style="display: none;">
+                            <div><a class="fhs_center_space" th:href="@{/user/account/profile}">
+                                <div class="fhs_center_left">
+                                    <div class="fhs_center_left ico_vip_copper" style="margin-right:8px"></div>
+                                    <div>
+                                        <div class="fhs_center_left fhs_nowrap_one"
+                                             style="font-size: 1.23em; color: #0D0E0F; font-weight: bold;max-width: 200px;height: 22px; text-transform: capitalize;">
+                                            <span th:text="${authen_user.firstName + ' ' + (authen_user.lastName == null ? '' : authen_user.lastName)}"></span>
+                                        </div>
+                                        <div class="fhs_center_left" style="height: 22px;">Thành viên</div>
+                                    </div>
+                                </div>
+                                <div class="icon_seemore_gray right" style="width:24px;height:24px;"></div>
+                            </a></div>
+                            <div style="border-top: 1px solid #F2F4F5;"><a class="fhs_center_left"
+                                                                           th:href="@{/user/account/history}"><span
+                                    class="icon_bill_gray"
+                                    style="margin-right:8px;"></span><span>Đơn hàng của tôi</span></a></div>
+                            <div class="fhs_center_left fhs_mouse_point" style="border-top: 1px solid #F2F4F5;"><a
+                                    class="fhs_center_left fhs_flex_grow" href="/perform_logout"><span
+                                    class="ico_logout_gray"
+                                    style="margin-right:8px;"></span><span>Thoát tài khoản</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</th:block>

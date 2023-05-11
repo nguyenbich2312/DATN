@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{client-layout}">
+<th:block layout:fragment="content">
+    <th:block layout:insert="~{fragments/client/header}"/>
+    <th:block layout:insert="~{pages/client/header-breadcrumbs}"/>
+    <th:block>
+        <div class="main">
+            <div>
+                <div class="container" style="background-color : transparent!important;">
+                </div>
+            </div>
+            <!--                                <div></div>-->
+            <div class="container">
+                <div class="container-inner">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-left sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-left: 0px;">
+
+                            <div class="block block-account">
+                                <div class="block-title">
+                                    <strong><span>Tài khoản</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li class="current"><a th:href="@{/user/account/profile}">Thông tin tài
+                                            khoản</a>
+                                        </li>
+                                        <li><a th:href="@{/user/account/history}">Đơn hàng của tôi</a>
+                                        </li>
+                                        <li><a
+                                                th:href="@{/user/account/notify}">Thông
+                                            Báo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="youama-ajaxlogin-cover" id="loader" style="display: none;"></div>
+                        <div class="youama-change-window youama-changeEmail-window" id="changeEmailform"
+                             style="display: none;">
+                            <div class="popup-change-title">
+                                Thay đổi email
+                            </div>
+                            <div class="popup-change-content">
+                                <div class="fhs-input-box fhs-input-send">
+                                    <label>Email</label>
+                                    <div class="fhs-input-group">
+                                        <input class="fhs-textbox" type="text" placeholder="Enter Email"
+                                               id="change_email" name="youama-email" value="" maxlength="200"
+                                               autocomplete="off">
+                                        <span class="fhs-input-icon fhs-textbox-emailsend"
+                                              onclick="changeEmailwithOTP()">Gửi mã OTP</span>
+                                    </div>
+                                    <div class="fhs-input-alert" id="alert"></div>
+                                </div>
+                                <div class="fhs-input-box">
+                                    <label>Mã xác nhận OTP</label>
+                                    <div class="fhs-input-group">
+                                        <input class="fhs-textbox" type="text" placeholder="6 ký tự"
+                                               id="change_email_otp" name="otpvalue" value="" maxlength="6"
+                                               autocomplete="off" disabled="disabled">
+                                    </div>
+                                    <div class="fhs-input-icon fhs-textbox-alert" id="alert-otp"></div>
+                                </div>
+                                <div class="fhs-input-box">
+                                    <div class="fhs-btn-box">
+                                        <button type="button" title="Xác nhận" id="confirm"
+                                                class="fhs-btn-confirm fhs-btn-changeemail" disabled="">
+                                            <span>Xác nhận</span></button>
+                                        <button type="button" title="Trở về"
+                                                class="fhs-btn-back lg-close fhs-btn-backemail" onclick="popup()"><span>Trở về</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="fhs-popup-msg fhs-changeemail-msg"></div>
+                            </div>
+                        </div>
+                        <div class="col-main col-lg-9 col-md-9 col-sm-12 col-xs-12 col-fhs-main-body">
+                            <ul id="admin_messages"></ul>
+                            <style>
+                                .fhs-input-box .fhs-input-group.checked-error .fhs-textbox-alert,
+                                .fhs-input-box.checked-error .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_fail.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+
+                                .fhs-input-box.checked-pass .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_success.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+                            </style>
+                            <div class="my-account">
+                                <style>
+                                    .col-fhs-main-body {
+                                        background: #F0F0F0 !important;
+                                        padding-right: 0 !important;
+                                        padding-left: 0 !important;
+                                    }
+
+                                    .my-account {
+                                        padding-right: 15px;
+                                        padding-left: 15px;
+                                        margin-top: 0 !important
+                                    }
+                                </style>
+                                <div style="background-color: #fff;">
+                                    <div class="page-title-2">
+                                        <h1>Thông tin tài khoản</h1>
+                                    </div>
+                                    <ul class="messages" th:if="${report != null}">
+                                        <li class="success-msg">
+                                            <ul>
+                                                <li><span th:text="${report}" id="report"></span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="messages" th:if="${error != null}">
+                                        <li class="success-msg">
+                                            <ul>
+                                                <li><span th:text="${error}"></span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <form th:action="@{/user/account/profile}" method="post"
+                                          id="form-account-info" autocomplete="off">
+                                        <div>
+                                            <input type="hidden" name="id" th:value="${user?.id}">
+                                            <div class="fhs-input-box fhs-input-group-horizontal-account">
+                                                <label>Họ*</label>
+                                                <div class="fhs-input-item">
+                                                    <div class="fhs-input-group">
+                                                        <input class="fhs-textbox" type="text" placeholder="Nhập họ"
+                                                               id="lastname" name="lastname"
+                                                               th:value="${user?.lastName}"
+                                                               maxlength="200" required>
+                                                        <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="fhs-input-alert"></div>
+                                            </div>
+                                            <div class="fhs-input-box fhs-input-group-horizontal-account">
+                                                <label>Tên*</label>
+                                                <div class="fhs-input-item">
+                                                    <div class="fhs-input-group">
+                                                        <input class="fhs-textbox" type="text" placeholder="Nhập tên"
+                                                               id="firstname" name="firstname"
+                                                               th:value="${user?.firstName}"
+                                                               maxlength="200" required>
+                                                        <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="fhs-input-alert"></div>
+                                            </div>
+
+                                            <div class="fhs-input-box fhs-input-group-horizontal-account fhs-input-send">
+                                                <label>Số điện thoại</label>
+                                                <div class="fhs-input-item">
+                                                    <div class="fhs-input-group">
+                                                        <input class="fhs-textbox" type="text" id="telephone"
+                                                               name="telephone" maxlength="11" minlength="10"
+                                                               th:value="${user?.phoneNumber}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="fhs-input-alert"></div>
+                                            </div>
+                                            <div class="fhs-input-box fhs-input-group-horizontal-account fhs-input-send">
+                                                <label>Email</label>
+                                                <div class="fhs-input-item">
+                                                    <div class="fhs-input-group">
+                                                        <input class="fhs-textbox" type="text"
+                                                               placeholder="Chưa có email"
+                                                               id="email" name="email"
+                                                               maxlength="200" readonly="true"
+                                                               th:value="${#authentication.getName()}">
+                                                        <span class="fhs-input-icon fhs-textbox-changeemail"
+                                                              id="changeEmail" onclick="popup()">Thay đổi</span>
+                                                    </div>
+                                                </div>
+                                                <div class="fhs-input-alert"></div>
+                                            </div>
+
+                                            <div class="fhs-input-box fhs-input-group-horizontal-account">
+                                                <label>Giới tính*</label>
+                                                <div class="fhs-input-item">
+                                                    <div class="fhs-input-group">
+                                                        <div>
+                                                            <label class="fhs-radio" style="margin-top: 2px;">Nam <input
+                                                                    type="radio" class="gender-radio"
+                                                                    name="gender-radio"
+                                                                    th:if="${user.gender}"
+                                                                    value="male"
+                                                                    checked
+                                                            >
+                                                                <input
+                                                                        type="radio" class="gender-radio"
+                                                                        name="gender-radio"
+                                                                        th:if="${!user.gender}"
+                                                                        value="male"
+
+                                                                >
+                                                            </label>
+
+                                                        </div>
+                                                        <div>
+                                                            <label class="fhs-radio" style="margin-top: 2px;">Nữ <input
+                                                                    type="radio" class="gender-radio"
+                                                                    name="gender-radio"
+                                                                    th:if="${!user.gender}"
+                                                                    value="female"
+                                                                    checked>
+                                                                <input
+                                                                        type="radio" class="gender-radio"
+                                                                        name="gender-radio"
+                                                                        th:if="${user.gender}"
+                                                                        value="female">
+                                                            </label>
+
+                                                        </div>
+                                                        <div style="width: 42px;"></div>
+                                                        <div style="clear: both;"></div>
+
+                                                        <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="fhs-input-alert"></div>
+                                            </div>
+
+                                            <div class="fhs-input-box fhs-input-group-horizontal-account fhs-input-send">
+                                                <label>Birthday*</label>
+                                                <div class="fhs-input-item" style="padding:0 !important;">
+                                                    <div class="fhs-input-group customer-dob">
+                                                        <div class="account-input-bod">
+                                                            <input id="day"
+                                                                   class="fhs_input_date_group_day account-input-birthday"
+                                                                   name="day" type="text" style="text-align: center;"
+                                                                   maxlength="2" placeholder="DD"
+                                                                   th:value="${day}" required>
+                                                        </div>
+                                                        <div class="account-input-bod">
+                                                            <input id="month"
+                                                                   class="fhs_input_date_group_month account-input-birthday"
+                                                                   name="month" type="text" style="text-align: center;"
+                                                                   maxlength="2" placeholder="MM"
+                                                                   th:value="${month}" required>
+                                                        </div>
+                                                        <div class="account-input-bod">
+                                                            <input id="year"
+                                                                   class="fhs_input_date_group_year account-input-birthday"
+                                                                   name="year" type="text" style="text-align: center;"
+                                                                   maxlength="4" placeholder="YYYY"
+                                                                   th:value="${year}" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="fhs-input-alert"></div>
+                                            </div>
+                                            <div class="account-row" style="margin-top: 10px;">
+                                                <label class="account-title"></label>
+                                                <div class="account-input">
+                                                    <label class="fhs-checkbox">Đổi mật khẩu <input type="checkbox"
+                                                                                                    name="change_password"
+                                                                                                    id="change_password"
+                                                                                                    onclick="changepass()"
+                                                                                                    title="Đổi mật khẩu"
+                                                                                                    value="1"
+                                                                                                    style="margin-top: -11px; margin-right: 11px;">
+                                                    </label>
+                                                </div>
+                                                <div style="clear: both;"></div>
+                                            </div>
+                                            <div class="fhs-edit-account-password-form" style="display:none;">
+                                                <div class="fhs-input-box fhs-input-group-horizontal-account">
+                                                    <label>Mật khẩu hiện tại*</label>
+                                                    <div class="fhs-input-item">
+                                                        <div class="fhs-input-group">
+                                                            <input class="fhs-textbox" type="password"
+                                                                   placeholder="Mật khẩu hiện tại"
+                                                                   name="current_password"
+                                                                   id="current_password" value="" maxlength="16">
+                                                            <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fhs-input-alert"></div>
+                                                </div>
+                                                <div class="fhs-input-box fhs-input-group-horizontal-account">
+                                                    <label>Mật khẩu mới*</label>
+                                                    <div class="fhs-input-item">
+                                                        <div class="fhs-input-group">
+                                                            <input class="fhs-textbox" type="password"
+                                                                   placeholder="Mật khẩu mới" name="password"
+                                                                   id="password"
+                                                                   value="" maxlength="16">
+                                                            <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fhs-input-alert"></div>
+                                                </div>
+                                                <div class="fhs-input-box fhs-input-group-horizontal-account">
+                                                    <label>Nhập lại mật khẩu mới*</label>
+                                                    <div class="fhs-input-item">
+                                                        <div class="fhs-input-group">
+                                                            <input class="fhs-textbox" type="password"
+                                                                   placeholder="Nhập lại mật khẩu mới"
+                                                                   name="confirmation"
+                                                                   id="confirmation" value="" maxlength="16">
+                                                            <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fhs-input-alert"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="text-align: center;padding: 20px 0 10px 0;">
+                                            <button type="button" title="Lưu thay đổi" id="btn-save-account-info"
+                                                    onclick="this.form.submit()"
+                                                    class="btn-save-confirm"><span><span>Lưu thay đổi</span></span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+    <th:block layout:insert="~{fragments/client/footer}"/>
+</th:block>
+</html>

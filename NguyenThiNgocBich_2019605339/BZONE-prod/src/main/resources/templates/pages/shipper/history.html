@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>BZone</title>
+    <link rel="stylesheet" th:href="@{/css/shipper/style.css}"/>
+    <!-- Favicon -->
+    <link href="img/icons8-admin-settings-male-16.png" rel="icon"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <aside style="width: 110%;">
+        <div class="navbar-top">
+            <div class="profile">
+                <div class="info" style="margin: 30px;">
+                    <h2>Welcome, </h2>
+                    <p class="text-muted"
+                       th:text="${authen_user.firstName + ' ' + (authen_user.lastName == null ? '' : authen_user.lastName)}"></p>
+                </div>
+            </div>
+            <div class="btn-close">
+                <span class="material-symbols-outlined"> close </span>
+            </div>
+        </div>
+
+        <div class="navbar-content">
+            <a th:href="@{/shipper}">
+                <span class="material-symbols-outlined"> grid_view </span>
+                <h3>Trang chủ</h3>
+            </a>
+            <a th:href="@{/shipper/history}" class="active">
+                <span class="material-symbols-outlined"> grid_view </span>
+                <h3>Xem lịch sử giao hàng</h3>
+            </a>
+            <a href="/perform_logout" class="logout">
+                <span class="material-symbols-outlined"> logout </span>
+                <h3>Đăng xuất</h3>
+            </a>
+        </div>
+    </aside>
+    <main style="margin-left: 20px;">
+        <h1 style="margin: 25px 0px 50px 0px;">Nhân viên giao hàng</h1>
+        <!-- USER TABLE -->
+        <div class="recent-orders" th:if="${order_set.size() != 0}">
+            <h2>Quản lý đơn hàng</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>Mã đơn đặt</th>
+                    <th>Khách hàng</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Ngày đặt hàng</th>
+                    <th>Tình trạng</th>
+                    <th colspan="2">Thao tác</th>
+                </tr>
+                </thead>
+                <tbody th:each="i : ${order_set}">
+                <tr>
+                    <td th:text="${i.orderId}"></td>
+                    <td th:text="${i.name}"></td>
+                    <td th:text="${i.phoneNumber}"></td>
+                    <td th:text="${i.address}"></td>
+                    <td th:text="${i.orderDate}"></td>
+                    <td class="status"  th:text="${i.recentOrderStatus}"></td>
+                    <td><a th:href="@{/shipper/detail(id=${i.orderId})}" class="success">Xem chi tiết</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div th:unless="${order_set.size() != 0}">Không có dữ liệu.........</div>
+    </main>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    const statuses = document.querySelectorAll('.status')
+    statuses.forEach(status => {
+        if (status.innerText === 'Completed') {
+            status.style.color = '#41f1b6'
+        } else if (status.innerText === 'Waiting') {
+            status.style.color = '#eaa636'
+        } else {
+            status.style.color = '#fc515f'
+        }
+    });
+</script>
+</body>
+</html>

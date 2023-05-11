@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BZone</title>
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/admin/view_account.css}">
+    <link rel="icon" href="/image/p.png" type="image/x-icon">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle">
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <h2><span class="lab la-accusoft"></span><span>BZone</span></h2>
+    </div>
+
+    <div class="sidebar-menu">
+        <ul>
+            <li>
+                <a href="/admin"><span class="las la-igloo"></span>
+                    <span>Trang chủ</span></a>
+            </li>
+            <li>
+                <a href="/admin/create-account"><span class="las la-users"></span>
+                    <span>Tạo tài khoản</span></a>
+            </li>
+            <li>
+                <a href="/admin/view-account" class="active"><span class="las la-user-circle"></span>
+                    <span>Xem tài khoản</span></a>
+            </li>
+            <li>
+                <a href="/perform_logout"><span class="las la-sign-out-alt"></span>
+                    <span>Đăng xuất</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
+            Giám đốc
+        </h2>
+
+
+        <div class="user-wrapper">
+            <img src="/image/ico_account_gray.png" width="24px" height="24px" alt="">
+            <div>
+                <h4 th:text="${authen_user.firstName + ' ' + authen_user.lastName}"></h4>
+                <!--                <small th:text="${authen_user.role.roleName}"></small>-->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form first">
+                <div class="details personal">
+                    <div class="container-header" style="   display: block;width: 90%;">
+                        <form id="frm" action="/admin/view-account" method="get">
+                            <div class="search-wrapper">
+                                <span class="las la-search"></span>
+                                <input type="search" th:value="${email}" name="email" placeholder="Search here">
+                            </div>
+                            <div class="dropdown-role" style="float: right">
+                                <select name="role-id" class="dropdown-box" onchange="changeRole()">
+                                    <option class="option" value="0">All</option>
+                                    <option th:each="role: ${roles}" th:if="${id == role.id}" selected
+                                            th:text="${role.roleName}" class="option" th:value="${role.id}"></option>
+                                    <option th:each="role: ${roles}" th:if="${!(id == role.id)}"
+                                            th:text="${role.roleName}" class="option" th:value="${role.id}"></option>
+
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="list-accounts">
+                    <table width="100%">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Họ và tên</th>
+                            <th>Email</th>
+                            <th>Phân quyền</th>
+                            <th>Tình trạng</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="item: ${users}">
+                            <td th:text="${item.id}"></td>
+                            <td th:text="${item.firstName + ' ' + item.lastName}"></td>
+                            <td th:text="${item.email}"></td>
+                            <td th:if="${item.role.id== 1}">Khách hàng</td>
+                            <td th:if="${item.role.id == 2}">Nhân viên</td>
+                            <td th:if="${item.role.id == 3}">Nhân viên giao hàng</td>
+                            <td th:if="${item.role.id == 4}">Quản lý</td>
+                            <td th:if="${item.role.id == 5}">Giám đốc</td>
+                            <td th:text="${item.active ? 'Đang hoạt động' : 'Không hoạt động'}"></td>
+                            <td>
+                                <a th:href="@{/admin/view-detail(id=${item.id})}" class="btn btn-primary">Xem</a>
+                                <a th:href="@{/admin/activate(id=${item.id})}" th:if="${item.active}"
+                                   class="btn btn-success">Ngắt kết nối</a>
+                                <a th:href="@{/admin/activate(id=${item.id})}" th:if="${!item.active}"
+                                   class="btn btn-success">Kết nối</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script>
+    let form = document.getElementById('frm');
+
+    function changeRole() {
+        form.submit();
+    }
+</script>
+</body>
+</html>

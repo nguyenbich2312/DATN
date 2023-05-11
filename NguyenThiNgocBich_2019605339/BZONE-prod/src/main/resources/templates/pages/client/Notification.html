@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{client-layout}">
+<th:block layout:fragment="content">
+    <th:block layout:insert="~{fragments/client/header}"/>
+    <th:block layout:insert="~{pages/client/header-breadcrumbs}"/>
+    <th:block>
+        <div class="main">
+            <div>
+                <div class="container" style="background-color : transparent!important;">
+                </div>
+            </div>
+            <!--                                <div></div>-->
+            <div class="container">
+                <div class="container-inner">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-left sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-left: 0px;">
+
+                            <div class="block block-account">
+                                <div class="block-title">
+                                    <strong><span>Tài khoản</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a th:href="@{/user/account/profile}">Thông tin tài
+                                            khoản</a>
+                                        </li>
+                                        <li><a th:href="@{/user/account/history}">Đơn hàng của tôi</a>
+                                        </li>
+                                        <li class="current"><a
+                                                th:href="@{/user/account/notify}">Thông
+                                            Báo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-main col-lg-9 col-md-9 col-sm-12 col-xs-12 col-fhs-main-body">
+                            <ul id="admin_messages"></ul>
+                            <style>
+                                .fhs-input-box .fhs-input-group.checked-error .fhs-textbox-alert,
+                                .fhs-input-box.checked-error .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_fail.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+
+                                .fhs-input-box.checked-pass .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_success.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+                            </style>
+
+                            <style type="text/css">
+                                .col-fhs-main-body {
+                                    background: none;
+                                }
+
+                                #notification-top-msg {
+                                    padding: 15px 25px;
+                                    border: 1px solid #e6e6e6;
+                                    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+                                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+                                    background-color: white;
+                                    margin-bottom: 15px;
+                                    display: none;
+                                }
+
+                                #notification-top-msg .notification-top-msg-header {
+                                    padding-bottom: 5px;
+                                    border-bottom: 2px solid #FF9800;
+                                    margin-bottom: 15px;
+                                    color: #FF9800;
+                                }
+
+                                #notification-top-msg .notification-top-msg-header h3 {
+                                    font-size: 20px;
+                                    font-weight: bold;
+                                    float: left;
+                                }
+
+                                #notification-top-msg .notification-top-msg-header-date {
+                                    float: right;
+                                    color: #333;
+                                    padding-top: 20px;
+                                }
+
+                                #notification-top-msg .notification-top-msg-container {
+                                    padding: 20px 20px;
+                                    border-radius: 4px;
+                                    border: 1px solid #ccc;
+                                    margin-bottom: 10px;
+                                }
+
+                                #notification-top-msg .notification-top-msg-body {
+                                    max-height: 34px;
+                                    overflow: hidden;
+                                }
+
+                                #notification-container {
+                                    padding: 20px;
+                                    background-color: #fff;
+                                    border: 1px solid #e6e6e6;
+                                    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+                                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+                                }
+
+                                .notification-msg-tab {
+                                    cursor: pointer !important;
+                                    float: left;
+                                    margin: 10px 10px 10px 0px;
+                                }
+
+                                .notification-msg-tab.active a {
+                                    color: #FF9800 !important;
+                                    user-select: none;
+                                }
+
+                                .notification-msg-tab-label {
+                                    float: left;
+                                    padding: 2px 2px 2px 5px;
+                                    font-size: 16px;
+                                }
+
+                                .notification-msg-tab-underline {
+                                    clear: both;
+                                    border: 1px solid #FF9800;
+                                }
+
+                                .notification-body {
+                                    padding: 5px;
+                                    border-top: none;
+                                    display: block !important;
+                                    border-bottom-left-radius: 4px;
+                                    border-bottom-right-radius: 4px;
+                                    display: block !important;
+                                    background-color: #fff;
+                                    overflow-y: auto;
+                                    padding-right: 15px;
+                                    max-height: 600px;
+                                }
+
+                                .notification-body .list-group {
+                                    margin: 0px;
+                                }
+
+                                .notification-item {
+                                    border-bottom: 1px solid #e6e6e6;
+                                    padding: 10px 10px;
+                                }
+
+                                .notification-item-clickable {
+                                    cursor: pointer;
+                                    background-color: #f9ffd6;
+                                }
+
+                                .notification-item-header {
+                                    margin-bottom: 10px;
+                                }
+
+                                .notification-item-title {
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    float: left;
+                                }
+
+                                .notification-item-date {
+                                    font-style: italic;
+                                    float: right;
+                                }
+
+                                .notification-item-icon {
+                                    width: 32px;
+                                    float: left;
+                                    margin-right: 10px;
+                                }
+
+                                .notification-item-text {
+                                }
+
+                                .notification-body-loading {
+                                    margin: 50px auto;
+                                    width: 100px;
+                                    padding: 5px 15px;
+                                    text-align: center;
+                                }
+
+                                #notification-body-list {
+                                    display: none;
+                                }
+
+                                .notification-msg-tab-unseen {
+                                    border: 3px;
+                                    border-radius: 50%;
+                                    margin-top: 3px;
+                                    opacity: 0;
+                                    position: relative;
+                                    display: inline-block;
+                                    float: right;
+                                    text-align: center;
+                                    background-color: #ff2020;
+                                    padding: 4px;
+                                }
+
+                                .notification-top-msg-result,
+                                .notification-item-msg-result {
+                                    margin-top: 18px;
+                                }
+
+                                #notification-body-empty {
+                                    display: none;
+                                    padding: 40px;
+                                    text-align: center;
+                                }
+
+                                #notification-popup {
+                                    position: fixed;
+                                    width: 100%;
+                                    height: 100%;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 999;
+                                    background-color: #24242470;
+                                    display: none;
+                                }
+
+                                #notification-popup-container {
+                                    width: 98vw;
+                                    max-width: 650px;
+                                    margin: 0 auto;
+                                    margin-top: 70px;
+                                }
+
+                                #notification-popup .notification-popup-header {
+                                    background-color: #ff9800;
+                                    padding: 10px 20px;
+                                    border-top-left-radius: 10px;
+                                    border-top-right-radius: 10px;
+                                }
+
+                                #notification-popup .notification-popup-header h3 {
+                                    font-size: 20px;
+                                    float: left;
+                                    color: #fff;
+                                    font-weight: bold;
+                                }
+
+                                #notification-popup .notification-popup-date {
+                                    float: right;
+                                    padding: 10px;
+                                    color: #fff;
+                                }
+
+                                @media (max-width: 767px) {
+                                    #notification-popup-container {
+                                        margin-top: 10px;
+                                    }
+
+                                    #notification-popup .notification-popup-header h3 {
+                                        line-height: 1.2em;
+                                    }
+                                }
+
+                                .notification-popup-body {
+                                    min-height: 100px;
+                                    background-color: #fff;
+                                    z-index: 9999;
+                                    border-bottom-left-radius: 10px;
+                                    border-bottom-right-radius: 10px;
+                                    padding: 15px;
+                                }
+
+                                .notification-popup-body .radio input {
+                                    margin-top: -10px;
+                                }
+
+                                .notification-popup-content {
+                                    overflow: auto;
+                                    max-height: 40vh;
+                                    padding: 5px;
+                                }
+
+                                .notification-popup-data {
+                                    padding: 10px;
+                                }
+
+                                .notification-popup-actions {
+                                    text-align: center;
+                                }
+
+                                #notification-menu li.swiper-slide {
+                                    text-align: center;
+                                }
+
+                                .notification-msg-tab.swiper-slide {
+                                    width: unset;
+                                }
+                            </style>
+
+                            <div class="">
+                                <div id="notification-container">
+                                    <ul id="notification-menu">
+                                        <li data-id="all" class="notification-msg-tab active">
+                                            <a href="#">
+                                                <div class="notification-msg-tab-unseen" style="opacity: 0;"></div>
+                                                <div class="notification-msg-tab-label">Tất Cả</div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="notification-msg-tab-underline"></div>
+                                    <div>
+                                        <div class="notification-body-loading" style="display: none;">Đang tải ...</div>
+                                        <div class="notification-body">
+                                            <ul id="notification-body-list" style="display: block;"
+                                                th:each="i : ${list_noti}" th:unless="${list_noti.size() == 0}">
+                                                <li class="notification-item" id="notification-item-207304048"
+                                                    data-unseen="1" data-msg-id="207304048">
+                                                    <div class="notification-item-header">
+                                                        <div class="notification-item-title" th:text="${i.title}">
+                                                        </div>
+                                                        <div class="notification-item-date" th:text="${i.date}"></div>
+                                                        <br
+                                                                style="clear:both;">
+                                                    </div>
+                                                    <div class="notification-item-icon"><img
+                                                            src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/customer/notification_order.png">
+                                                    </div>
+                                                    <div class="notification-item-text" th:text="${i.description}">
+                                                    </div>
+                                                    <div class="notification-item-msg-actions"
+                                                         style="float: right;clear: both;margin-top: 5px;"></div>
+                                                    <div class="notification-item-msg-result"></div>
+                                                    <div style="clear:both;"></div>
+                                                </li>
+                                            </ul>
+                                            <div id="notification-body-empty" style="display: block;"
+                                                 th:if="${list_noti.size() == 0}">Không có thông báo.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+    <th:block layout:insert="~{fragments/client/footer}"/>
+</th:block>
+</html>

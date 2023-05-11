@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{client-layout}">
+<th:block layout:fragment="content">
+    <th:block layout:insert="~{fragments/client/header}"/>
+    <th:block layout:insert="~{pages/client/header-breadcrumbs}"/>
+    <th:block>
+        <div class="container">
+            <div class="std">
+                <!--                <div class="row cms-icon-menu">-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/flashsale?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_FlashSale_Hot_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Flash Sale</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/ma-giam-gia?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_MaGiamGia_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Mã Giảm Giá</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/deal-hot-pages?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_Trending_Hot_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Xu hướng</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/phien-cho-do-cu?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_PhienChoCu_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Phiên Chợ <br>Sách Cũ</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/new-product?category=all&amp;sort=created_at&amp;fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_SanPhamMoi_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Sản Phẩm <br>Mới</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/tu-sach-tham-khao?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_VanHoc_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Tủ Sách <br> Tham Khảo</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/back-to-school-trang-chinh?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_VanPhongPham_Hot_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">SGK &amp;<br> VPP</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/sach-thieu-nhi-nuoi-duong-tuong-lai?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_ThieuNhi_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Thiếu Nhi</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/nhap-hoi-manga-comic?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_MangaCommic_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Manga - Comic</div>-->
+                <!--                    </div>-->
+                <!--                    <div class="col-sms-3 col-sm-3 col-md-3">-->
+                <!--                        <div>-->
+                <!--                            <a href="/sach-kinh-te-mua-manh-giam-bao?fhs_campaign=homepageicon"><img-->
+                <!--                                    src="https://cdn0.fahasa.com/media/wysiwyg/icon-menu/Icon_KinhTe_8px_1.png"-->
+                <!--                                    class="center"></a>-->
+                <!--                        </div>-->
+                <!--                        <div class="cms-icon-menu-item-name">Kinh Tế</div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!-- end menu icon -->
+
+                <!--start icon_menu-->
+                <div class="desktop_only" style="width: 100%;">
+                    <div class="fhs_block" style="margin-top: 24px;">
+                        <div class="fhs_block_head fhs_center_left"><span class="ico_menu_red"
+                                                                          style="margin-right: 8px;"></span><span
+                                class="fhs_block_head_title">Danh mục sản
+                            phẩm</span></div>
+                        <div class="fhs_block_line">
+                            <div></div>
+                        </div>
+                        <div class="fhs_block_head">
+                            <div class="menu_category_block_content_list"
+                                 style="display: grid;grid-template-columns: repeat(5, 1fr);">
+                                <a href="/category?id=1"
+                                   class="fhs_column_center">
+                                    <img class=" lazyloaded"
+                                         src="/image/may-anh-fujifilm-gfx-100.png"
+                                         data-src="/image/may-anh-fujifilm-gfx-100.png" style="width: 456px;">
+                                    <div class="fhs_nowrap_two fhs_center_center"
+                                         style="margin-top: 16px; font-size: 1.23em;">Máy ảnh
+                                    </div>
+                                </a>
+                                <a href="/category?id=2"
+                                   class="fhs_column_center">
+                                    <img class=" lazyloaded"
+                                         src="/image/ong-kinh-zeiss-compact-zoom-cz-2-28-80mm-t2-9.png"
+                                         data-src="/image/ong-kinh-zeiss-compact-zoom-cz-2-28-80mm-t2-9.png"
+                                         style="width: 456px;">
+                                    <div class="fhs_nowrap_two fhs_center_center"
+                                         style="margin-top: 16px; font-size: 1.23em;">Ống kính
+                                    </div>
+                                </a>
+                                <a href="/category?id=3"
+                                   class="fhs_column_center">
+                                    <img class=" lazyloaded"
+                                         src="/image/canon-eos-c700.png"
+                                         data-src="/image/canon-eos-c700.png" style="width: 456px;">
+                                    <div class="fhs_nowrap_two fhs_center_center"
+                                         style="margin-top: 16px; font-size: 1.23em;">Máy quay
+                                    </div>
+                                </a>
+                                <a href="/category?id=4"
+                                   class="fhs_column_center">
+                                    <img class=" lazyloaded"
+                                         src="/image/FLASH-GODOX-TT350-CHO-FUJIFILM.png"
+                                         data-src="/image/FLASH-GODOX-TT350-CHO-FUJIFILM.png" style="width: 456px;">
+                                    <div class="fhs_nowrap_two fhs_center_center"
+                                         style="margin-top: 16px; font-size: 1.23em;">Phụ kiện <br> máy ảnh
+                                    </div>
+                                    Ma
+                                </a>
+                                <a href="/category?id=5"
+                                   class="fhs_column_center">
+                                    <img class=" lazyloaded"
+                                         src="/image/bo-den-studio-godox-flash-kit-ms300.png"
+                                         data-src="/image/bo-den-studio-godox-flash-kit-ms300.png"
+                                         style="width: 456px;">
+                                    <div class="fhs_nowrap_two fhs_center_center"
+                                         style="margin-top: 16px; font-size: 1.23em;">Thiết bị Studio
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end icon_menu-->
+
+                <div id="categorytab-gia-noi-bat" class="categorytab-slider fhs-grid">
+                    <div>
+                        <div class="tabslider-header">
+                            <div class="tabslider-title girdslider-title-aaa"
+                                 style="background-color: #C92127;padding-bottom: 12px;">
+                                <div class="header-icon-gridslider">
+                                    <img src="https://cdn0.fahasa.com/skin/frontend/base/default/images/ico_dealhot.png"
+                                         class="center">
+                                </div>
+                                <span>
+                                Xu Hướng Mua Sắm </span>
+                            </div>
+                            <div class="tab-title ma-title">
+                                <div class="tabslider-tabs tabslider-tabs-gird">
+                                    <ul class="tabs tabs-gia-noi-bat  tab_categorys girdslider-header-menu-aaa">
+                                        <div class="ts-header">
+                                            <li class="girdslider-menu-item-aaa" rel="deal"
+                                                onclick="tabslider('gia-noi-bat',false)">
+                                                Sản Phẩm Mới
+                                            </li>
+                                            <li class=" girdslider-menu-item-aaa" rel="km"
+                                                onclick="tabslider('gia-noi-bat',false)">
+                                                Máy Ảnh HOT - Giảm Sốc
+                                            </li>
+                                            <li class=" girdslider-menu-item-aaa" rel="kmnv"
+                                                onclick="tabslider('gia-noi-bat',false)">
+                                                Máy Ảnh Bán Chạy
+                                            </li>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabslider-top-content" style="margin-bottom: 10px;">
+                        </div>
+                        <div class="tabslider-loading-icon"
+                             style="margin: 0px 0px -350px; padding-top: 100px; display: none;"><img
+                                src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ring_loader.svg"
+                                class="img-responsive center-block"></div>
+                        <div class="tab_container">
+                            <div class="col-lg-12 col-md-12 col-sm-12 fhs-full-p">
+                                <div id="tabdeal-gia-noi-bat" class="tab_content_gia-noi-bat"
+                                     style="min-height: 400px;">
+                                </div>
+                            </div><!-- #tab1 -->
+                        </div>
+                    </div> <!-- .tab_container -->
+                </div>
+            </div> <!-- end div -->
+
+            <div id="categorytab-mglnv" class="categorytab-slider fhs-grid">
+                <div>
+                    <div class="tabslider-header">
+                        <div class="tab-title ma-title">
+                            <div class="tabslider-tabs tabslider-tabs-gird">
+                                <ul class="tabs tabs-mglnv  tab_categorys girdslider-header-menu-aaa">
+                                    <div class="ts-header">
+                                        <li class="girdslider-menu-item-aaa" rel="mglnv"
+                                            onclick="tabslider('mglnv',false)">
+                                            Câu Hỏi Thường Gặp
+                                        </li>
+                                        <!--                                            <li class=" girdslider-menu-item-aaa" rel="topmanga" onclick="tabslider('mglnv',false)">-->
+                                        <!--                                                Top Manga-->
+                                        <!--                                            </li>-->
+                                        <!--                                            <li class=" girdslider-menu-item-aaa" rel="lnvelmoi" onclick="tabslider('mglnv',false)">-->
+                                        <!--                                                Light Novel Mới-->
+                                        <!--                                            </li>-->
+                                        <!--                                            <li class=" girdslider-menu-item-aaa" rel="lnvelnewbanchay" onclick="tabslider('mglnv',false)">-->
+                                        <!--                                                Top Light Novel-->
+                                        <!--                                            </li>-->
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fhs_block_line">
+                        <div></div>
+                    </div>
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                    <strong><p>Làm cách nào để chọn thiết bị chiếu sáng phù hợp cho studio của tôi?</p>
+                                    </strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Khi chọn thiết bị chiếu sáng cho studio của bạn, hãy xem xét loại hình chụp ảnh bạn
+                                    thực hiện và kích thước không gian của bạn.
+                                    Đèn liên tục có thể là lựa chọn tốt cho công việc video hoặc studio nhỏ hơn, trong
+                                    khi đèn nhấp nháy tốt hơn cho không gian rộng hơn và chụp ảnh tĩnh.
+                                    Hãy tìm thiết bị có cài đặt công suất và nhiệt độ màu có thể điều chỉnh, cũng như bộ
+                                    khuếch tán và gương phản xạ để kiểm soát ánh sáng.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                    <strong><p>Lợi ích của việc sử dụng máy tính bảng đồ họa trong chỉnh sửa ảnh là
+                                        gì</p>
+                                    </strong>
+                                    </strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Máy tính bảng đồ họa cho phép bạn sử dụng bút stylus để chỉnh sửa hình ảnh của mình,
+                                    mang lại khả năng điều khiển chính xác hơn và cảm giác tự nhiên hơn so với sử dụng
+                                    chuột. Điều này có thể đặc biệt hữu ích cho các tác vụ như chỉnh sửa và tổng hợp,
+                                    trong đó các chuyển động chính xác là cần thiết.
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                    <strong><p>Phụ kiện chụp ảnh và thiết bị&nbsp;studio có gì khác nhau?</p>
+                                    </strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    Phụ kiện ảnh thường có mục đích chung hơn và có thể được sử dụng trong nhiều bối
+                                    cảnh chụp ảnh khác nhau, trong khi phụ kiện studio chuyên dụng hơn và phù hợp với
+                                    nhu cầu của các nhiếp ảnh gia studio hoặc các content creator muốn set up
+                                    miniStudio. <br>
+                                    Phụ kiện studio thường bao gồm thiết bị chiếu sáng, giá đỡ phông nền và các công cụ
+                                    khác để tạo môi trường studio được kiểm soát, trong khi các phụ kiện chụp ảnh có xu
+                                    hướng tập trung nhiều hơn vào việc hỗ trợ máy ảnh và ống kính của bạn.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                    <strong><p>Thương hiệu nào cung cấp thiết bị studio tốt nhất hiện nay?</p>
+                                    </strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <p style="text-align:justify">Có một số thương hiệu cung cấp thiết bị phòng thu chất
+                                        lượng cao để chụp ảnh và quay phim. Thương hiệu tốt nhất cho bạn sẽ phụ thuộc
+                                        vào nhu cầu và ngân sách cụ thể của bạn. Tuy nhiên, một số thương hiệu hàng đầu
+                                        trên thị trường hiện nay bao gồm:</p>
+                                    <ul style="margin-left:0px; margin-right:0px">
+                                        <li>
+                                            <p style="margin-left:0px; margin-right:0px">Profoto: thương hiệu Thụy Điển
+                                                nổi tiếng với thiết bị chiếu sáng studio cao cấp. Sản phẩm của họ được
+                                                biết đến với độ tin cậy, tính nhất quán và độ bền.</p>
+                                        </li>
+                                        <li>
+                                            <p style="margin-left:0px; margin-right:0px">Godox: thương hiệu cung cấp
+                                                nhiều loại thiết bị chiếu sáng studio, bao gồm đèn nhấp nháy, đèn chiếu
+                                                sáng liên tục và bộ kích hoạt không dây. Họ được biết đến với các sản
+                                                phẩm giá cả phải chăng nhưng đáng tin cậy.</p>
+                                        </li>
+                                        <li>
+                                            <p>Elgato: thương hiệu cung cấp nhiều loại thiết bị để tạo nội dung, bao gồm
+                                                các sản phẩm livestream, ghi âm và chiếu sáng. Các sản phẩm của họ được
+                                                biết đến với tính dễ sử dụng và khả năng tương thích với các phần mềm và
+                                                nền tảng phổ biến. Elgato cung cấp nhiều loại sản phẩm có thể được sử
+                                                dụng trong môi trường phòng thu nhỏ, chẳng hạn như bảng điều khiển Key
+                                                Light và Key Light Air LED của họ. Những đèn này cung cấp độ sáng và
+                                                nhiệt độ màu có thể điều chỉnh và có thể được điều khiển bằng phần mềm
+                                                Trung tâm điều khiển Elgato. Elgato cũng cung cấp Stream Deck, một bề
+                                                mặt điều khiển có thể lập trình có thể được sử dụng để điều khiển nhiều
+                                                ứng dụng và thiết bị chỉ bằng một nút bấm.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                    <strong><p>Làm thế nào tôi có thể bảo trì và chăm sóc thiết bị studio&nbsp;của mình
+                                        để đảm bảo nó hoạt động lâu dài?</p>
+                                    </strong>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                 aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li style="text-align: justify;">
+                                            <p>Vệ sinh thường xuyên và bảo quản đúng cách có thể giúp kéo dài tuổi thọ
+                                                của thiết bị studio.</p>
+                                        </li>
+                                        <li style="text-align: justify;">
+                                            <p>Xử lý thiết bị cẩn thận và luôn làm theo hướng dẫn của nhà sản xuất.</p>
+                                        </li>
+                                        <li style="text-align: justify;">
+                                            <p>Thường xuyên kiểm tra thiết bị để phát hiện hao mòn và sửa chữa hoặc thay
+                                                thế các bộ phận bị lỗi càng sớm càng tốt.</p>
+                                        </li>
+                                        <li style="text-align: justify;">
+                                            <p>Thực hiện theo các khuyến nghị của nhà sản xuất để phục vụ và bảo
+                                                trì.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+    <th:block layout:insert="~{fragments/client/footer}"/>
+    <script type="text/javascript">
+        // show an error message if the app loading takes more than 4 sec
+        window.onload = function () {
+            setTimeout(showError, 4000);
+        };
+        function showError() {
+            var errorElm = document.getElementById('jhipster-error');
+            if (errorElm && errorElm.style) {
+                errorElm.style.display = 'block';
+            }
+        }
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/645b0c5cad80445890ec12a9/1h01qgj39';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</th:block>
+</html>

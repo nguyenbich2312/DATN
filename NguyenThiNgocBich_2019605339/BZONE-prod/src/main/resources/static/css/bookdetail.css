@@ -1,0 +1,1594 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f6f0;
+    color: #333333;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    line-height: 1.428571429;
+    font-family: nunito-sans, sans-serif, Helvetica, Arial;
+
+}
+
+.container {
+    width: 1230px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body, .container, bg-header-con, .ma-menu .container {
+    background: #F0F0F0;
+}
+
+a {
+    text-decoration: none;
+    color: #646464;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 39px;
+}
+
+.main {
+    margin: 0 auto;
+    min-height: 320px;
+    padding: 0px;
+    text-align: left;
+}
+
+.all .product-essential {
+    padding: 16px 16px 25px 16px;
+    margin-top: 0px;
+    background-color: white;
+}
+
+.product-essential {
+    display: flex;
+    border-radius: 8px;
+}
+
+.product-essential-media {
+    width: 484px;
+}
+
+.product-view-image {
+    justify-content: center;
+}
+
+.product-view-image > .product-view-image-product {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+}
+
+.product_view_add_box {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.product_view_add_box button:first-of-type {
+    margin-left: 0;
+    color: #C92127;
+    background: #fff;
+    border: 2px solid #C92127;
+}
+
+.product_view_add_box button {
+    cursor: pointer;
+    user-select: none;
+    height: 44px;
+    margin-left: 10px;
+    width: 220px;
+    font-weight: 700;
+    font-size: 1.1em;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #C92127;
+    border: none;
+}
+
+.product-essential-detail {
+    width: calc(100% - 484px);
+    padding-left: 36px;
+}
+
+h1 {
+    font-size: 20px;
+    line-height: 39px;
+}
+.all {
+    display: table;
+    font-family: 'Roboto',sans-serif !important;
+    background: white !important;
+    width: 100%;
+}
+.all h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Nunito Sans','sans-serif';
+    line-height: 1.5em;
+    overflow-wrap: break-word;
+    padding-bottom: 16px;
+}
+
+.product-view-sa-supplier {
+    display: inline-block;
+    width: 40%;
+    padding-right: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-view-sa-supplier:first-child {
+    padding-right: 8px;
+}
+
+.product-view-sa-supplier a {
+    color: #2489F4;
+    font-weight: 600;
+}
+
+.product-view-sa-author {
+    display: inline-block;
+    width: 40%;
+    padding-left: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-view-sa-author:first-child {
+    padding-right: 8px;
+}
+
+.product-view-sa-author span:nth-of-type(2) {
+    font-weight: 600;
+}
+
+.product-essential > .product-essential-detail .view-rate {
+    margin: 0px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.product-essential > .product-essential-detail .view-rate > div {
+    display: flex;
+    align-items: center;
+}
+
+.rating {
+    display:flex;
+    line-height: 25px;
+}
+
+.product-view .ratings table tbody td {
+    display: flex;
+    align-items: center;
+}
+
+.rating-box .rating {
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_yellow.svg) repeat-x;
+    background-size: 16px 16px;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.rating-box .rating {
+    float: left;
+    height: 16px;
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_yellow.svg) repeat-x;
+    background-size: 16px 16px;
+}
+
+.rating-content tr {
+    display: flex;
+    align-items: center;
+}
+
+.ratings .rating-content {
+    max-width: 320px;
+    float: left;
+    margin-right: 10px;
+}
+
+.ratings-desktop a, .ratings-short a, .ratings-short td {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.comment_list .rating-box, .comment_list .rating, .ratings-desktop .rating-box, .ratings-desktop .rating {
+    height: 14px;
+    background-size: 14px 14px;
+}
+
+.checked {
+    color: orange;
+}
+
+.product-view .review-position > p > a, .product-view .review-position > a > span {
+    font-size: 15px;
+}
+
+.all .price-block-left div {
+    background-color: white !important;
+}
+
+#catalog-product-details-price > .price-box > p {
+    display: inline-block;
+}
+
+.price-box > .old-price > .price, .price-box > .old-price > .price > span {
+    margin-left: 8px;
+    color: #0D0E0F;
+}
+
+.price-box > .old-price > .discount-percent {
+    margin-left: 8px;
+    padding: 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #C92127;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.special-price .price-label {
+    font-size: 13px;
+    font-weight: normal;
+    white-space: nowrap;
+    color: #cd5033;
+    display: none;
+}
+
+.all .regular-price .price, .all .special-price .price {
+    font-size: 32px;
+    line-height: 32px;
+    color: #C92127;
+    font-family: 'Roboto',sans-serif !important;
+    font-weight: 700;
+}
+
+.all .price-block {
+    padding: 0px;
+    color: #575757;
+    margin-bottom: 15px;
+}
+
+#expected_delivery > div {
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+}
+
+#expected_delivery > div >div:first-of-type {
+    max-width: 200px;
+    min-width: 150px;
+}
+
+#expected_delivery > div > div:nth-of-type(2) {
+    min-width: calc(100% - 200px);
+    max-width: calc(100% - 150px);
+}
+
+#expected_delivery > div > div:nth-of-type(2) > div:first-of-type {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    user-select: none;
+}
+
+#expected_delivery > div > div:nth-of-type(2) > div:first-of-type > div:first-of-type {
+    display: flex;
+    max-width: calc(100% - 100px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#expected_delivery > div > div:nth-of-type(2) > div:first-of-type > div:nth-of-type(2) {
+    width: 80px;
+    color: #2489F4;
+    font-weight: 600;
+    padding-left: 10px;
+    white-space: nowrap;
+}
+
+#catalog-product-details-discount {
+    width: 100%;
+    padding: 8px 0;
+}
+
+.product-view-quantity-box label {
+    font-size: 1.2em;
+    font-weight: 650;
+    padding: 0 8px 0 0;
+    margin-bottom: 0;
+    text-align: left;
+    max-width: 200px;
+    min-width: 150px;
+}
+
+.product-view-quantity-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.product-view-quantity-box-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    height: 32px;
+}
+.product-view-quantity-box-block a {
+    cursor: pointer;
+}
+.product-view-quantity-box-block a.btn-subtract-qty {
+    padding: 0 8px 0 16px;
+    display: flex;
+}
+
+.product-view-quantity-box-block a.btn-add-qty {
+    padding: 0 16px 0 8px;
+    display: flex;
+}
+
+.product-view-quantity-box-block #qty {
+    border: none !important;;
+    width: 3em !important;
+    color: #0D0E0F;
+    font-weight: 700;
+    font-size: 1.2em;
+    height: 100%;
+    text-align: center;
+}
+
+.fhs_tabslider3_container {
+    padding-bottom: 10px;
+    margin-top: 0px;
+    background-color: white;
+    margin-top: 15px;
+    position: relative;
+    min-height: 300px;
+    border-radius: 8px;
+}
+
+.fhs_tabslider3_header {
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.fhs_tabslider3_title {
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-top: 1px;
+}
+
+.fhs_tabslider3_tabs_swiper_container {
+    overflow: hidden;
+    padding: 0 15px;
+    margin: 10px 0 5px 0;
+}
+
+.fhs_tabslider3_tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fhs-tabs {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    border-bottom: 1px solid #CDCFD0;
+    margin-bottom: 2px !important;
+}
+
+.fhs-tabs > li {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    margin-right: 40px;
+    width: auto;
+}
+
+.fhs-tabs > li.active a, .fhs-tabs > li:hover a {
+    color: #C92127;
+    font-weight: bold;
+    -webkit-transition: none;
+    transition: none;
+}
+
+.fhs-tabs > li.active hr {
+    background-color: #C92127;
+    border: 1px solid #C92127;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    width: 100%;
+}
+
+.fhs_tabslider3_products_container {
+    margin-top: 16px;
+    padding-left: 10px;
+}
+
+.fhs_tabslider3_products {
+    overflow: hidden;
+}
+
+.swiper-slide {
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+}
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform,-webkit-transform;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.fhs_tabslider3_li_items {
+    padding: 0px 10px;
+    /* width: 245px; */
+}
+
+.label-pro-sale {
+    background-color: #F7941E;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+}
+
+.discount-l-fs {
+    font-weight: bold;
+}
+
+.p-sale-label {
+    color: #ffffff;
+    font-size: 0.9em;
+    /* font-weight: 600; */
+}
+
+.ma-box-content {
+    padding: 0.8em;
+}
+
+.ma-box-content .products {
+    margin: 0 0 10px;
+    display: block;
+}
+
+.item-inner .images-container {
+    position: relative;
+}
+
+.item-inner .images-container .product-image img {
+    max-height: 190px;
+}
+
+.product-name-no-ellipsis a {
+    padding-top: 0px !important;
+    line-height: 1.4em;
+    word-break: break-word;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    min-height: 2.8em;
+    max-height: 2.8em;
+    font-size: 0.77em;
+    color: #333333;
+}
+
+.flashsale-item .flashsale-price, .wrap-item .price-label, .item-inner .price-label {
+    position: relative;
+    margin-top: 4px;
+    height: 60px;
+}
+
+.categorytab-slider .special-price, .personalization-item .special-price, .products-grid .special-price, #girdslider-page-container .special-price, #girdslider-page-container .special-price, .products-grid .regular-price, .fhs-product-grid .special-price, .fhs-product-grid-list .special-price, .products_grid_mobile .special-price, #fhs-asidebar-product-block-content .special-price, #event-buffetcombo-container .special-price {
+    margin: 0px;
+    background-color: transparent !important;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: stretch;
+    justify-content: stretch;
+}
+
+.categorytab-slider .special-price .price, .personalization-item .special-price .price, .products-grid .special-price .price, #girdslider-page-container .special-price .price, #girdslider-page-container .special-price .price, .products-grid .regular-price .price, .fhs-product-grid .special-price .price, .fhs-product-grid-list .special-price .price, .products_grid_mobile .special-price .price, #fhs-asidebar-product-block-content .special-price .price, #event-buffetcombo-container .special-price .price {
+    line-height: 1.65rem;
+    font-size: 1rem !important;
+    color: #C92127;
+    font-weight: 600;
+}
+
+p.old-price {
+    display: inline;
+}
+
+.item-inner .price-label {
+    height: 5rem;
+}
+
+.old-price .price {
+    color: #888888;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.flashsale-item .flashsale-price, .wrap-item .price-label, .item-inner .price-label {
+    position: relative;
+    margin-top: 4px;
+}
+
+.old-price .price-label {
+    white-space: nowrap;
+    color: #999;
+    display: none;
+}
+
+.fhs-rating-container, .rating-container {
+    min-height: 15px;
+    margin-top: 4px;
+}
+
+.ratings {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    font-size: 11px;
+    margin: 0;
+    margin-top: -2px;
+}
+
+.ratings .rating-box {
+    float: left;
+    margin-right: 3px;
+    margin-left: 0px;
+}
+
+.rating-box {
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_gray.svg) repeat-x;
+    background-size: 16px 16px;
+    margin: 0px 0px 0px 10px;
+    position: relative;
+    float: left;
+}
+
+.review-position span, .review-position > .rating-links > a, .ratings > .amount, .review-position > .rating-links {
+    color: #F6A500 !important;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: .35;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.fhs-tab3-slider-next {
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fa-angle-right_32_8_8e8c8c_none.png) no-repeat 100% 100% !important;
+    background-size: 30px 30px !important;
+    opacity: 0.7;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 19px;
+    border: 1px solid #CCCCCC !important;
+    background-position: 3px 1px !important;
+    position: absolute;
+    z-index: 10;
+    top: 30%;
+}
+
+.content {
+    margin-top: 15px;
+}
+
+.product_view_content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.product_view_content-title {
+    font-size: 1.45em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product_view_tab_content_ad {
+    overflow: hidden;
+    max-height: 600px;
+}
+
+.product_view_tab_content_additional {
+    border-bottom: 1px solid #c1c1c1;
+}
+
+.data-table {
+    border: none;
+    box-shadow: none;
+}
+
+.data-table {
+    width: 100%;
+
+    box-shadow: 0px 0px 2px rgb(0 0 0 / 10%);
+    background: transparent;
+}
+
+.data-table tbody th, .data-table tbody td {
+    border: none;
+    font-size: 1.1em;
+}
+
+.youama-forgot-password a, .youama-ac a, .review-nologged a, .e-msg, a#review-form, .no-rating a, .p-info, .xem-chi-tiet {
+    color: #2489F4;
+}
+
+.fhs_product_link li:first-of-type {
+    padding-top: 0;
+}
+
+.fhs_product_link li {
+    list-style-type: disc;
+    margin-left: 15px;
+    padding-top: 4px;
+    font-size: 0.9em;
+}
+
+ul li, ol li {
+    list-style: none;
+}
+
+.fhs_product_link li::marker {
+    unicode-bidi: isolate;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    text-indent: 0px !important;
+    text-align: start !important;
+    text-align-last: start !important;
+}
+
+#product_tabs_description_contents {
+    line-height: 25px;
+}
+
+.std {
+    font-size: 13px;
+}
+
+.std i, .std em {
+    font-style: italic;
+}
+
+.clear {
+    clear: both;
+}
+
+.fhs_center_center {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.fhs_bar_bottom a, .fhs_btn_default {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #C92127;
+    background-color: #fff;
+    border: 2px solid #C92127;
+    font-size: 14px;
+    font-weight: 700;
+    width: 210px;
+    max-width: 100%;
+    height: 40px;
+    max-height: 100%;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    transition: all 0.5s;
+}
+
+.product_view_content-title {
+    font-size: 1.45em;
+    font-weight: 700;
+}
+
+#product_view_review .product-view-tab-content-rating {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.product-view-tab-content-rating {
+    padding-bottom: 8px;
+}
+
+.product-view-tab-content-rating-chart {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type {
+    width: calc(50% - 100px);
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:first-of-type {
+    width: 130px;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:first-of-type > div {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:first-of-type > div > div:first-of-type {
+    font-size: 3em;
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:first-of-type > div > div:first-of-type > span {
+    font-size: 0.5em;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:first-of-type > div > div:nth-of-type(2) {
+    margin-bottom: 0.5em;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:first-of-type > div > div:nth-of-type(3) {
+    color: #7A7E7F;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:nth-of-type(2) {
+    width: calc(100% - 130px);
+    font-size: 1.3em;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:nth-of-type(2) {
+    width: calc(100% - 130px);
+    font-size: 1.3em;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:nth-of-type(2) > div:first-of-type {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.review-rating {
+    margin: 0 10px;
+    width: calc(100% - 115px);
+    height: 5px;
+    background-color: #e6e6e6;
+}
+
+.review-rating > div {
+    background: #F6A500;
+    height: 100%;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(2) {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(3) {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(4) {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.product-view-tab-content-rating-chart > div:first-of-type > div:nth-of-type(2) > div:nth-of-type(5) {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.product-view-tab-content-rating-chart > div:last-of-type {
+    width: calc(50% + 100px);
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.fhs-icon-write {
+    width: 19px;
+    height: 19px;
+    background: url(/skin/frontend/ma_vanese/fahasa/images/ico-write-red.svg) no-repeat center center;
+    background-size: 19px;
+}
+
+.product-view-tab-content-review-comment {
+    margin-top: 9px;
+}
+
+.comment_list > li:first-of-type {
+    padding-top: 0;
+}
+
+.comment_list > li {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.comment_list li > div:first-of-type {
+    width: 172px;
+    margin-right: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment_list li > div:first-of-type > div:first-of-type {
+    font-size: 1em;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 8px;
+}
+.comment_list li > div:first-of-type > div:nth-of-type(2) {
+    color: #7A7E7F;
+}
+
+.comment_list li > div:first-of-type > div {
+    margin-top: 4px;
+}
+
+ul li, ol li {
+    list-style: none;
+}
+
+.comment_list li > div:nth-of-type(2) {
+    width: calc(100% - 180px);
+    font-size: 1.1em;
+}
+
+.comment_list li > div:nth-of-type(2) > div:first-of-type {
+    padding-top: 0;
+    padding-bottom: 8px;
+}
+
+.comment_list li .rating-box {
+    margin: 0 0 0 -2px;
+}
+
+.comment_list li > div:nth-of-type(2) > div:nth-of-type(2) {
+    padding-bottom: 8px;
+}
+
+.comment_list li > div:nth-of-type(2) > div {
+    padding-top: 8px;
+}
+
+.fhs_center_left {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.review_like {
+    color: #7A7E7F;
+}
+
+.fhs_mouse_point {
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.review_like .icon_review_like {
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico-like-gray.svg) no-repeat bottom;
+    -webkit-background-size: 18px;
+    -moz-background-size: 18px;
+    -o-background-size: 18px;
+    background-size: 18px;
+    height: 18px;
+    width: 18px;
+}
+
+.review_like > span {
+    margin-right: 4px;
+}
+
+.review_report .icon_review_report {
+    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/promotion/ico-alert-grey.svg) no-repeat bottom;
+    -webkit-background-size: 18px;
+    -moz-background-size: 18px;
+    -o-background-size: 18px;
+    background-size: 18px;
+    height: 18px;
+    width: 18px;
+}
+/* Toolbar */
+.product_view_tab_content_review > .product-view-tab-content-review-comment > .toolbar {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.toolbar-bottom .pager {
+    color: black;
+}
+
+.toolbar .pager {
+    float: right;
+}
+
+.pager {
+    margin: 0;
+    text-align: center;
+}
+
+.pager .pages ol {
+    display: inline;
+}
+
+.toolbar .pager .pages li.current {
+    background: #C92127;
+    width: 40px;
+}
+
+.toolbar .pager li > a, .toolbar .pager li > span, .toolbar .pager .pages li.current {
+    padding: 0;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    line-height: 40px;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    height: 40px;
+}
+
+.home-block-bottom .box-col:hover, .navbar, .pager .pages .current, .pager li > a:hover {
+    background: #FCDAB0;
+    border-radius: 5px;
+    /* width: calc(100% + 20px); */
+}
+
+.toolbar .pager li {
+    width: auto;
+}
+
+.pager .pages li {
+    display: inline-block;
+    margin: 0 2px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    font-family: sans-serif;
+    line-height: 28px;
+}
+
+.pager .pages li {
+    zoom: 1;
+    height: 30px;
+    /* width: 30px; */
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff !important;
+}
+
+
+
+.toolbar .pager .pages li.current a {
+    color: white;
+    pointer-events: none;
+}
+
+.toolbar a .fa {
+    padding: 3px 5px;
+    margin: 0 0 1px;
+    vertical-align: middle;
+}
+
+.toolbar .pager li > a {
+    width: 40px;
+}
+
+.table-label {
+    display: table-cell;
+    padding-left: 0 !important;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: #777;
+}
+
+.data-table th {
+    padding: 6px 10px;
+    font-weight: normal;
+}
+
+.data-table th, .data-table td {
+    padding: 4px;
+}
+
+.data-table tbody th, .data-table tbody td {
+    border: none;
+}
+
+.data-table tbody th, .data-table tbody td {
+    font-size: 0.9em;
+}
+
+.std {
+    margin-top: 16px;
+    font-size: 0.9em;
+}
+
+#ves-breadcrumbs {
+    font-family: "Poppins", sans-serif;
+    background: transparent;
+    background-size: 100%;
+}
+
+#ves-breadcrumbs .breadcrumbs {
+    background: transparent;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+}
+
+#ves-breadcrumbs .breadcrumbs {
+    padding: 5px 0;
+}
+
+.breadcrumb {
+    padding: 8px 15px;
+    margin: 0;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+ves-breadcrumbs .breadcrumb {
+    background: transparent;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.fhs_btn_write {
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 5px 15px;
+    font-size: 1.2em;
+    font-weight: 650;
+    transition: all 0.3s;
+    border-radius: 8px;
+    color: #C92127;
+    border: 2px solid #C92127;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    align-self: center;
+    background-color: white;
+}
+
+.fhs_popup-default {
+    opacity: 1;
+    position: fixed;
+    z-index: 99999;
+    width: 550px;
+    height: 80%;
+    max-height: 650px;
+    max-width: 100%;
+    background-color: white;
+    display: none;
+    border: none;
+    top: 10%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    -webkit-border-bottom-left-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+.fhs_popup-default-info-detail {
+    height: 100%;
+    padding-bottom: 15px;
+}
+
+.fhs_popup-default-info-detail-title {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-shadow: 0 4px 7px 0 hsl(0deg 0% 95%);
+    -moz-box-shadow: 0 4px 7px 0 hsl(0, 0%, 95%);
+    box-shadow: 0 4px 7px 0 hsl(0deg 0% 95%);
+    padding: 10px;
+    height: 50px;
+}
+
+#popup_write_review .fhs_popup-default-info-detail-title {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.fhs_popup-default-info-detail-content {
+    height: calc(100% - 50px);
+    width: 100%;
+    overflow-y: auto;
+    padding: 0 15px;
+}
+
+#popup_write_review .fhs_popup-default-info-detail-content {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.fhs_popup-default-info-detail-title-text {
+    width: 100%;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.fhs_popup-default-info-detail-title-center {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    align-self: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: #212121;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.product-view-tab-content-rating-review {
+    padding: 0 8px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding-bottom: 8px;
+    height: calc(100% - 40px);
+}
+
+.fhs_center_center {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.product-view-tab-content-rating-review > div, .product-view-tab-content-rating-review > div textarea, .product-view-tab-content-rating-review > div input {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+.rating_item {
+    background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_gray.svg') no-repeat center center;
+    -webkit-background-size: 25px;
+    -moz-background-size: 25px;
+    -o-background-size: 25px;
+    background-size: 25px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.rating_item.active {
+    background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_star_yellow.svg') no-repeat center center;
+    -webkit-background-size: 25px;
+    -moz-background-size: 25px;
+    -o-background-size: 25px;
+    background-size: 25px;
+    height: 25px;
+    width: 25px;
+}
+
+.fhs_center_right {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-end;
+    justify-content: center;
+    text-align: right;
+}
+
+.fhs_bar_bottom a, .fhs_btn_default {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    color: #C92127;
+    background-color: #fff;
+    border: 2px solid #C92127;
+    font-size: 14px;
+    font-weight: 700;
+    width: 210px;
+    max-width: 100%;
+    height: 40px;
+    max-height: 100%;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    transition: all 0.5s;
+}
+
+.fhs_bar_bottom a.active, .fhs_btn_default.active {
+    color: #fff;
+    background-color: #C92127;
+    border: 2px solid #C92127;
+}
+
+.youama-ajaxlogin-cover {
+    display: none;
+    background: #261E1E none repeat scroll 0% 0%;
+    opacity: 0.5;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: fixed;
+    z-index: 2000;
+}
+
+.fhs_popup-default-info-detail-title-right {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    align-self: center;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: right;
+}
+.icon_close_gray {
+    background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_delete_gray.svg') no-repeat center center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+}
+
+.comment_list .rating-box, .ratings-desktop .rating-box {
+    width: 70px;
+}
+
+.fhs_icon_cart {
+    padding-left: 10px;
+    background: url("https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/icon-cart.svg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 24px;
+    width: 22px;
+}

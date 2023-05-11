@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1, maximun-scale = 1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BZone</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="add-product-content content p-3 mb-5">
+    <div class="row p-3">
+
+        <div class="accordion" id="accordionExample" style="width: 100%">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">
+                            Thông tin sản phẩm
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                     data-parent="#accordionExample">
+                    <div class="card-body">
+                        <form th:action="@{/manager/product/Edit}" enctype="multipart/form-data" method="post">
+                            <input type="hidden" name="id" th:value="${product?.id}">
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label for="p_code">Mã sản phẩm</label> <input type="text" class="form-control"
+                                                                                   id="p_code" th:value="${product?.id}"
+                                                                                   disabled="disabled">
+                                </div>
+
+                                <div class="form-group col-6">
+                                    <label for="category">Danh mục sản phẩm</label> <select class="form-control"
+                                                                                            id="category"
+                                                                                            name="category"
+                                                                                            required>
+                                    <th:block th:each="c : ${list_category}">
+                                        <option th:value="${c.id}" th:text="${c.categoryName}"
+                                                th:selected="${c.id == product?.id}? 'selected'">
+                                        </option>
+                                    </th:block>
+                                </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="p_name">Tên sản phẩm</label> <input type="text" class="form-control"
+                                                                                    id="p_name" name="name" required
+                                                                                    th:value="${product?.productName}">
+                                </div>
+
+                                <div class="form-group col-6">
+                                    <label for="p_amount">Số lượng</label> <input type="text" class="form-control"
+                                                                                  id="p_amount" name="quantity" required
+
+                                                                                  th:value="${product?.quantity}">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="p_price">Giá bán</label> <input type="text" class="form-control"
+                                                                                 id="p_price" name="price" required
+                                                                                 th:value="${product?.price}">
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="p_price">Giá nhập</label> <input type="text" class="form-control"
+                                                                                 id="author" name="author" required
+                                                                                 th:value="${product?.author}">
+                                </div>
+<!--                                <div class="form-group col-6">-->
+<!--                                    <label for="author">Sản phẩm</label> <input type="text" class="form-control"-->
+<!--                                                                               id="author" name="author" required-->
+<!--                                                                               th:value="${product?.author}">-->
+<!--                                    </select>-->
+<!--                                </div>-->
+                                <div class="form-group col-6">
+                                    <label for="supplier">Thương hiệu</label> <input type="text"
+                                                                                          id="supplier"
+                                                                                          class="form-control"
+                                                                                          name="supplier" required
+                                                                                          th:value="${product?.supplier}">
+                                </div>
+
+                                <div class="form-group col-6">
+                                    <label for="publisher">Bảo hành</label>
+                                    <input type="text" class="form-control"
+                                                                                       id="publisher"
+                                                                                       name="publisher"
+                                                                                       required
+                                                                                       th:value="${product?.publisher}">
+                                </div>
+
+<!--                                <div class="form-group col-6">-->
+<!--                                    <label for="publisher_year">Bảo hành</label> <input type="text"-->
+<!--                                                                                            id="publisher_year"-->
+<!--                                                                                            class="form-control"-->
+<!--                                                                                            name="publisher_year"-->
+<!--                                                                                            required-->
+<!--                                                                                            th:value="${product?.publishYear}">-->
+<!--                                </div>-->
+
+                                <div class="form-group col-6">
+                                    <label for="attr_language">Loại sản phẩm</label> <select class="form-control"
+                                                                                        id="attr_language"
+                                                                                        name="attrLanguage"
+                                                                                        required>
+                                    <option value="Máy ảnh" th:selected="${product?.language} == 'Máy ảnh'">
+                                        Máy ảnh
+                                    </option>
+                                    <option value="Máy quay"
+                                            th:selected="${product?.language} == 'Máy quay'">
+                                        Máy quay
+                                    </option>
+                                    <option value="Ống kính" th:selected="${product?.language} == 'Ống kính'">
+                                        Ống kính
+                                    </option>
+                                    <option value="Phụ kiện máy ảnh" th:selected="${product?.language} == 'Phụ kiện máy ảnh'">
+                                        Phụ kiện máy ảnh
+                                    </option>
+                                    <option value="Thiết bị Studio" th:selected="${product?.language} == 'Thiết bị Studio'">
+                                        Thiết bị Studio
+                                    </option>
+                                </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="attr_layout">Màu sắc</label> <select class="form-control"
+                                                                                       id="attr_layout"
+                                                                                       name="attrLayout"
+                                                                                       required>
+                                    <option value="Trắng" th:selected="${product?.bookLayout} == 'Trắng'">
+                                        Trắng
+                                    </option>
+                                    <option value="Đen"
+                                            th:selected="${product?.bookLayout} == 'Đen'">
+                                        Đen
+                                    </option>
+                                </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="isbn">Mã sản phẩm</label> <input type="text" class="form-control"
+                                                                          id="isbn"
+                                                                          name="isbn"
+                                                                          th:value="${product.isbn}"
+                                                                          required>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="discount">Giảm giá</label> <input type="text" class="form-control"
+                                                                                  id="discount"
+                                                                                  name="discount"
+                                                                                  th:value="${product.discount}"
+                                                                                  required>
+                                </div>
+                                <div class="form-group col-6">
+                                    <img th:src="${product.image}" th:if="${product?.image.startsWith('http')}"
+                                         width="100" height="100" alt="none" id="image"
+                                    />
+                                    <img th:src="${product.image}"
+                                         th:unless="${product?.image.startsWith('http')}"
+                                         width="100" height="100" alt="none" id="image"
+                                    />
+                                    <input type="file" class="form-control-file" id="p_imageUrl" name="file" required>
+                                </div>
+                            </div>
+                            <div class="form-group col-12" style="padding: 0">
+                                <label for="p_content">Nội Dung Sản Phẩm</label>
+                                <textarea name="description" class="form-control" id="p_content" rows="6" required
+                                          th:text="${product?.description}"></textarea>
+                            </div>
+                            <div class="form-group col-12 text-center">
+                                <button type="button" class="btn btn-success btn-sm"
+                                        onclick="window.location.href='/manager/product'">Trở về
+                                </button>
+                                <button type="submit" class="btn btn-success btn-sm">Lưu</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById("p_imageUrl").onchange = function (evt) {
+        var tgt = evt.target || window.event.srcElement,
+            files = tgt.files;
+        if (FileReader && files && files.length) {
+            var fr = new FileReader();
+            fr.onload = function () {
+                document.getElementById("image").src = fr.result;
+            }
+            fr.readAsDataURL(files[0]);
+        }
+    }
+    $(document).ready(function () {
+        $("#form").submit(function (e) {
+            var price = parseInt($('#p_price').val(), 10);
+            console.log(price)
+            var number = $('#p_amount').val();
+            var year = $('#publisher_year').val();
+            var isbn = $('#isbn').val();
+            var regex = /^[0-9]{10}/;
+            var discount = $('#discount').val();
+            if (!Number.isInteger(price) || price < 0) {
+                alert('Giá phải là số và lớn hơn 0!!');
+                e.preventDefault();
+            } else if (!$.isNumeric(number) || number < 0 || !Math.floor(number) == number) {
+                alert('Số lượng phải là số và lớn hơn 0!!');
+                e.preventDefault();
+            } else if (!$.isNumeric(year) || year < 0) {
+                alert('Năm phải là số và lớn hơn 0!!');
+                e.preventDefault();
+            } else if (!regex.test(isbn)) {
+                alert('Mã sản phẩm lỗi!!');
+                e.preventDefault();
+            } else if (!$.isNumeric(discount) ||
+                discount < 0 || discount > 100) {
+                alert('Giảm giá phải là số, lớn hơn 0 và nhỏ hơn 100');
+                e.preventDefault();
+            } else {
+
+            }
+        });
+    });
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<!-- JQUERY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+</html>

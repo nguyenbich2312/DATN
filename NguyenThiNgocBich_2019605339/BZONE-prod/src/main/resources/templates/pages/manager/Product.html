@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1, maximun-scale = 1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BZone</title>
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/manager.css}">
+    <script th:src="@{/JS/main.js}"></script>
+</head>
+<body>
+
+<th:block layout:insert="~{fragments/manager/header}"/>
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
+            Quản lý
+        </h2>
+<!--        <form th:action="@{/manager/product}" method="get">-->
+<!--            <div class="search-wrapper">-->
+<!--                <span class="las la-search"></span>-->
+<!--                <input type="search" placeholder="Search here" name="search" th:value="${search != null}? ${search}">-->
+<!--            </div>-->
+<!--        </form>-->
+        <div class="user-wrapper">
+            <div>
+                <h4 th:text="${#authentication.getName().split('@')[0]}"></h4>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div style="display: flex;align-items: center;justify-content: space-between; margin-bottom: 15px;">
+            <button style="    padding: 8px 8px;
+    background: var(--main-color);
+    border: none;
+    color: white;
+    border-radius: 6px;" type="button"><a style="color: white" th:href="@{/manager/product/Add}">Thêm một sản phẩm</a></button>
+            <form th:action="@{/manager/product}" style="padding: 20px" method="get">
+                <div>
+                    <span style="color: black">Sắp xếp</span>
+                    <select class="form-select" name="sort" onchange="this.form.submit()">
+                        <option value="1" th:selected="${sort == 1}? 'selected'">Tăng dần theo tên</option>
+                        <option value="2" th:selected="${sort == 2}? 'selected'">Giảm dần theo tên</option>
+                        <option value="3" th:selected="${sort == 3}? 'selected'">Tăng dần theo giá tiền</option>
+                        <option value="4" th:selected="${sort == 4}? 'selected'">Giảm dần theo giá tiền</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div th:if="${!list.isEmpty()}">
+            <table>
+                <thead>
+                <tr style="color: var(--main-color)">
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng nhập</th>
+                    <th>Số lượng</th>
+                    <th>Số lượng bán</th>
+                    <th>Lợi nhuận</th>
+                    <th colspan="2">Thao tác</th>
+                </tr>
+                </thead>
+                <tbody th:each="i : ${list}">
+                <tr>
+                    <td th:text="${iStat.index + 1 + 12 * (current_index - 1)}"></td>
+                    <td>
+                        <div th:text="${i.productName}"></div>
+                    </td>
+                    <td>
+                        <div th:text="${i.publishYear}"></div>
+                    </td>
+                    <td>
+                        <div th:text="${i.quantity}"></div>
+                    </td>
+                    <td>
+                        <div th:text="${i.getInt() - i.quantity}"></div>
+                    </td>
+                    <td>
+                        <div th:text="${(i.price - i.getCost())*(i.getInt() - i.quantity)}"></div>
+                    </td>
+                    <td><a th:href="@{'/manager/product/Edit?id=' + ${i.id}}">Sửa</a></td>
+                    <td><a  th:href="@{'/manager/product/Delete?id=' + ${i.id}}">Xóa</a></td>
+<!--                    <td th:if="${!i.available}"><a  th:href="@{'/manager/product/Delete?id=' + ${i.id}}">Activate</a></td>-->
+                </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center;margin-top: 20px">
+                <button th:each="i : ${#numbers.sequence(1,index)}">
+                    <span><a class="paging-index" th:href="@{/manager/product/(pageIndex = ${i},sort=${sort != null}?${sort},
+                    search = ${search != null}?${search})}"
+                             th:style="${i == current_index}?'color : red'" th:text="${i}"></a></span>
+                </button>
+            </div>
+
+        </div>
+        <div th:if="${list.isEmpty()}">
+            <div style="text-align: center;font-size: larger;color: black">Không có dữ liệu........</div>
+        </div>
+    </main>
+</div>
+<script type="text/javascript"></script>
+</body>

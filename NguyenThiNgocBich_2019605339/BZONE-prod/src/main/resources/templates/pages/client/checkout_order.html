@@ -1,0 +1,4804 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" class="mdl-js">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="icon" href="/image/p.png" type="image/x-icon">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title> BZone</title>
+    <meta name="description" content="Máy ảnh">
+    <meta name="keywords" content="BZone.com, bzone, máy ảnh, máy quay">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="p:domain_verify" content="cbc2e84e0738473689487ead377f46f2">
+    <meta property="fb:app_id" content="331898836987489">
+
+
+    <!--[if lt IE 7]>
+    <script type="text/javascript">
+        //<![CDATA[
+    var BLANK_URL = 'https://cdn0.fahasa.com/js/blank.html';
+    var BLANK_IMG = 'https://cdn0.fahasa.com/js/spacer.gif';
+//]]>
+</script>
+
+<![endif]-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn0.fahasa.com/media/css_secure/98b6b70732ea1423eaa1259d8065405a.css?q=101574" media="all">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn0.fahasa.com/media/css_secure/5722a920567ae30e71034727845e9254.css?q=101574" media="print">
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async=""
+            src="https://analytics.tiktok.com/i18n/pixel/config.js?sdkid=CCUF92BC77U9S7CCBOSG&amp;hostname=www.fahasa.com">
+
+    </script>
+    <script type="text/javascript" async=""
+            src="https://www.googletagmanager.com/gtag/js?id=G-460L9JMC2G&amp;l=dataLayer&amp;cx=c"></script>
+    <script type="text/javascript" async=""
+            src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=CCUF92BC77U9S7CCBOSG&amp;lib=ttq"></script>
+    <script type="text/javascript" async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+    <script src="https://connect.facebook.net/en_US/sdk.js?hash=a0390c01fdc5b362bf8974a6ca7c321c" async=""
+            crossorigin="anonymous"></script>
+    <script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script async="" src="//connect.facebook.net/en_US/fbevents.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-K6Z5N97"></script>
+    <script async="" src="https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js"></script>
+    <script type="text/javascript" src="https://cdn0.fahasa.com/media/js/94b25fc72f860a309ccf66a9d00e3d4d.js?q=101574"
+            async=""></script>
+    <!--  <script type="text/javascript" src="https://cdn0.fahasa.com/media/js/677be2c7a42686f78c2d7cd5a67845b0.js?q=101574"></script>-->
+    <link href="https://www.fahasa.com/blog/rss/index/store_id/1/" title="Blog" rel="alternate"
+          type="application/rss+xml">
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn0.fahasa.com/media/css_secure/4ed718da1dd531c63cd9a68c1712314c.css?q=101574" media="all"/>
+    <script type="text/javascript"
+            src="https://cdn0.fahasa.com/media/js/eac590fb3c12aecdddfb6f0b1d144e45.js?q=101574"></script>
+    <![endif]-->
+    <!--[if lt IE 7]>
+    <script type="text/javascript"
+            src="https://cdn0.fahasa.com/media/js/c2571c3ebbe7d4c7d65cb7f26dbcf0eb.js?q=101574"></script>
+    <![endif]-->
+
+
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m, n) {
+            i.moengage_object = r;
+            t = {};
+            q = function (f) {
+                return function () {
+                    (i.moengage_q = i.moengage_q || []).push({f: f, a: arguments})
+                }
+            };
+            f = ['track_event', 'add_user_attribute', 'add_first_name', 'add_last_name', 'add_email', 'add_mobile', 'add_user_name', 'add_gender', 'add_birthday', 'destroy_session', 'add_unique_user_id', 'moe_events', 'call_web_push', 'track', 'location_type_attribute'], h = {onsite: ["getData", "registerCallback"]};
+            for (k
+                in f) {
+                t[f[k]] = q(f[k])
+            }
+            for (k in h) for (l in h[k]) {
+                null == t[k] && (t[k] = {}), t[k][h[k][l]] = q(k + "." + h[k][l])
+            }
+            a = s.createElement(o);
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+            i.moe = i.moe || function () {
+                n = arguments[0];
+                return t
+            };
+            a.onload = function () {
+                if (n) {
+                    i[r] = moe(n)
+                }
+            }
+        })(window, document, 'script', 'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js', 'Moengage')
+
+        Moengage = moe({
+            app_id: "UXZ1BZEANNSKWCUD0ZKCZ146",
+            debug_logs: 0,
+            swPath: "/serviceworker.js"
+        });
+    </script>
+    <script>
+        $jq(window).on('myInfo_loaded', function () {
+            if (!fhs_account.isEmpty(fhs_account.myInfo) && fhs_account.myInfo.islogin == true) {
+                Moengage.add_unique_user_id(fhs_account.myInfo['telephone']);
+            }
+        });
+    </script>
+    <!-- MOENGAGE End --
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-857907211"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-857907211');
+  </script>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K6Z5N97');</script>-->
+    <!-- End Google Tag Manager --><!-- Facebook Pixel Code conversionintent-->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window,
+            document, 'script', '//connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '1536278503328349');
+        fbq('track', 'PageView');
+
+    </script>
+    <meta http-equiv="origin-trial"
+          content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <meta http-equiv="origin-trial"
+          content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <script type="text/javascript" async=""
+            src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/857907211/?random=1667054026526&amp;cv=11&amp;fst=1667054026526&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=2oaaq0&amp;u_w=1920&amp;u_h=1080&amp;hn=www.googleadservices.com&amp;frm=0&amp;url=https%3A%2F%2Fwww.fahasa.com%2Fonestepcheckout%2Findex&amp;ref=https%3A%2F%2Fwww.fahasa.com%2Fcheckout%2Fcart%2F&amp;tiba=One%20Step%20Checkout%20-%20FAHASA.COM&amp;auid=255492985.1667040249&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script>
+    <meta http-equiv="origin-trial"
+          content="A751Xsk4ZW3DVQ8WZng2Dk5s3YzAyqncTzgv+VaE6wavgTY0QHkDvUTET1o7HanhuJO8lgv1Vvc88Ij78W1FIAAAAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjgwNjUyNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <script type="text/javascript" async=""
+            src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/10955497748/?random=1667054026756&amp;cv=11&amp;fst=1667054026756&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=2wgaq0&amp;u_w=1920&amp;u_h=1080&amp;hn=www.googleadservices.com&amp;frm=0&amp;url=https%3A%2F%2Fwww.fahasa.com%2Fonestepcheckout%2Findex&amp;ref=https%3A%2F%2Fwww.fahasa.com%2Fcheckout%2Fcart%2F&amp;tiba=One%20Step%20Checkout%20-%20FAHASA.COM&amp;auid=255492985.1667040249&amp;rfmt=3&amp;fmt=4"></script>
+    <meta http-equiv="origin-trial"
+          content="AwfiJ+ITEOHGsyR7mKDk6NmR0nb7ZXBkH2A13Wc0XRmgWRH7aF5Xr0a1qB2MvWAZUh9p601rOqFPDpTjfg0ovQ0AAACKeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZWFkc2VydmljZXMuY29tOjQ0MyIsImZlYXR1cmUiOiJQcml2YWN5U2FuZGJveEFkc0FQSXMiLCJleHBpcnkiOjE2Njk3NjYzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9">
+    <script type="text/javascript" async=""
+            src="https://www.googleadservices.com/pagead/conversion/857907211/?random=1667054027379&amp;cv=9&amp;fst=1667054027379&amp;num=1&amp;label=QcCCCKuqr28Qi8CKmQM&amp;bg=ffffff&amp;hl=en&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=375603260&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1032&amp;u_aw=1920&amp;u_cd=24&amp;u_his=4&amp;u_tz=420&amp;u_java=false&amp;u_nplug=5&amp;u_nmime=2&amp;sendb=1&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fwww.fahasa.com%2Fonestepcheckout%2Findex&amp;ref=https%3A%2F%2Fwww.fahasa.com%2Fcheckout%2Fcart%2F&amp;tiba=One%20Step%20Checkout%20-%20FAHASA.COM&amp;hn=www.googleadservices.com&amp;rfmt=3&amp;fmt=4"></script>
+    <script type="text/javascript" async=""
+            src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/857907211/?random=1667054027393&amp;cv=11&amp;fst=1667054027393&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=2oaaq0&amp;u_w=1920&amp;u_h=1080&amp;hn=www.googleadservices.com&amp;frm=0&amp;url=https%3A%2F%2Fwww.fahasa.com%2Fonestepcheckout%2Findex&amp;ref=https%3A%2F%2Fwww.fahasa.com%2Fcheckout%2Fcart%2F&amp;tiba=One%20Step%20Checkout%20-%20FAHASA.COM&amp;auid=255492985.1667040249&amp;data=event%3Dpage_view%3Bdynx_itemid%3D234767%3Bdynx_pagetype%3Dconversionintent%3Bdynx_totalvalue%3D228000%3Becomm_prodid%3D234767%3Becomm_pagetype%3Dcart%3Becomm_totalvalue%3D228000&amp;rfmt=3&amp;fmt=4"></script>
+    <style type="text/css"
+           data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden {
+        position: absolute;
+        top: -10000px;
+        z-index: 10001
+    }
+
+    .fb_reposition {
+        overflow: hidden;
+        position: relative
+    }
+
+    .fb_invisible {
+        display: none
+    }
+
+    .fb_reset {
+        background: none;
+        border: 0;
+        border-spacing: 0;
+        color: #000;
+        cursor: auto;
+        direction: ltr;
+        font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+        font-size: 11px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        letter-spacing: normal;
+        line-height: 1;
+        margin: 0;
+        overflow: visible;
+        padding: 0;
+        text-align: left;
+        text-decoration: none;
+        text-indent: 0;
+        text-shadow: none;
+        text-transform: none;
+        visibility: visible;
+        white-space: normal;
+        word-spacing: normal
+    }
+
+    .fhs-bsidebar {
+        visibility: visible;
+    }
+
+    .fhs-bsidebar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        visibility: hidden;
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+    }
+
+    .fhs-bsidebar-tab {
+        position: absolute;
+        height: 48px;
+        height: -webkit-calc(48px + env(safe-area-inset-bottom, 0));
+        height: calc(56px + env(safe-area-inset-bottom, 0));
+        max-height: 70px;
+        width: 100%;
+        max-width: 600px;
+        left: 50%;
+        z-index: 1;
+        -webkit-transform: translate(-50%, -100%);
+        -ms-transform: translate(-50%, -100%);
+        -moz-transform: translate(-50%, -100%);
+        transform: translate(-50%, -100%);
+        background-color: white;
+    }
+
+    .fhs-bsidebar-tab-items {
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        align-items: center;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0px -2px 4px #0000001A;
+    }
+
+    .fb_reset > div {
+        overflow: hidden
+    }
+
+    .main .container .container-inner {
+        padding: 10px 0;
+        padding-top: 0;
+    }
+
+    @keyframes fb_transform {
+        from {
+            opacity: 0;
+            transform: scale(.95)
+        }
+        to {
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+
+    .fb_animate {
+        animation: fb_transform .3s forwards
+    }
+
+    .fb_hidden {
+        position: absolute;
+        top: -10000px;
+        z-index: 10001
+    }
+
+    .fb_reposition {
+        overflow: hidden;
+        position: relative
+    }
+
+    .fb_invisible {
+        display: none
+    }
+
+    .fb_reset {
+        background: none;
+        border: 0;
+        border-spacing: 0;
+        color: #000;
+        cursor: auto;
+        direction: ltr;
+        font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+        font-size: 11px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        letter-spacing: normal;
+        line-height: 1;
+        margin: 0;
+        overflow: visible;
+        padding: 0;
+        text-align: left;
+        text-decoration: none;
+        text-indent: 0;
+        text-shadow: none;
+        text-transform: none;
+        visibility: visible;
+        white-space: normal;
+        word-spacing: normal
+    }
+
+    .fb_reset > div {
+        overflow: hidden
+    }
+
+    @keyframes fb_transform {
+        from {
+            opacity: 0;
+            transform: scale(.95)
+        }
+        to {
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+
+    .fb_animate {
+        animation: fb_transform .3s forwards
+    }
+
+    .fb_dialog {
+        background: rgba(82, 82, 82, .7);
+        position: absolute;
+        top: -10000px;
+        z-index: 10001
+    }
+
+    .fb_dialog_advanced {
+        border-radius: 8px;
+        padding: 10px
+    }
+
+    .fb_dialog_content {
+        background: #fff;
+        color: #373737
+    }
+
+    .fb_dialog_close_icon {
+        background: url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+        cursor: pointer;
+        display: block;
+        height: 15px;
+        position: absolute;
+        right: 18px;
+        top: 17px;
+        width: 15px
+    }
+
+    .fb_dialog_mobile .fb_dialog_close_icon {
+        left: 5px;
+        right: auto;
+        top: 5px
+    }
+
+    .fb_dialog_padding {
+        background-color: transparent;
+        position: absolute;
+        width: 1px;
+        z-index: -1
+    }
+
+    .fb_dialog_close_icon:hover {
+        background: url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+    }
+
+    .fb_dialog_close_icon:active {
+        background: url(https://connect.facebook.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+    }
+
+    .fb_dialog_iframe {
+        line-height: 0
+    }
+
+    .fb_dialog_content .dialog_title {
+        background: #6d84b4;
+        border: 1px solid #365899;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0
+    }
+
+    .fb_dialog_content .dialog_title > span {
+        background: url(https://connect.facebook.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+        float: left;
+        padding: 5px 0 7px 26px
+    }
+
+    body.fb_hidden {
+        height: 100%;
+        left: 0;
+        margin: 0;
+        overflow: visible;
+        position: absolute;
+        top: -10000px;
+        transform: none;
+        width: 100%
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading {
+        background: url(https://connect.facebook.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+        min-height: 100%;
+        min-width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 10001
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading.centered {
+        background: none;
+        height: auto;
+        min-height: initial;
+        min-width: initial;
+        width: auto
+    }
+
+    .fb_dialog.fb_dialog_mobile.loading iframe {
+        visibility: hidden
+    }
+
+    .fb_dialog_content .dialog_header table {
+        height: 43px;
+        width: 100%
+    }
+
+    .fb_dialog_content .dialog_header td.header_left {
+        font-size: 12px;
+        padding-left: 5px;
+        vertical-align: middle;
+        width: 60px
+    }
+
+
+    .fb_dialog_content .dialog_header .touchable_button input {
+        background: none;
+        border: none;
+        color: #fff;
+        font: bold 12px Helvetica, sans-serif;
+        margin: 2px -12px;
+        padding: 2px 6px 3px 6px;
+        text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+    }
+
+    .fb_dialog_content .dialog_header .header_center {
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        vertical-align: middle
+    }
+
+    .fb_dialog_content .dialog_content {
+        background: url(https://connect.facebook.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+        border: 1px solid #4a4a4a;
+        border-bottom: 0;
+        border-top: 0;
+        height: 150px
+    }
+
+    .fb_dialog_content .dialog_footer {
+        background: #f5f6f7;
+        border: 1px solid #4a4a4a;
+        border-top-color: #ccc;
+        height: 40px
+    }
+
+    #fb_dialog_loader_close {
+        float: left
+    }
+
+    .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+        visibility: hidden
+    }
+
+    #fb_dialog_loader_spinner {
+        animation: rotateSpinner 1.2s linear infinite;
+        background-color: transparent;
+        background-image: url(https://connect.facebook.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        height: 24px;
+        width: 24px
+    }
+
+    @keyframes rotateSpinner {
+        0% {
+            transform: rotate(0deg)
+        }
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+
+    .fb_iframe_widget {
+        display: inline-block;
+        position: relative
+    }
+
+    .fb_iframe_widget span {
+        display: inline-block;
+        position: relative;
+        text-align: justify
+    }
+
+    .fb_iframe_widget iframe {
+        position: absolute
+    }
+
+    .fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe {
+        max-width: 100%
+    }
+
+    .default-icon-loading {
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: rotate;
+        -moz-animation-duration: 2s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+    }
+
+    #default-icon-loading {
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: rotate;
+        -moz-animation-duration: 2s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+    }
+
+    .fb_iframe_widget_fluid_desktop iframe {
+        min-width: 220px;
+        position: relative
+    }
+
+    .fhs-btn-box > .fhs-btn-coupon-copy,
+    .fhs-btn-box > .fhs-btn-goto,
+    .fhs-btn-box > .fhs-btn-confirm,
+    .fhs-btn-box > .fhs-btn-recovery,
+    .fhs-btn-box > .fhs-btn-register,
+    .fhs-btn-box > .fhs-btn-login-link,
+    .fhs-btn-box > .fhs-btn-login {
+        background: #C92127;
+        color: white;
+        border: none;
+    }
+
+    .fhs-btn-box {
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    .fb_iframe_widget_lift {
+        z-index: 1
+    }
+
+    .fb_iframe_widget_fluid {
+        display: inline
+    }
+
+    .fb_iframe_widget_fluid span {
+        width: 100%
+    }
+
+    .fhs-bsidebar {
+        visibility: visible;
+    }
+
+    .fhs-radio-big input:checked ~ .radiomark-big {
+        border: 2px solid #C92127;
+    }
+
+    .radiomark-big {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border: 2px solid #e6e6e6;
+        border-radius: 50%;
+    }
+
+    .fhs_radio_top .radiomark-big {
+        top: 3px;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .fhs-raido-big-with-icon {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .radiomark-big {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        -moz-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border: 2px solid #e6e6e6;
+        border-radius: 50%;
+    }
+
+    .fhs_radio_top .radiomark-big {
+        top: 3px;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    label {
+        color: #333333;
+    }
+
+    .fhs_checkout_paymentmethod_with_tutorial {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        float: left;
+        margin: 0;
+        width: auto;
+        border: 0;
+    }
+
+    .fhs-radio-big .radiomark-big:after {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        background: #C92127;
+    }
+
+    .fhs-radio-big input:checked ~ .radiomark-big {
+        border: 2px solid #C92127;
+    }
+
+    .fhs-radio-big input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .fhs-radio-big .radiomark-big:after {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        background: #C92127;
+    }
+
+    .fhs-radio-big input:checked ~ .radiomark-big:after {
+        display: block;
+    }
+
+    .fhs-radio-big {
+        display: inline-table;
+        position: relative;
+        /*    padding-right: 20px;*/
+        padding-left: 30px !important;
+        font-weight: normal !important;
+        font-size: 1em !important;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .fb_mpn_mobile_landing_page_slide_out {
+        animation-duration: 200ms;
+        animation-name: fb_mpn_landing_page_slide_out;
+        transition-timing-function: ease-in
+    }
+
+    .fb_mpn_mobile_landing_page_slide_out_from_left {
+        animation-duration: 200ms;
+        animation-name: fb_mpn_landing_page_slide_out_from_left;
+        transition-timing-function: ease-in
+    }
+
+
+    .fhs_checkout_total > div {
+        padding-bottom: 4px;
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+    }
+
+    .fhs_checkout_total > div > div {
+        text-align: right;
+    }
+
+    .fhs_checkout_total > div > div:first-of-type {
+        width: calc(100% - 150px);
+    }
+
+    .fhs_checkout_total_mobile > div > div:first-of-type {
+        text-align: left;
+    }
+
+    .fhs_checkout_total > div > div:last-of-type {
+        width: 150px;
+        text-align: right;
+    }
+
+    .fhs_checkout_total > .fhs_checkout_total_grand_total > div:first-of-type {
+        font-weight: 600;
+    }
+
+    .fhs_checkout_total > .fhs_checkout_total_grand_total > div:last-of-type {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #F39801;
+    }
+
+    .fhs-bsidebar {
+        visibility: visible;
+    }
+
+    .fhs-bsidebar-content {
+        position: absolute;
+        bottom: 0;
+        padding-bottom: env(safe-area-inset-bottom, 0);
+        width: 100%;
+        z-index: 1;
+        background-color: white;
+        padding: 8px 16px;
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-shadow: 0px -4px 10px -4px rgba(0, 0, 0, 0.66);
+        -moz-box-shadow: 0px -4px 10px -4px rgba(0, 0, 0, 0.66);
+        box-shadow: 0px -4px 10px -4px rgba(0, 0, 0, 0.66);
+    }
+
+    .fhs-bsidebar-content > div {
+        background-color: white;
+    }
+
+    .fhs_checkout_bottom {
+        padding: 4px 0;
+        display: flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-align-items: center;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+    }
+
+    .fhs_checkout_bottom > div:first-of-type {
+        width: calc(100% - 300px);
+    }
+
+    .fhs_checkout_bottom > div:last-of-type {
+        width: 300px;
+    }
+
+    .fhs_checkout_bottom > div:first-of-type > div:first-of-type {
+        display: none;
+    }
+
+    .fhs_checkout_bottom > div:first-of-type > div:first-of-type > div:first-of-type {
+        font-weight: 600;
+        width: calc(100% - 120px);
+    }
+
+    .fhs_checkout_bottom > div:first-of-type > div:first-of-type > div:last-of-type {
+        width: 120px;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #F39801;
+        text-align: right;
+    }
+
+    .fhs_checkout_bottom > div:first-of-type > div:last-of-type > a {
+        cursor: pointer;
+        user-select: none;
+        color: #555555;
+        font-weight: 600;
+    }
+
+    .fhs-btn-orderconfirm {
+        font-size: 1.4em !important;
+        width: 100% !important;
+    }
+
+    .default-icon-loading {
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: rotate;
+        -moz-animation-duration: 2s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+    }
+
+    @keyframes fb_mpn_landing_page_slide_out {
+        0% {
+            margin: 0 12px;
+            width: 100%;
+        }
+        60% {
+            border-radius: 18px
+        }
+        100% {
+            border-radius: 50%;
+            margin: 0 24px;
+            width: 60px
+        }
+    }
+
+    @keyframes fb_mpn_landing_page_slide_out_from_left {
+        0% {
+            left: 12px;
+            width: 100%;
+        }
+        60% {
+            border-radius: 18px
+        }
+        100% {
+            border-radius: 50%;
+            left: 12px;
+            width: 60px
+        }
+    }
+
+    @keyframes fb_mpn_landing_page_slide_up {
+        0% {
+            bottom: 0;
+            opacity: 0
+        }
+        100% {
+            bottom: 24px;
+            opacity: 1
+        }
+    }
+
+    @keyframes fb_mpn_bounce_in {
+        0% {
+            opacity: .5;
+            top: 100%
+        }
+        100% {
+            opacity: 1;
+            top: 0
+        }
+    }
+
+    @keyframes fb_mpn_fade_out {
+        0% {
+            bottom: 30px;
+            opacity: 1
+        }
+        100% {
+            bottom: 0;
+            opacity: 0
+        }
+    }
+
+    @keyframes fb_mpn_bounce_out {
+        0% {
+            opacity: 1;
+            top: 0
+        }
+        100% {
+            opacity: .5;
+            top: 100%
+        }
+    }
+
+    @keyframes fb_bounce_in_v2 {
+        0% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom right
+        }
+        50% {
+            transform: scale(1.03, 1.03);
+            transform-origin: bottom right
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom right
+        }
+    }
+
+    @keyframes fb_bounce_in_from_left {
+        0% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom left
+        }
+        50% {
+            transform: scale(1.03, 1.03);
+            transform-origin: bottom left
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom left
+        }
+    }
+
+    @keyframes fb_bounce_out_v2 {
+        0% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom right
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom right
+        }
+    }
+
+    @keyframes fb_bounce_out_from_left {
+        0% {
+            opacity: 1;
+            transform: scale(1, 1);
+            transform-origin: bottom left
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0, 0);
+            transform-origin: bottom left
+        }
+    }
+
+    @keyframes slideInFromBottom {
+        0% {
+            opacity: .1;
+            transform: translateY(100%)
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }
+
+    @keyframes slideInFromBottomDelay {
+        0% {
+            opacity: 0;
+            transform: translateY(100%)
+        }
+        97% {
+            opacity: 0;
+            transform: translateY(100%)
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0)
+        }
+    }</style>
+    <script charset="utf-8" src="https://analytics.tiktok.com/i18n/pixel/identify.js"></script>
+    <style type="text/css" data-styled-components="FiaaB gTcftA caPIRE" data-styled-components-is-local="true">
+        /* sc-component-id: sc-keyframes-FiaaB */
+        @-webkit-keyframes FiaaB {
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes FiaaB {
+            100% {
+                -webkit-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        /* sc-component-id: sc-keyframes-gTcftA */
+        @-webkit-keyframes gTcftA {
+            10%, 90% {
+                -webkit-transform: translate3d(-1px, 0, 0);
+                -ms-transform: translate3d(-1px, 0, 0);
+                transform: translate3d(-1px, 0, 0);
+            }
+            20%, 80% {
+                -webkit-transform: translate3d(2px, 0, 0);
+                -ms-transform: translate3d(2px, 0, 0);
+                transform: translate3d(2px, 0, 0);
+            }
+            30%, 50%, 70% {
+                -webkit-transform: translate3d(-4px, 0, 0);
+                -ms-transform: translate3d(-4px, 0, 0);
+                transform: translate3d(-4px, 0, 0);
+            }
+            40%, 60% {
+                -webkit-transform: translate3d(4px, 0, 0);
+                -ms-transform: translate3d(4px, 0, 0);
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+
+        @keyframes gTcftA {
+            10%, 90% {
+                -webkit-transform: translate3d(-1px, 0, 0);
+                -ms-transform: translate3d(-1px, 0, 0);
+                transform: translate3d(-1px, 0, 0);
+            }
+            20%, 80% {
+                -webkit-transform: translate3d(2px, 0, 0);
+                -ms-transform: translate3d(2px, 0, 0);
+                transform: translate3d(2px, 0, 0);
+            }
+            30%, 50%, 70% {
+                -webkit-transform: translate3d(-4px, 0, 0);
+                -ms-transform: translate3d(-4px, 0, 0);
+                transform: translate3d(-4px, 0, 0);
+            }
+            40%, 60% {
+                -webkit-transform: translate3d(4px, 0, 0);
+                -ms-transform: translate3d(4px, 0, 0);
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+
+        /* sc-component-id: sc-keyframes-caPIRE */
+        @-webkit-keyframes caPIRE {
+            0% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+            20% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+            }
+            40% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+            60% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+            }
+            80% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+            100% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+        }
+
+        @keyframes caPIRE {
+            0% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+            20% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+            }
+            40% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+            60% {
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+            }
+            80% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+            100% {
+                -webkit-transform: scale(.75);
+                -ms-transform: scale(.75);
+                transform: scale(.75);
+            }
+        }</style>
+    <style>@-webkit-keyframes swal2-show {
+               0% {
+                   -webkit-transform: scale(.7);
+                   transform: scale(.7)
+               }
+               45% {
+                   -webkit-transform: scale(1.05);
+                   transform: scale(1.05)
+               }
+               80% {
+                   -webkit-transform: scale(.95);
+                   transform: scale(.95)
+               }
+               100% {
+                   -webkit-transform: scale(1);
+                   transform: scale(1)
+               }
+           }
+
+    @keyframes swal2-show {
+        0% {
+            -webkit-transform: scale(.7);
+            transform: scale(.7)
+        }
+        45% {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05)
+        }
+        80% {
+            -webkit-transform: scale(.95);
+            transform: scale(.95)
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+    }
+
+    @-webkit-keyframes swal2-hide {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+        100% {
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+            opacity: 0
+        }
+    }
+
+    @keyframes swal2-hide {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+        100% {
+            -webkit-transform: scale(.5);
+            transform: scale(.5);
+            opacity: 0
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-success-line-tip {
+        0% {
+            top: 1.1875em;
+            left: .0625em;
+            width: 0
+        }
+        54% {
+            top: 1.0625em;
+            left: .125em;
+            width: 0
+        }
+        70% {
+            top: 2.1875em;
+            left: -.375em;
+            width: 3.125em
+        }
+        84% {
+            top: 3em;
+            left: 1.3125em;
+            width: 1.0625em
+        }
+        100% {
+            top: 2.8125em;
+            left: .875em;
+            width: 1.5625em
+        }
+    }
+
+    @keyframes swal2-animate-success-line-tip {
+        0% {
+            top: 1.1875em;
+            left: .0625em;
+            width: 0
+        }
+        54% {
+            top: 1.0625em;
+            left: .125em;
+            width: 0
+        }
+        70% {
+            top: 2.1875em;
+            left: -.375em;
+            width: 3.125em
+        }
+        84% {
+            top: 3em;
+            left: 1.3125em;
+            width: 1.0625em
+        }
+        100% {
+            top: 2.8125em;
+            left: .875em;
+            width: 1.5625em
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-success-line-long {
+        0% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0
+        }
+        65% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0
+        }
+        84% {
+            top: 2.1875em;
+            right: 0;
+            width: 3.4375em
+        }
+        100% {
+            top: 2.375em;
+            right: .5em;
+            width: 2.9375em
+        }
+    }
+
+    @keyframes swal2-animate-success-line-long {
+        0% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0
+        }
+        65% {
+            top: 3.375em;
+            right: 2.875em;
+            width: 0
+        }
+        84% {
+            top: 2.1875em;
+            right: 0;
+            width: 3.4375em
+        }
+        100% {
+            top: 2.375em;
+            right: .5em;
+            width: 2.9375em
+        }
+    }
+
+    @-webkit-keyframes swal2-rotate-success-circular-line {
+        0% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        5% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        12% {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+        100% {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+    }
+
+    @keyframes swal2-rotate-success-circular-line {
+        0% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        5% {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+        12% {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+        100% {
+            -webkit-transform: rotate(-405deg);
+            transform: rotate(-405deg)
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-error-x-mark {
+        0% {
+            margin-top: 1.625em;
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            opacity: 0
+        }
+        50% {
+            margin-top: 1.625em;
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            opacity: 0
+        }
+        80% {
+            margin-top: -.375em;
+            -webkit-transform: scale(1.15);
+            transform: scale(1.15)
+        }
+        100% {
+            margin-top: 0;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    }
+
+    @keyframes swal2-animate-error-x-mark {
+        0% {
+            margin-top: 1.625em;
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            opacity: 0
+        }
+        50% {
+            margin-top: 1.625em;
+            -webkit-transform: scale(.4);
+            transform: scale(.4);
+            opacity: 0
+        }
+        80% {
+            margin-top: -.375em;
+            -webkit-transform: scale(1.15);
+            transform: scale(1.15)
+        }
+        100% {
+            margin-top: 0;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes swal2-animate-error-icon {
+        0% {
+            -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+            opacity: 0
+        }
+        100% {
+            -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+            opacity: 1
+        }
+    }
+
+    @keyframes swal2-animate-error-icon {
+        0% {
+            -webkit-transform: rotateX(100deg);
+            transform: rotateX(100deg);
+            opacity: 0
+        }
+        100% {
+            -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+            opacity: 1
+        }
+    }
+
+    body.swal2-toast-shown .swal2-container {
+        background-color: transparent
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-shown {
+        background-color: transparent
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .swal2-container.swal2-top-right {
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: auto
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-top-left, body.swal2-toast-shown .swal2-container.swal2-top-start {
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center-left, body.swal2-toast-shown .swal2-container.swal2-center-start {
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center {
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-center-end, body.swal2-toast-shown .swal2-container.swal2-center-right {
+        top: 50%;
+        right: 0;
+        bottom: auto;
+        left: auto;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom-left, body.swal2-toast-shown .swal2-container.swal2-bottom-start {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+
+    body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: auto
+    }
+
+    body.swal2-toast-column .swal2-toast {
+        flex-direction: column;
+        align-items: stretch
+    }
+
+    body.swal2-toast-column .swal2-toast .swal2-actions {
+        flex: 1;
+        align-self: stretch;
+        height: 2.2em;
+        margin-top: .3125em
+    }
+
+    body.swal2-toast-column .swal2-toast .swal2-loading {
+        justify-content: center
+    }
+
+    body.swal2-toast-column .swal2-toast .swal2-input {
+        height: 2em;
+        margin: .3125em auto;
+        font-size: 1em
+    }
+
+    body.swal2-toast-column .swal2-toast .swal2-validation-message {
+        font-size: 1em
+    }
+
+    .swal2-popup.swal2-toast {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        padding: .625em;
+        box-shadow: 0 0 .625em #d9d9d9;
+        overflow-y: hidden
+    }
+
+    .swal2-popup.swal2-toast .swal2-header {
+        flex-direction: row
+    }
+
+    .swal2-popup.swal2-toast .swal2-title {
+        flex-grow: 1;
+        justify-content: flex-start;
+        margin: 0 .6em;
+        font-size: 1em
+    }
+
+    .swal2-popup.swal2-toast .swal2-footer {
+        margin: .5em 0 0;
+        padding: .5em 0 0;
+        font-size: .8em
+    }
+
+    .swal2-popup.swal2-toast .swal2-close {
+        position: initial;
+        width: .8em;
+        height: .8em;
+        line-height: .8
+    }
+
+    .swal2-popup.swal2-toast .swal2-content {
+        justify-content: flex-start;
+        font-size: 1em
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon {
+        width: 2em;
+        min-width: 2em;
+        height: 2em;
+        margin: 0
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon-text {
+        font-size: 2em;
+        font-weight: 700;
+        line-height: 1em
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+        width: 2em;
+        height: 2em
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+        top: .875em;
+        width: 1.375em
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+        left: .3125em
+    }
+
+    .swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+        right: .3125em
+    }
+
+    .swal2-popup.swal2-toast .swal2-actions {
+        height: auto;
+        margin: 0 .3125em
+    }
+
+    .swal2-popup.swal2-toast .swal2-styled {
+        margin: 0 .3125em;
+        padding: .3125em .625em;
+        font-size: 1em
+    }
+
+    .swal2-popup.swal2-toast .swal2-styled:focus {
+        box-shadow: 0 0 0 .0625em #fff, 0 0 0 .125em rgba(50, 100, 150, .4)
+    }
+
+    .swal2-popup.swal2-toast .swal2-success {
+        border-color: #a5dc86
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line] {
+        position: absolute;
+        width: 2em;
+        height: 2.8125em;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        border-radius: 50%
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left] {
+        top: -.25em;
+        left: -.9375em;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 2em 2em;
+        transform-origin: 2em 2em;
+        border-radius: 4em 0 0 4em
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right] {
+        top: -.25em;
+        left: .9375em;
+        -webkit-transform-origin: 0 2em;
+        transform-origin: 0 2em;
+        border-radius: 0 4em 4em 0
+    }
+
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+        width: 2em;
+        height: 2em
+    }
+
+    .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+        top: 0;
+        left: .4375em;
+        width: .4375em;
+        height: 2.6875em
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line] {
+        height: .3125em
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip] {
+        top: 1.125em;
+        left: .1875em;
+        width: .75em
+    }
+
+    .swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long] {
+        top: .9375em;
+        right: .1875em;
+        width: 1.375em
+    }
+
+    .swal2-popup.swal2-toast.swal2-show {
+        -webkit-animation: showSweetToast .5s;
+        animation: showSweetToast .5s
+    }
+
+    .swal2-popup.swal2-toast.swal2-hide {
+        -webkit-animation: hideSweetToast .2s forwards;
+        animation: hideSweetToast .2s forwards
+    }
+
+    .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-tip {
+        -webkit-animation: animate-toast-success-tip .75s;
+        animation: animate-toast-success-tip .75s
+    }
+
+    .swal2-popup.swal2-toast .swal2-animate-success-icon .swal2-success-line-long {
+        -webkit-animation: animate-toast-success-long .75s;
+        animation: animate-toast-success-long .75s
+    }
+
+    @-webkit-keyframes showSweetToast {
+        0% {
+            -webkit-transform: translateY(-.625em) rotateZ(2deg);
+            transform: translateY(-.625em) rotateZ(2deg);
+            opacity: 0
+        }
+        33% {
+            -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+            opacity: .5
+        }
+        66% {
+            -webkit-transform: translateY(.3125em) rotateZ(2deg);
+            transform: translateY(.3125em) rotateZ(2deg);
+            opacity: .7
+        }
+        100% {
+            -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+            opacity: 1
+        }
+    }
+
+    @keyframes showSweetToast {
+        0% {
+            -webkit-transform: translateY(-.625em) rotateZ(2deg);
+            transform: translateY(-.625em) rotateZ(2deg);
+            opacity: 0
+        }
+        33% {
+            -webkit-transform: translateY(0) rotateZ(-2deg);
+            transform: translateY(0) rotateZ(-2deg);
+            opacity: .5
+        }
+        66% {
+            -webkit-transform: translateY(.3125em) rotateZ(2deg);
+            transform: translateY(.3125em) rotateZ(2deg);
+            opacity: .7
+        }
+        100% {
+            -webkit-transform: translateY(0) rotateZ(0);
+            transform: translateY(0) rotateZ(0);
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes hideSweetToast {
+        0% {
+            opacity: 1
+        }
+        33% {
+            opacity: .5
+        }
+        100% {
+            -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+            opacity: 0
+        }
+    }
+
+    @keyframes hideSweetToast {
+        0% {
+            opacity: 1
+        }
+        33% {
+            opacity: .5
+        }
+        100% {
+            -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+            opacity: 0
+        }
+    }
+
+    @-webkit-keyframes animate-toast-success-tip {
+        0% {
+            top: .5625em;
+            left: .0625em;
+            width: 0
+        }
+        54% {
+            top: .125em;
+            left: .125em;
+            width: 0
+        }
+        70% {
+            top: .625em;
+            left: -.25em;
+            width: 1.625em
+        }
+        84% {
+            top: 1.0625em;
+            left: .75em;
+            width: .5em
+        }
+        100% {
+            top: 1.125em;
+            left: .1875em;
+            width: .75em
+        }
+    }
+
+    @keyframes animate-toast-success-tip {
+        0% {
+            top: .5625em;
+            left: .0625em;
+            width: 0
+        }
+        54% {
+            top: .125em;
+            left: .125em;
+            width: 0
+        }
+        70% {
+            top: .625em;
+            left: -.25em;
+            width: 1.625em
+        }
+        84% {
+            top: 1.0625em;
+            left: .75em;
+            width: .5em
+        }
+        100% {
+            top: 1.125em;
+            left: .1875em;
+            width: .75em
+        }
+    }
+
+    @-webkit-keyframes animate-toast-success-long {
+        0% {
+            top: 1.625em;
+            right: 1.375em;
+            width: 0
+        }
+        65% {
+            top: 1.25em;
+            right: .9375em;
+            width: 0
+        }
+        84% {
+            top: .9375em;
+            right: 0;
+            width: 1.125em
+        }
+        100% {
+            top: .9375em;
+            right: .1875em;
+            width: 1.375em
+        }
+    }
+
+    @keyframes animate-toast-success-long {
+        0% {
+            top: 1.625em;
+            right: 1.375em;
+            width: 0
+        }
+        65% {
+            top: 1.25em;
+            right: .9375em;
+            width: 0
+        }
+        84% {
+            top: .9375em;
+            right: 0;
+            width: 1.125em
+        }
+        100% {
+            top: .9375em;
+            right: .1875em;
+            width: 1.375em
+        }
+    }
+
+    body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+        overflow: hidden
+    }
+
+    body.swal2-height-auto {
+        height: auto !important
+    }
+
+    body.swal2-no-backdrop .swal2-shown {
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        background-color: transparent
+    }
+
+    .fhs-payment-name {
+        margin: 4px 0 0 10px;
+        flex: 1;
+    }
+
+    .fhs_checkout_block_banner_alert {
+        margin-top: 12px;
+        background-color: #cddef4;
+        color: #2f80ed;
+        display: flex;
+    }
+
+    .fhs_checkout_block_banner_alert > div:first-of-type {
+        display: flex;
+        align-items: center;
+        -webkit-align-items: center;
+        padding-right: 8px;
+        max-width: 28px;
+    }
+
+    .fhs_checkout_block_banner_alert > div:first-of-type > img {
+        min-width: 20px;
+        max-width: 20px;
+    }
+
+    .fhs_checkout_block_banner_alert > div:nth-last-of-type(2) {
+
+    }
+
+    body.swal2-no-backdrop .swal2-shown > .swal2-modal {
+        box-shadow: 0 0 10px rgba(0, 0, 0, .4)
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-top {
+        top: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-top-left, body.swal2-no-backdrop .swal2-shown.swal2-top-start {
+        top: 0;
+        left: 0
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-top-end, body.swal2-no-backdrop .swal2-shown.swal2-top-right {
+        top: 0;
+        right: 0
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-center {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-center-left, body.swal2-no-backdrop .swal2-shown.swal2-center-start {
+        top: 50%;
+        left: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-center-end, body.swal2-no-backdrop .swal2-shown.swal2-center-right {
+        top: 50%;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-bottom {
+        bottom: 0;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-bottom-left, body.swal2-no-backdrop .swal2-shown.swal2-bottom-start {
+        bottom: 0;
+        left: 0
+    }
+
+    body.swal2-no-backdrop .swal2-shown.swal2-bottom-end, body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
+        right: 0;
+        bottom: 0
+    }
+
+    .swal2-container {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: transparent;
+        z-index: 1060;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .swal2-container.swal2-top {
+        align-items: flex-start
+    }
+
+    .swal2-container.swal2-top-left, .swal2-container.swal2-top-start {
+        align-items: flex-start;
+        justify-content: flex-start
+    }
+
+    .swal2-container.swal2-top-end, .swal2-container.swal2-top-right {
+        align-items: flex-start;
+        justify-content: flex-end
+    }
+
+    .swal2-container.swal2-center {
+        align-items: center
+    }
+
+    .swal2-container.swal2-center-left, .swal2-container.swal2-center-start {
+        align-items: center;
+        justify-content: flex-start
+    }
+
+    .swal2-container.swal2-center-end, .swal2-container.swal2-center-right {
+        align-items: center;
+        justify-content: flex-end
+    }
+
+    .swal2-container.swal2-bottom {
+        align-items: flex-end
+    }
+
+    .swal2-container.swal2-bottom-left, .swal2-container.swal2-bottom-start {
+        align-items: flex-end;
+        justify-content: flex-start
+    }
+
+    .swal2-container.swal2-bottom-end, .swal2-container.swal2-bottom-right {
+        align-items: flex-end;
+        justify-content: flex-end
+    }
+
+    .swal2-container.swal2-grow-fullscreen > .swal2-modal {
+        display: flex !important;
+        flex: 1;
+        align-self: stretch;
+        justify-content: center
+    }
+
+    .swal2-container.swal2-grow-row > .swal2-modal {
+        display: flex !important;
+        flex: 1;
+        align-content: center;
+        justify-content: center
+    }
+
+    .swal2-container.swal2-grow-column {
+        flex: 1;
+        flex-direction: column
+    }
+
+    .swal2-container.swal2-grow-column.swal2-bottom, .swal2-container.swal2-grow-column.swal2-center, .swal2-container.swal2-grow-column.swal2-top {
+        align-items: center
+    }
+
+    .swal2-container.swal2-grow-column.swal2-bottom-left, .swal2-container.swal2-grow-column.swal2-bottom-start, .swal2-container.swal2-grow-column.swal2-center-left, .swal2-container.swal2-grow-column.swal2-center-start, .swal2-container.swal2-grow-column.swal2-top-left, .swal2-container.swal2-grow-column.swal2-top-start {
+        align-items: flex-start
+    }
+
+    .swal2-container.swal2-grow-column.swal2-bottom-end, .swal2-container.swal2-grow-column.swal2-bottom-right, .swal2-container.swal2-grow-column.swal2-center-end, .swal2-container.swal2-grow-column.swal2-center-right, .swal2-container.swal2-grow-column.swal2-top-end, .swal2-container.swal2-grow-column.swal2-top-right {
+        align-items: flex-end
+    }
+
+    .swal2-container.swal2-grow-column > .swal2-modal {
+        display: flex !important;
+        flex: 1;
+        align-content: center;
+        justify-content: center
+    }
+
+    .swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen) > .swal2-modal {
+        margin: auto
+    }
+
+    @media all and (-ms-high-contrast: none),(-ms-high-contrast: active) {
+        .swal2-container .swal2-modal {
+            margin: 0 !important
+        }
+    }
+
+    .swal2-container.swal2-fade {
+        transition: background-color .1s
+    }
+
+    .swal2-container.swal2-shown {
+        background-color: rgba(0, 0, 0, .4)
+    }
+
+    .swal2-popup {
+        display: none;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        width: 32em;
+        max-width: 100%;
+        padding: 1.25em;
+        border-radius: .3125em;
+        background: #fff;
+        font-family: inherit;
+        font-size: 1rem;
+        box-sizing: border-box
+    }
+
+    .swal2-popup:focus {
+        outline: 0
+    }
+
+    .swal2-popup.swal2-loading {
+        overflow-y: hidden
+    }
+
+    .swal2-popup .swal2-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    .swal2-popup .swal2-title {
+        display: block;
+        position: relative;
+        max-width: 100%;
+        margin: 0 0 .4em;
+        padding: 0;
+        color: #595959;
+        font-size: 1.875em;
+        font-weight: 600;
+        text-align: center;
+        text-transform: none;
+        word-wrap: break-word
+    }
+
+    .swal2-popup .swal2-actions {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 1.25em auto 0;
+        z-index: 1
+    }
+
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+        opacity: .4
+    }
+
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1))
+    }
+
+    .swal2-popup .swal2-actions:not(.swal2-loading) .swal2-styled:active {
+        background-image: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2))
+    }
+
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+        width: 2.5em;
+        height: 2.5em;
+        margin: .46875em;
+        padding: 0;
+        border: .25em solid transparent;
+        border-radius: 100%;
+        border-color: transparent;
+        background-color: transparent !important;
+        color: transparent;
+        cursor: default;
+        box-sizing: border-box;
+        -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+        animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none
+    }
+
+    .swal2-popup .swal2-actions.swal2-loading .swal2-styled.swal2-cancel {
+        margin-right: 30px;
+        margin-left: 30px
+    }
+
+    .swal2-popup .swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+        border: 3px solid #999;
+        border-radius: 50%;
+        border-right-color: transparent;
+        box-shadow: 1px 1px 1px #fff;
+        content: '';
+        -webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+        animation: swal2-rotate-loading 1.5s linear 0s infinite normal
+    }
+
+    .swal2-popup .swal2-styled {
+        margin: .3125em;
+        padding: .625em 2em;
+        font-weight: 500;
+        box-shadow: none
+    }
+
+    .swal2-popup .swal2-styled:not([disabled]) {
+        cursor: pointer
+    }
+
+    .swal2-popup .swal2-styled.swal2-confirm {
+        border: 0;
+        border-radius: .25em;
+        background: initial;
+        background-color: #3085d6;
+        color: #fff;
+        font-size: 1.0625em
+    }
+
+    .swal2-popup .swal2-styled.swal2-cancel {
+        border: 0;
+        border-radius: .25em;
+        background: initial;
+        background-color: #aaa;
+        color: #fff;
+        font-size: 1.0625em
+    }
+
+    .swal2-popup .swal2-styled:focus {
+        outline: 0;
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(50, 100, 150, .4)
+    }
+
+    .swal2-popup .swal2-styled::-moz-focus-inner {
+        border: 0
+    }
+
+    .swal2-popup .swal2-footer {
+        justify-content: center;
+        margin: 1.25em 0 0;
+        padding: 1em 0 0;
+        border-top: 1px solid #eee;
+        color: #545454;
+        font-size: 1em
+    }
+
+    .swal2-popup .swal2-image {
+        max-width: 100%;
+        margin: 1.25em auto
+    }
+
+    .swal2-popup .swal2-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        width: 1.2em;
+        height: 1.2em;
+        padding: 0;
+        transition: color .1s ease-out;
+        border: none;
+        border-radius: 0;
+        outline: initial;
+        background: 0 0;
+        color: #ccc;
+        font-family: serif;
+        font-size: 2.5em;
+        line-height: 1.2;
+        cursor: pointer;
+        overflow: hidden
+    }
+
+    .swal2-popup .swal2-close:hover {
+        -webkit-transform: none;
+        transform: none;
+        color: #f27474
+    }
+
+    .swal2-popup > .swal2-checkbox, .swal2-popup > .swal2-file, .swal2-popup > .swal2-input, .swal2-popup > .swal2-radio, .swal2-popup > .swal2-select, .swal2-popup > .swal2-textarea {
+        display: none
+    }
+
+    .swal2-popup .swal2-content {
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        color: #545454;
+        font-size: 1.125em;
+        font-weight: 300;
+        line-height: normal;
+        z-index: 1;
+        word-wrap: break-word
+    }
+
+    .swal2-popup #swal2-content {
+        text-align: center
+    }
+
+    .swal2-popup .swal2-checkbox, .swal2-popup .swal2-file, .swal2-popup .swal2-input, .swal2-popup .swal2-radio, .swal2-popup .swal2-select, .swal2-popup .swal2-textarea {
+        margin: 1em auto
+    }
+
+    .swal2-popup .swal2-file, .swal2-popup .swal2-input, .swal2-popup .swal2-textarea {
+        width: 100%;
+        transition: border-color .3s, box-shadow .3s;
+        border: 1px solid #d9d9d9;
+        border-radius: .1875em;
+        font-size: 1.125em;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06);
+        box-sizing: border-box
+    }
+
+    .swal2-popup .swal2-file.swal2-inputerror, .swal2-popup .swal2-input.swal2-inputerror, .swal2-popup .swal2-textarea.swal2-inputerror {
+        border-color: #f27474 !important;
+        box-shadow: 0 0 2px #f27474 !important
+    }
+
+    .swal2-popup .swal2-file:focus, .swal2-popup .swal2-input:focus, .swal2-popup .swal2-textarea:focus {
+        border: 1px solid #b4dbed;
+        outline: 0;
+        box-shadow: 0 0 3px #c4e6f5
+    }
+
+    .swal2-popup .swal2-file::-webkit-input-placeholder, .swal2-popup .swal2-input::-webkit-input-placeholder, .swal2-popup .swal2-textarea::-webkit-input-placeholder {
+        color: #ccc
+    }
+
+    .swal2-popup .swal2-file:-ms-input-placeholder, .swal2-popup .swal2-input:-ms-input-placeholder, .swal2-popup .swal2-textarea:-ms-input-placeholder {
+        color: #ccc
+    }
+
+    .swal2-popup .swal2-file::-ms-input-placeholder, .swal2-popup .swal2-input::-ms-input-placeholder, .swal2-popup .swal2-textarea::-ms-input-placeholder {
+        color: #ccc
+    }
+
+    .swal2-popup .swal2-file::placeholder, .swal2-popup .swal2-input::placeholder, .swal2-popup .swal2-textarea::placeholder {
+        color: #ccc
+    }
+
+    .swal2-popup .swal2-range input {
+        width: 80%
+    }
+
+    .swal2-popup .swal2-range output {
+        width: 20%;
+        font-weight: 600;
+        text-align: center
+    }
+
+    .swal2-popup .swal2-range input, .swal2-popup .swal2-range output {
+        height: 2.625em;
+        margin: 1em auto;
+        padding: 0;
+        font-size: 1.125em;
+        line-height: 2.625em
+    }
+
+    .swal2-popup .swal2-input {
+        height: 2.625em;
+        padding: 0 .75em
+    }
+
+    .swal2-popup .swal2-input[type=number] {
+        max-width: 10em
+    }
+
+    .swal2-popup .swal2-file {
+        font-size: 1.125em
+    }
+
+    .swal2-popup .swal2-textarea {
+        height: 6.75em;
+        padding: .75em
+    }
+
+    .swal2-popup .swal2-select {
+        min-width: 50%;
+        max-width: 100%;
+        padding: .375em .625em;
+        color: #545454;
+        font-size: 1.125em
+    }
+
+    .swal2-popup .swal2-checkbox, .swal2-popup .swal2-radio {
+        align-items: center;
+        justify-content: center
+    }
+
+    .swal2-popup .swal2-checkbox label, .swal2-popup .swal2-radio label {
+        margin: 0 .6em;
+        font-size: 1.125em
+    }
+
+    .swal2-popup .swal2-checkbox input, .swal2-popup .swal2-radio input {
+        margin: 0 .4em
+    }
+
+    .swal2-popup .swal2-validation-message {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: .625em;
+        background: #f0f0f0;
+        color: #666;
+        font-size: 1em;
+        font-weight: 300;
+        overflow: hidden
+    }
+
+    .swal2-popup .swal2-validation-message::before {
+        display: inline-block;
+        width: 1.5em;
+        min-width: 1.5em;
+        height: 1.5em;
+        margin: 0 .625em;
+        border-radius: 50%;
+        background-color: #f27474;
+        color: #fff;
+        font-weight: 600;
+        line-height: 1.5em;
+        text-align: center;
+        content: '!';
+        zoom: normal
+    }
+
+    @supports (-ms-accelerator:true) {
+        .swal2-range input {
+            width: 100% !important
+        }
+
+        .swal2-range output {
+            display: none
+        }
+    }
+
+    @media all and (-ms-high-contrast: none),(-ms-high-contrast: active) {
+        .swal2-range input {
+            width: 100% !important
+        }
+
+        .swal2-range output {
+            display: none
+        }
+    }
+
+    @-moz-document url-prefix() {
+        .swal2-close:focus {
+            outline: 2px solid rgba(50, 100, 150, .4)
+        }
+    }
+
+    .swal2-icon {
+        position: relative;
+        justify-content: center;
+        width: 5em;
+        height: 5em;
+        margin: 1.25em auto 1.875em;
+        border: .25em solid transparent;
+        border-radius: 50%;
+        line-height: 5em;
+        cursor: default;
+        box-sizing: content-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        zoom: normal
+    }
+
+    .swal2-icon-text {
+        font-size: 3.75em
+    }
+
+    .swal2-icon.swal2-error {
+        border-color: #f27474
+    }
+
+    .swal2-icon.swal2-error .swal2-x-mark {
+        position: relative;
+        flex-grow: 1
+    }
+
+    .swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+        display: block;
+        position: absolute;
+        top: 2.3125em;
+        width: 2.9375em;
+        height: .3125em;
+        border-radius: .125em;
+        background-color: #f27474
+    }
+
+    .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left] {
+        left: 1.0625em;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+
+    .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right] {
+        right: 1em;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+    }
+
+    .swal2-icon.swal2-warning {
+        border-color: #facea8;
+        color: #f8bb86
+    }
+
+    .swal2-icon.swal2-info {
+        border-color: #9de0f6;
+        color: #3fc3ee
+    }
+
+    .swal2-icon.swal2-question {
+        border-color: #c9dae1;
+        color: #87adbd
+    }
+
+    .swal2-icon.swal2-success {
+        border-color: #a5dc86
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-circular-line] {
+        position: absolute;
+        width: 3.75em;
+        height: 7.5em;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        border-radius: 50%
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left] {
+        top: -.4375em;
+        left: -2.0635em;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 3.75em 3.75em;
+        transform-origin: 3.75em 3.75em;
+        border-radius: 7.5em 0 0 7.5em
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right] {
+        top: -.6875em;
+        left: 1.875em;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 0 3.75em;
+        transform-origin: 0 3.75em;
+        border-radius: 0 7.5em 7.5em 0
+    }
+
+    .swal2-icon.swal2-success .swal2-success-ring {
+        position: absolute;
+        top: -.25em;
+        left: -.25em;
+        width: 100%;
+        height: 100%;
+        border: .25em solid rgba(165, 220, 134, .3);
+        border-radius: 50%;
+        z-index: 2;
+        box-sizing: content-box
+    }
+
+    .swal2-icon.swal2-success .swal2-success-fix {
+        position: absolute;
+        top: .5em;
+        left: 1.625em;
+        width: .4375em;
+        height: 5.625em;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        z-index: 1
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-line] {
+        display: block;
+        position: absolute;
+        height: .3125em;
+        border-radius: .125em;
+        background-color: #a5dc86;
+        z-index: 2
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-line][class$=tip] {
+        top: 2.875em;
+        left: .875em;
+        width: 1.5625em;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg)
+    }
+
+    .swal2-icon.swal2-success [class^=swal2-success-line][class$=long] {
+        top: 2.375em;
+        right: .5em;
+        width: 2.9375em;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg)
+    }
+
+    .swal2-progresssteps {
+        align-items: center;
+        margin: 0 0 1.25em;
+        padding: 0;
+        font-weight: 600
+    }
+
+    .swal2-progresssteps li {
+        display: inline-block;
+        position: relative
+    }
+
+    .swal2-progresssteps .swal2-progresscircle {
+        width: 2em;
+        height: 2em;
+        border-radius: 2em;
+        background: #3085d6;
+        color: #fff;
+        line-height: 2em;
+        text-align: center;
+        z-index: 20
+    }
+
+    .swal2-progresssteps .swal2-progresscircle:first-child {
+        margin-left: 0
+    }
+
+    .swal2-progresssteps .swal2-progresscircle:last-child {
+        margin-right: 0
+    }
+
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+        background: #3085d6
+    }
+
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+        background: #add8e6
+    }
+
+    .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
+        background: #add8e6
+    }
+
+    .swal2-progresssteps .swal2-progressline {
+        width: 2.5em;
+        height: .4em;
+        margin: 0 -1px;
+        background: #3085d6;
+        z-index: 10
+    }
+
+    [class^=swal2] {
+        -webkit-tap-highlight-color: transparent
+    }
+
+    .swal2-show {
+        -webkit-animation: swal2-show .3s;
+        animation: swal2-show .3s
+    }
+
+    .swal2-show.swal2-noanimation {
+        -webkit-animation: none;
+        animation: none
+    }
+
+    .swal2-hide {
+        -webkit-animation: swal2-hide .15s forwards;
+        animation: swal2-hide .15s forwards
+    }
+
+    .swal2-hide.swal2-noanimation {
+        -webkit-animation: none;
+        animation: none
+    }
+
+    .swal2-rtl .swal2-close {
+        right: auto;
+        left: 0
+    }
+
+    .swal2-animate-success-icon .swal2-success-line-tip {
+        -webkit-animation: swal2-animate-success-line-tip .75s;
+        animation: swal2-animate-success-line-tip .75s
+    }
+
+    .swal2-animate-success-icon .swal2-success-line-long {
+        -webkit-animation: swal2-animate-success-line-long .75s;
+        animation: swal2-animate-success-line-long .75s
+    }
+
+    .swal2-animate-success-icon .swal2-success-circular-line-right {
+        -webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+        animation: swal2-rotate-success-circular-line 4.25s ease-in
+    }
+
+    .swal2-animate-error-icon {
+        -webkit-animation: swal2-animate-error-icon .5s;
+        animation: swal2-animate-error-icon .5s
+    }
+
+    .swal2-animate-error-icon .swal2-x-mark {
+        -webkit-animation: swal2-animate-error-x-mark .5s;
+        animation: swal2-animate-error-x-mark .5s
+    }
+
+    @-webkit-keyframes swal2-rotate-loading {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0)
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @keyframes swal2-rotate-loading {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0)
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg)
+        }
+    }
+
+    @media print {
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+            overflow-y: scroll !important
+        }
+
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) > [aria-hidden=true] {
+            display: none
+        }
+
+        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+            position: initial !important
+        }
+    }</style>
+    <style>
+        .ejoy-sub-active {
+            color: #1296ba !important;
+        }
+
+        .ejoy-sub-hovered {
+            color: #1296ba !important;
+        }
+
+        .ejoy-sub-clzz {
+            cursor: pointer;
+
+            lineHeight: 1.2;
+            font-size: 28px;
+            color: #FFCC00;
+            background: rgba(17, 17, 17, 0.7);
+
+        }
+
+        .ejoy-sub-clzz:hover {
+            color: #1296ba !important;
+        }
+
+        .ej-trans-sub {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999999;
+            cursor: move;
+        }
+
+        .ej-trans-sub > span {
+            color: #3CF9ED;
+            font-size: 18px;
+            text-align: center;
+            padding: 0 16px;
+            line-height: 1.5;
+            background: rgba(32, 26, 25, 0.8);
+        / / text-shadow: 0 px 1 px 4 px black;
+            padding: 0 8px;
+
+            lineHeight: 1.2;
+            font-size: 16px;
+            color: #0CB1C7;
+            background: rgba(67, 65, 65, 0.7);
+
+        }
+
+        .ej-main-sub {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999999;
+            cursor: move;
+            padding: 0 8px;
+        }
+
+        .ej-main-sub > span {
+            color: white;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: center;
+            background: rgba(32, 26, 25, 0.8);
+        / / text-shadow: 0 px 1 px 4 px black;
+            padding: 2px 8px;
+
+            lineHeight: 1.2;
+            font-size: 28px;
+            color: #FFCC00;
+            background: rgba(17, 17, 17, 0.7);
+
+        }
+
+        .ej-main-sub .ejoy-sub-clzz {
+            background: transparent !important
+        }
+
+        .fhs_checkout_block {
+            padding: 8px 16px;
+            background-color: white;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_title {
+            padding: 8px 0;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-bottom: 1px solid #ced4da;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content {
+            padding: 4px 0;
+            position: relative;
+        }
+
+        .popup-loading-event-cart-coupon > .fhs_checkout_block_content > .fhs_checkout_block_loading,
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_loading {
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content.loading {
+            min-height: 80px;
+        }
+
+        .popup-loading-event-cart-coupon > .fhs_checkout_block_content > .fhs_checkout_block_loading > div,
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_loading > div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        .popup-loading-event-cart-coupon > .fhs_checkout_block_content.loading > .fhs_checkout_block_loading,
+        .fhs_checkout_block > .fhs_checkout_block_content.loading > .fhs_checkout_block_loading {
+            display: block;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list {
+            padding: 4px 0;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list .fhs_checkout_block_address_list_items {
+
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list .fhs_checkout_block_address_list_items li,
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list .fhs_checkout_block_address_list_items li > div {
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list .fhs_checkout_block_address_list_items li > div:first-of-type {
+            width: calc(100% - 80px);
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list .fhs_checkout_block_address_list_items li > div:last-of-type {
+            width: 80px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list .fhs_checkout_block_address_list_items li > div:last-of-type > span {
+            padding: 4px 8px;
+            color: #007bff;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list .fhs_checkout_block_address_list_items li:first-of-type > div:last-of-type > span:last-of-type {
+            visibility: hidden;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_radio_list,
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_radio_list .fhs_checkout_block_radio_list_msg {
+            padding: 4px 0;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_radio_list .fhs_checkout_block_radio_list_title {
+            padding-bottom: 4px;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list > .fhs_checkout_block_address_list-btn {
+            padding: 8px 0;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list > .fhs_checkout_block_address_list-btn > span:first-of-type {
+            width: 20px;
+            height: 20px;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_list > .fhs_checkout_block_address_list-btn > span:last-of-type {
+            padding-left: 10px;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_block.gtgt > .fhs-input-box > .fhs-input-item,
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_block {
+            max-width: 600px;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_content > .fhs_checkout_block_address_block.gtgt {
+            max-width: 100%;
+        }
+
+        #popup_fahasa_shipping_confirm {
+            opacity: 1;
+            position: fixed;
+            z-index: 99999;
+            width: 600px;
+            background-color: white;
+            display: none;
+            border: none;
+            top: 25%;
+            left: 50%;
+            margin-left: -300px;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        #fhs_checkout_block_address_popup {
+            opacity: 1;
+            position: fixed;
+            z-index: 99999;
+            width: 600px;
+            background-color: white;
+            display: none;
+            border: none;
+            top: 10%;
+            left: 50%;
+            margin-left: -300px;
+            padding: 15px;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        .fhs_checkout_block_address_popup_title {
+            text-align: center;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            padding: 8px 0;
+            color: #F7941E;
+            font-weight: 600;
+        }
+
+        .fhs_checkout_block_address_popup_title {
+            text-align: center;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            padding: 8px 0;
+            color: #F7941E;
+            font-weight: 600;
+        }
+
+        #fhs_checkout_block_address_popup:not(.change) .fhs_checkout_block_address_popup_title span:last-of-type {
+            display: none;
+        }
+
+        #fhs_checkout_block_address_popup.change .fhs_checkout_block_address_popup_title span:first-of-type {
+            display: none;
+        }
+
+        #shipping_address_confirm_content {
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .fhs_checkout_block .select2-container {
+            width: 100% !important;
+        }
+
+        .fhs_checkout_block input[type=checkbox].with-font ~ label:before {
+            color: #ced4da !important;
+            width: 1.2em !important;
+            font-size: 1.6em !important;
+        }
+
+        .fhs_checkout_block input[type=checkbox].with-font:checked ~ label:before {
+            color: #F7941E !important;
+        }
+
+        .fhs_checkout_member.fhs_en > span:first-of-type {
+            width: 145px;
+        }
+
+        .fhs_checkout_member:not(.fhs_en) > span:first-of-type {
+            width: 122px;
+        }
+
+        .fhs_checkout_member > span:last-of-type {
+            color: #F39801;
+            font-size: 1em !important;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+
+        .fhs_checkout_member > span:last-of-type > span {
+            color: #F39801;
+            font-size: 1em !important;
+            font-weight: 600;
+        }
+
+        .fhs_checkout_products {
+            padding: 4px 0;
+        }
+
+        .fhs_checkout_products > div {
+            padding: 4px;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item {
+            padding: 8px 0;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: flex-start;
+            -webkit-align-items: flex-start;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+            border-top: 1px solid #ced4da;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item:first-of-type {
+            border-top: none;
+            padding: 4px 0 8px 0;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item > .fhs_checkout_products_item_img {
+            width: 145px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item > .fhs_checkout_products_item_img img {
+            max-height: 145px;
+            margin: auto;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item > .fhs_checkout_products_item_detail {
+            width: calc(100% - 145px);
+            padding: 0 4px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: flex-start;
+            -webkit-align-items: flex-start;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item .fhs_checkout_products_item_name {
+            width: calc(100% - 345px);
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item .fhs_checkout_products_item_name > div {
+            padding-bottom: 4px;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item .fhs_checkout_products_item_price {
+            width: 100px;
+            padding-bottom: 4px;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item .fhs_checkout_products_item_price .fhs_checkout_products_item_original_price {
+            color: #bfbfbf;
+            text-decoration: line-through;
+            font-size: 0.95em;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item .fhs_checkout_products_item_qty {
+            width: 100px;
+            text-align: center;
+            padding-bottom: 4px;
+        }
+
+        .fhs_checkout_products > .fhs_checkout_products_item .fhs_checkout_products_item_qty > span:first-of-type {
+            display: none;
+        }
+
+        .fhs_checkout_products .fhs_checkout_products_item_total {
+            width: 100px;
+            color: #F39801;
+            font-weight: 600;
+        }
+
+        .fhs_checkout_total_desktop {
+            border-bottom: 1px solid #ced4da;
+        }
+
+        .fhs_checkout_total {
+            padding: 4px 0;
+            font-size: 1.1em;
+        }
+
+        .fhs_checkout_total_mobile {
+            padding: 8px 0;
+            border-top: 1px solid #ced4da;
+            display: none;
+        }
+
+        .fhs_checkout_total > div {
+            padding-bottom: 4px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: flex-start;
+            -webkit-align-items: flex-start;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_total > div > div {
+            text-align: right;
+        }
+
+        .fhs_checkout_total > div > div:first-of-type {
+            width: calc(100% - 150px);
+        }
+
+        .fhs_checkout_total_mobile > div > div:first-of-type {
+            text-align: left;
+        }
+
+        .fhs_checkout_total > div > div:last-of-type {
+            width: 150px;
+            text-align: right;
+        }
+
+        .fhs_checkout_total > .fhs_checkout_total_grand_total > div:first-of-type {
+            font-weight: 600;
+        }
+
+        .fhs_checkout_total > .fhs_checkout_total_grand_total > div:last-of-type {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #F39801;
+        }
+
+        .fhs-bsidebar {
+            visibility: visible;
+        }
+
+        .fhs-bsidebar-content {
+            position: absolute;
+            bottom: 0;
+            padding-bottom: env(safe-area-inset-bottom, 0);
+            width: 100%;
+            z-index: 1;
+            background-color: white;
+            padding: 8px 16px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: flex-start;
+            -webkit-align-items: flex-start;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-shadow: 0px -4px 10px -4px rgba(0, 0, 0, 0.66);
+            -moz-box-shadow: 0px -4px 10px -4px rgba(0, 0, 0, 0.66);
+            box-shadow: 0px -4px 10px -4px rgba(0, 0, 0, 0.66);
+        }
+
+        .fhs-bsidebar-content > div {
+            background-color: white;
+        }
+
+        .fhs_checkout_bottom {
+            padding: 4px 0;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_bottom > div:first-of-type {
+            width: calc(100% - 300px);
+        }
+
+        .fhs_checkout_bottom > div:last-of-type {
+            width: 300px;
+        }
+
+        .fhs_checkout_bottom > div:first-of-type > div:first-of-type {
+            display: none;
+        }
+
+        .fhs_checkout_bottom > div:first-of-type > div:first-of-type > div:first-of-type {
+            font-weight: 600;
+            width: calc(100% - 120px);
+        }
+
+        .fhs_checkout_bottom > div:first-of-type > div:first-of-type > div:last-of-type {
+            width: 120px;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #F39801;
+            text-align: right;
+        }
+
+        .fhs_checkout_bottom > div:first-of-type > div:last-of-type > a {
+            cursor: pointer;
+            user-select: none;
+            color: #555555;
+            font-weight: 600;
+        }
+
+        .fhs-btn-orderconfirm {
+            font-size: 1.4em !important;
+            width: 100% !important;
+        }
+
+        .fhs_checkout_block .select2-container .select2-selection--single .select2-selection__rendered {
+            padding-left: 1.1em;
+        }
+
+        .fhs_checkout_block .fhs-input-box .fhs-input-group.checked-error .fhs-textbox-alert,
+        .fhs_checkout_block .fhs-input-box.checked-pass .fhs-input-group .fhs-textbox-alert,
+        .fhs_checkout_block .fhs-input-box.checked-error .fhs-input-group .fhs-textbox-alert {
+            height: 18px;
+            width: 18px;
+        }
+
+        .fhs_checkout_block > .fhs_checkout_block_alert {
+            display: none;
+            margin: 4px 0;
+        }
+
+        .fhs_checkout_block.block_checked_error > .fhs_checkout_block_alert {
+            display: block;
+            color: #dc3545;
+        }
+
+        .fhs_checkout_alert {
+            background-color: white;
+            margin-bottom: 16px;
+            font-size: 14px;
+            height: 46px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_alert > div:first-of-type {
+            padding: 4px;
+            color: white;
+            background-color: #F39801;
+            height: 100%;
+            width: 46px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+
+        .fhs_checkout_alert > div:first-of-type > img {
+            height: 22px;
+            width: 22px;
+        }
+
+        .fhs_checkout_alert > div:last-of-type {
+            padding-left: 8px;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_checkout_alert > div:last-of-type > span {
+            padding-left: 4px;
+            font-weight: 600;
+            color: #F39801;
+            cursor: pointer;
+            user-select: none;
+            text-decoration: underline;
+        }
+
+        .fhs_checkout_block_coupon_desktop .fhs_checkout_block_coupon_search {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            padding-left: 8px;
+            -webkit-transform: translate(100%, -50%);
+            -ms-transform: translate(100%, -50%);
+            -moz-transform: translate(100%, -50%);
+            transform: translate(100%, -50%);
+            width: 300px;
+        }
+
+        .fhs_checkout_block_coupon_desktop .fhs_checkout_block_coupon_search > span:first-of-type {
+            cursor: pointer;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+            text-decoration: underline;
+            color: #007bff;
+        }
+
+        .fhs_checkout_block_coupon_desktop .fhs_checkout_block_coupon_search > span:nth-of-type(2) {
+            margin-left: 8px;
+        }
+
+        .fhs_checkout_block_coupon_mobile {
+            display: none;
+        }
+
+        .fhs-input-group-horizontal-coupon .fhs-textbox {
+            border-radius: 8px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+        }
+
+        .fhs_checkout_block_coupon_mobile > .fhs_checkout_block_title {
+            position: relative;
+            cursor: pointer;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .fhs_checkout_block_title > .fhs_checkout_block_title_icon_viewmore {
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+            -moz-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+        }
+
+        .fhs-input-group-horizontal-coupon > .fhs_label_coupon_label {
+            margin: 8px 0 0 154px;
+        }
+
+        .fhs_label_coupon_label_row,
+        .fhs_label_coupon_label {
+            padding: 0 !important;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+        }
+
+        .fhs_label_coupon_label_row > div,
+        .fhs_label_coupon_label > div {
+            padding: 8px 15px;
+            width: 100%;
+            display: flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex-direction: row;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            border-radius: 8px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+        }
+
+        .fhs_label_coupon_label > div {
+            flex: 1;
+        }
+
+        .fhs_label_coupon_label_orange {
+            color: #FFB323;
+            background-color: #FFB3234D;
+        }
+
+        .fhs_label_coupon_label_green {
+            color: #23C16B;
+            background-color: #23C16B33;
+        }
+
+        .fhs_label_coupon_label_orange > div:first-of-type,
+        .fhs_label_coupon_label_green > div:first-of-type {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 600;
+        }
+
+        .tran-subtitle > span {
+            cursor: pointer;
+            padding-left: 10px;
+            top: 2px;
+            position: relative;
+        }
+
+        .tran-subtitle > span > span {
+            position: absolute;
+            top: -170%;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 13px;
+            line-height: 20px;
+            padding: 2px 8px;
+            color: white;
+            display: none;
+            border-radius: 4px;
+            white-space: nowrap;
+            left: -50%;
+            font-weight: normal;
+        }
+
+        .view-icon-copy-main-sub:hover > span, .view-icon-edit-sub:hover > span, .view-icon-copy-tran-sub:hover > span {
+            display: block;
+        }
+
+        .tran-subtitle > span > svg {
+            width: 16px;
+            height: 16px;
+            pointer-events: none;
+            display: inline-flex !important;
+            vertical-align: baseline !important;
+        }
+
+        .view-icon-copy-main-sub > svg {
+            pointer-events: none;
+            color: #FFCC00
+        }
+
+        .view-icon-copy-tran-sub {
+            padding-left: 0 !important;
+            padding-right: 8px !important;
+        }
+
+        .view-icon-copy-tran-sub > svg {
+            pointer-events: none;
+            color: #0CB1C7
+        }
+
+
+    </style>
+    <script type="text/javascript" async=""
+            src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/857907211/?random=1667054031581&amp;cv=11&amp;fst=1667054031581&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=2oaaq0&amp;u_w=1920&amp;u_h=1080&amp;hn=www.googleadservices.com&amp;frm=0&amp;url=https%3A%2F%2Fwww.fahasa.com%2Fonestepcheckout%2Findex&amp;ref=https%3A%2F%2Fwww.fahasa.com%2Fcheckout%2Fcart%2F&amp;tiba=One%20Step%20Checkout%20-%20FAHASA.COM&amp;auid=255492985.1667040249&amp;data=event%3Dform_start&amp;rfmt=3&amp;fmt=4"></script>
+    <script type="text/javascript" charset="UTF-8"
+            src="https://maps.googleapis.com/maps-api-v3/api/js/50/11/common.js"></script>
+    <script type="text/javascript" charset="UTF-8"
+            src="https://maps.googleapis.com/maps-api-v3/api/js/50/11/util.js"></script>
+</head>
+<body id="offcanvas-container" class=" onestepcheckout-index-index" style="margin-bottom: 175px;">
+<div style="display: block !important; height: 0px;"></div>
+<div id="tracking-fb-add-to-cart"></div>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=139977769676408&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code --><!-- META FOR IOS & HANDHELD -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- META FOR IOS & HANDHELD -->
+<script type="text/javascript">//<![CDATA[
+//]]></script>
+<style type="text/css">
+    .category-vmega_toggle {
+        display: none;
+    }
+</style>
+
+<meta property="og:url" content="https://www.fahasa.com:8443/onestepcheckout/index">
+<meta property="og:image" content="https://www.fahasa.com/media/wysiwyg/Thang-10-2017/logo_mascot_200px.jpg">
+<meta property="og:description" content="Sale Khủng. Hot 1000 độ. Giảm đến 50%++.">
+<meta property="og:site_name" content="Fahasa.com">
+
+
+<script type="text/javascript">
+    const loading_icon_url = 'https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ring_loader.gif';
+</script>
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+<section id="ves-wrapper">
+    <section id="page" class="offcanvas-pusher" role="main">
+        <div class="wrapper" id="wrapper">
+            <div id="loading"></div>
+            <noscript>
+                <div class="global-site-notice noscript">
+                    <div class="notice-inner">
+                        <p>
+                            <strong>JavaScript seems to be disabled in your browser.</strong><br/>
+                            You must have JavaScript enabled in your browser to utilize the functionality of this
+                            website. </p>
+                    </div>
+                </div>
+            </noscript>
+            <div class="page">
+                <section class="header" id="header">
+                    <th:block layout:insert="~{fragments/client/header}"/>
+                </section>
+                <div class="main-container col1-layout no-margin-top">
+                    <div class="main">
+                        <div class="margin-bottom: 5px;">
+                            <div class="container" style="background-color : transparent!important;">
+                            </div>
+                        </div>
+                        <div class="col-main">
+                            <div class="container">
+                                <div class="container-inner">
+                                    <ul id="admin_messages"></ul>
+                                    <style>
+                                        .fhs-input-box .fhs-input-group.checked-error .fhs-textbox-alert,
+                                        .fhs-input-box.checked-error .fhs-input-group .fhs-textbox-alert {
+                                            background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_fail.png) no-repeat center center;
+                                            -webkit-background-size: cover;
+                                            -moz-background-size: cover;
+                                            -o-background-size: cover;
+                                            background-size: cover;
+                                            height: 20px;
+                                            width: 20px;
+                                            display: inline-block;
+                                        }
+
+                                        .fhs-input-box.checked-pass .fhs-input-group .fhs-textbox-alert {
+                                            background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_success.png) no-repeat center center;
+                                            -webkit-background-size: cover;
+                                            -moz-background-size: cover;
+                                            -o-background-size: cover;
+                                            background-size: cover;
+                                            height: 20px;
+                                            width: 20px;
+                                            display: inline-block;
+                                        }
+                                    </style>
+
+                                    <!-- Shipping address start -->
+                                    <div id="fhs_checkout_block_address" class="fhs_checkout_block">
+                                        <div class="fhs_checkout_block_title">Địa chỉ giao hàng</div>
+                                        <div class="fhs_checkout_block_content">
+                                            <form th:action="@{/user/order/confirm}" method="post" id="confirm-form">
+                                                <div class="fhs_checkout_block_address_list">
+                                                    <div>
+                                                        <ul id="fhs_checkout_address"
+                                                            class="fhs_checkout_block_address_list_items">
+                                                            <li style="display: block"
+                                                                class="fhs_checkout_block_address_list_item">
+                                                                <div style="width: 100%">
+                                                                    <label style="width: 120px;">Họ tên</label>
+                                                                    <input type="text" name="name" th:value="${name}">
+                                                                    <span th:text="${name_msg}"
+                                                                          style="color: red"></span>
+                                                                </div>
+                                                                <div style="width: 100%; padding-top: 12px">
+                                                                    <label style="width: 120px;">Địa chỉ</label>
+                                                                    <input type="text" name="address"
+                                                                           th:value="${address}">
+                                                                    <span th:text="${address_msg}"
+                                                                          style="color: red"></span>
+
+                                                                </div>
+                                                                <div style="width: 100%; padding-top: 12px">
+                                                                    <label style="width: 120px;">Số điện
+                                                                        thoại</label>
+                                                                    <input type="phone" name="phone"
+                                                                           th:value="${phone}">
+                                                                    <span th:text="${phone_msg}"
+                                                                          style="color: red"></span>
+
+                                                                </div>
+
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </form>
+
+                                            </form>
+                                            <div id="fhs_checkout_block_address_popup">
+                                                <div class="fhs_checkout_block_address_popup_title"><span>Thêm mới địa chỉ giao hàng</span><span>Thay đổi địa chỉ giao hàng</span>
+                                                </div>
+                                                <div class="fhs_checkout_block_address_popup_content">
+                                                    <div class="fhs_checkout_block_address_block">
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Họ và tên người nhận</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <input class="fhs-textbox require_check_address"
+                                                                           type="text" validate_type="fullname"
+                                                                           placeholder="Nhập họ và tên người nhận"
+                                                                           id="fhs_address_fullname" name="fullname"
+                                                                           value="" maxlength="200">
+                                                                    <input type="hidden" id="fhs_address_firstname"
+                                                                           name="firstname">
+                                                                    <input type="hidden" id="fhs_address_lastname"
+                                                                           name="lastname">
+                                                                    <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="fhs-input-alert"></div>
+                                                        </div>
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Số điện thoại</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <input class="fhs-textbox require_check_address"
+                                                                           type="text"
+                                                                           validate_type="shipping_telephone"
+                                                                           placeholder="Ví dụ: 0979123xxx (10 ký tự số)"
+                                                                           id="fhs_address_telephone" name="telephone"
+                                                                           value="" maxlength="10">
+                                                                    <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="fhs-input-alert"></div>
+                                                        </div>
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Quốc gia</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <select name="fhs_address_country_select"
+                                                                            id="fhs_address_country_select"
+                                                                            class="fhs-selectbox select2-hidden-accessible"
+                                                                            title="Quốc gia"
+                                                                            data-select2-id="fhs_address_country_select"
+                                                                            tabindex="-1" aria-hidden="true">
+                                                                        <option value=""></option>
+                                                                        <option value="AU">Australia</option>
+                                                                        <option value="BR">Brazil</option>
+                                                                        <option value="CA">Canada</option>
+                                                                        <option value="CU">Cuba</option>
+                                                                        <option value="DK">Denmark</option>
+                                                                        <option value="FI">Finland</option>
+                                                                        <option value="FR">France</option>
+                                                                        <option value="DE">Germany</option>
+                                                                        <option value="HK">Hong Kong SAR China</option>
+                                                                        <option value="HU">Hungary</option>
+                                                                        <option value="ID">Indonesia</option>
+                                                                        <option value="IT">Italy</option>
+                                                                        <option value="JP">Japan</option>
+                                                                        <option value="MY">Malaysia</option>
+                                                                        <option value="NL">Netherlands</option>
+                                                                        <option value="NZ">New Zealand</option>
+                                                                        <option value="PH">Philippines</option>
+                                                                        <option value="PL">Poland</option>
+                                                                        <option value="RU">Russia</option>
+                                                                        <option value="SG">Singapore</option>
+                                                                        <option value="KR">South Korea</option>
+                                                                        <option value="ES">Spain</option>
+                                                                        <option value="SE">Sweden</option>
+                                                                        <option value="CH">Switzerland</option>
+                                                                        <option value="TW">Taiwan</option>
+                                                                        <option value="TH">Thailand</option>
+                                                                        <option value="GB">United Kingdom</option>
+                                                                        <option value="US">United States</option>
+                                                                        <option value="VN" selected="selected"
+                                                                                data-select2-id="2">Việt Nam
+                                                                        </option>
+                                                                    </select><span
+                                                                        class="select2 select2-container select2-container--default"
+                                                                        dir="ltr" data-select2-id="1"
+                                                                        style="width: 100px;"><span
+                                                                        class="selection"><span
+                                                                        class="select2-selection select2-selection--single"
+                                                                        role="combobox" aria-haspopup="true"
+                                                                        aria-expanded="false" title="Quốc gia"
+                                                                        tabindex="0" aria-disabled="false"
+                                                                        aria-labelledby="select2-fhs_address_country_select-container"><span
+                                                                        class="select2-selection__rendered"
+                                                                        id="select2-fhs_address_country_select-container"
+                                                                        role="textbox" aria-readonly="true"
+                                                                        title="Việt Nam"><span class="fhs_nowrap_one">Việt Nam</span></span><span
+                                                                        class="select2-selection__arrow"
+                                                                        role="presentation"><b role="presentation"></b></span></span></span><span
+                                                                        class="dropdown-wrapper"
+                                                                        aria-hidden="true"></span></span> <input
+                                                                        class="fhs-textbox require_check_address"
+                                                                        style="display: none;" type="text"
+                                                                        validate_type="text" placeholder="Nhập quốc gia"
+                                                                        id="fhs_address_country" name="country" value=""
+                                                                        maxlength="200">
+                                                                    <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Tỉnh/Thành Phố</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <select id="fhs_address_city_select"
+                                                                            class="fhs-input-select select2-hidden-accessible"
+                                                                            data-select2-id="fhs_address_city_select"
+                                                                            tabindex="-1" aria-hidden="true">
+                                                                    </select><span
+                                                                        class="select2 select2-container select2-container--default"
+                                                                        dir="ltr" data-select2-id="3"
+                                                                        style="width: 100px;"><span
+                                                                        class="selection"><span
+                                                                        class="select2-selection select2-selection--single"
+                                                                        role="combobox" aria-haspopup="true"
+                                                                        aria-expanded="false" tabindex="0"
+                                                                        aria-disabled="false"
+                                                                        aria-labelledby="select2-fhs_address_city_select-container"><span
+                                                                        class="select2-selection__rendered"
+                                                                        id="select2-fhs_address_city_select-container"
+                                                                        role="textbox" aria-readonly="true"><span
+                                                                        class="select2-selection__placeholder">Chọn tỉnh/thành Phố</span></span><span
+                                                                        class="select2-selection__arrow"
+                                                                        role="presentation"><b role="presentation"></b></span></span></span><span
+                                                                        class="dropdown-wrapper"
+                                                                        aria-hidden="true"></span></span>
+                                                                    <input class="fhs-textbox require_check_address"
+                                                                           style="display: none;" type="text"
+                                                                           validate_type="text"
+                                                                           placeholder="Nhập tỉnh/thành Phố"
+                                                                           id="fhs_address_city" name="city" value=""
+                                                                           maxlength="200">
+                                                                </div>
+                                                            </div>
+                                                            <div class="fhs-input-alert"></div>
+                                                        </div>
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Quận/Huyện</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <select id="fhs_address_district_select"
+                                                                            class="fhs-input-select select2-hidden-accessible"
+                                                                            data-select2-id="fhs_address_district_select"
+                                                                            tabindex="-1" aria-hidden="true">
+                                                                    </select><span
+                                                                        class="select2 select2-container select2-container--default"
+                                                                        dir="ltr" data-select2-id="4"
+                                                                        style="width: 100px;"><span
+                                                                        class="selection"><span
+                                                                        class="select2-selection select2-selection--single"
+                                                                        role="combobox" aria-haspopup="true"
+                                                                        aria-expanded="false" tabindex="0"
+                                                                        aria-disabled="false"
+                                                                        aria-labelledby="select2-fhs_address_district_select-container"><span
+                                                                        class="select2-selection__rendered"
+                                                                        id="select2-fhs_address_district_select-container"
+                                                                        role="textbox" aria-readonly="true"><span
+                                                                        class="select2-selection__placeholder">Chọn quận/huyện</span></span><span
+                                                                        class="select2-selection__arrow"
+                                                                        role="presentation"><b role="presentation"></b></span></span></span><span
+                                                                        class="dropdown-wrapper"
+                                                                        aria-hidden="true"></span></span>
+                                                                    <input class="fhs-textbox require_check_address"
+                                                                           style="display: none;" type="text"
+                                                                           validate_type="text"
+                                                                           placeholder="Nhập quận/huyện"
+                                                                           id="fhs_address_district" name="district"
+                                                                           value="" maxlength="200">
+                                                                </div>
+                                                            </div>
+                                                            <div class="fhs-input-alert"></div>
+                                                        </div>
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Mã bưu điện</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <input class="fhs-textbox" type="text"
+                                                                           placeholder="Nhập Mã bưu điện"
+                                                                           id="fhs_address_postcode" name="postcode"
+                                                                           value="" maxlength="20">
+                                                                    <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="fhs-input-alert"></div>
+                                                        </div>
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Phường/Xã</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <select id="fhs_address_wards_select"
+                                                                            class="fhs-input-select select2-hidden-accessible"
+                                                                            data-select2-id="fhs_address_wards_select"
+                                                                            tabindex="-1" aria-hidden="true">
+                                                                    </select><span
+                                                                        class="select2 select2-container select2-container--default"
+                                                                        dir="ltr" data-select2-id="5"
+                                                                        style="width: 100px;"><span
+                                                                        class="selection"><span
+                                                                        class="select2-selection select2-selection--single"
+                                                                        role="combobox" aria-haspopup="true"
+                                                                        aria-expanded="false" tabindex="0"
+                                                                        aria-disabled="false"
+                                                                        aria-labelledby="select2-fhs_address_wards_select-container"><span
+                                                                        class="select2-selection__rendered"
+                                                                        id="select2-fhs_address_wards_select-container"
+                                                                        role="textbox" aria-readonly="true"><span
+                                                                        class="select2-selection__placeholder">Chọn phường/Xã</span></span><span
+                                                                        class="select2-selection__arrow"
+                                                                        role="presentation"><b role="presentation"></b></span></span></span><span
+                                                                        class="dropdown-wrapper"
+                                                                        aria-hidden="true"></span></span>
+                                                                    <input class="fhs-textbox require_check_address"
+                                                                           style="display: none;" type="text"
+                                                                           validate_type="text"
+                                                                           placeholder="Nhập quận/huyện"
+                                                                           id="fhs_address_ward" name="district"
+                                                                           value="" maxlength="200">
+                                                                </div>
+                                                            </div>
+                                                            <div class="fhs-input-alert"></div>
+                                                        </div>
+                                                        <div class="fhs-input-box fhs-input-group-horizontal-shippingaddress">
+                                                            <label>Địa chỉ nhận hàng</label>
+                                                            <div class="fhs-input-item">
+                                                                <div class="fhs-input-group">
+                                                                    <input class="fhs-textbox require_check_address"
+                                                                           type="text" validate_type="text"
+                                                                           placeholder="Nhập địa chỉ nhận hàng"
+                                                                           id="fhs_address_street" name="address"
+                                                                           value="" maxlength="200">
+                                                                    <span class="fhs-input-icon fhs-textbox-alert"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="fhs-input-alert"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fhs_checkout_block_address_popup_btn">
+                                                        <div class="fhs-btn-box">
+                                                            <button type="button" title="Lưu địa chỉ"
+                                                                    class="fhs-btn-confirm fhs-btn-saveaddress"
+                                                                    disabled=""><span>Lưu địa chỉ</span></button>
+                                                            <button type="button" title="Hủy"
+                                                                    class="fhs-btn-back lg-close fhs-btn-saveaddress-cancel lg-close">
+                                                                <span>Hủy</span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script type="text/javascript">
+                                                    $jq("#fhs_address_country_select").select2({
+                                                        placeholder: "Chọn quốc gia",
+                                                        allowClear: false
+                                                    });
+                                                    $jq("#fhs_address_city_select").select2({
+                                                        placeholder: "Chọn tỉnh/thành Phố",
+                                                        allowClear: false
+                                                    });
+                                                    $jq("#fhs_address_district_select").select2({
+                                                        placeholder: "Chọn quận/huyện",
+                                                        allowClear: false
+                                                    });
+                                                    $jq("#fhs_address_wards_select").select2({
+                                                        placeholder: "Chọn phường/Xã",
+                                                        allowClear: false
+                                                    });
+                                                </script>
+                                            </div>
+                                            <div class="fhs_checkout_block_loading">
+                                                <!--                                                <div>-->
+                                                <!--                                                    <div id="default-icon-loading"-->
+                                                <!--                                                         style="height: 40px; width: 40px; background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fpointstore/loading.png?q=101574') no-repeat center center transparent; background-size: 40px;"></div>-->
+                                                <!--                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Shipping address end -->
+
+                                    <!-- Shipping Method start -->
+                                    <div id="fhs_checkout_block_shippingmethod" class="fhs_checkout_block">
+                                        <div class="fhs_checkout_block_title">Phương thức vận chuyển</div>
+                                        <div class="fhs_checkout_block_content">
+                                            <div class="fhs_checkout_block_radio_list">
+                                                <div id="fhs_checkout_shippingmethod_title"
+                                                     class="fhs_checkout_block_radio_list_title"></div>
+                                                <div>
+                                                    <ul id="fhs_checkout_shippingmethod"
+                                                        class="fhs_checkout_block_radio_list_items">
+                                                        <li class="fhs_checkout_block_radio_list_item fhs_radio_top">
+                                                            <div><label class="fhs-radio-big">
+                                                                <div style="font-weight: 600;">Giao hàng tiêu chuẩn:
+                                                                    30.000 đ
+                                                                </div>
+                                                                <input type="radio"
+                                                                       id="fhs_checkout_shippingmethod_vietnamshippingnormal_vietnamshippingnormal"
+                                                                       name="fhs_checkout_shippingmethod_option"
+                                                                       class="fhs_checkout_shippingmethod_option"
+                                                                       value="vietnamshippingnormal_vietnamshippingnormal"
+                                                                       checked=""><span
+                                                                    class="radiomark-big"></span></label></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div id="fhs_checkout_shippingmethod_msg"
+                                                     class="fhs_checkout_block_radio_list_msg" style="display: none;">
+                                                    Quý khách vui lòng điền tên và địa chỉ giao nhận trước.
+                                                </div>
+                                            </div>
+                                            <div class="fhs_checkout_block_loading">
+                                                <!--                                                <div>-->
+                                                <!--                                                    <div id="default-icon-loading"-->
+                                                <!--                                                         style="height: 40px; width: 40px; background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fpointstore/loading.png?q=101574') no-repeat center center transparent; background-size: 40px;"></div>-->
+                                                <!--                                                </div>-->
+                                            </div>
+                                        </div>
+                                        <div class="fhs_checkout_block_alert"></div>
+                                    </div>
+                                    <!-- Shipping Method end -->
+
+                                    <!-- Payment method start -->
+                                    <div id="fhs_checkout_block_paymentmethod" class="fhs_checkout_block">
+                                        <div class="fhs_checkout_block_title">Phương thức thanh toán</div>
+                                        <div class="fhs_checkout_block_content">
+                                            <div class="fhs_checkout_block_radio_list">
+                                                <div>
+                                                    <ul id="fhs_checkout_paymentmethod"
+                                                        class="fhs_checkout_block_radio_list_items">
+
+
+                                                        <li class="fhs_checkout_block_radio_list_item cashondelivery">
+                                                            <div class="fhs_checkout_paymentmethod_with_tutorial"
+                                                                 id="tutorial_cashondelivery">
+                                                                <div class="fhs-radio-big-with-icon-container">
+                                                                    <label class="fhs-radio-big fhs-raido-big-with-icon">
+                                                                        <div class="fhs-payment-name-with-icon-container">
+                                                                            <div style="background: url(https://cdn0.fahasa.com/skin/frontend/base/default/images/payment_icon/ico_cashondelivery.svg?q=102176) no-repeat center center;width: 40px;"></div>
+                                                                            <div class="fhs-payment-name">Thanh toán
+                                                                                bằng tiền mặt khi nhận hàng
+                                                                            </div>
+                                                                            <input type="radio"
+                                                                                   id="fhs_checkout_paymentmethod_cashondelivery"
+                                                                                   name="fhs_checkout_paymentmethod_option"
+                                                                                   class="fhs_checkout_paymentmethod_option"
+                                                                                   value="cashondelivery" checked="">
+                                                                            <span class="radiomark-big"></span>
+                                                                        </div>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="fhs_checkout_block_loading">
+                                                <!--                                                <div>-->
+                                                <!--                                                    <div id="default-icon-loading"-->
+                                                <!--                                                         style="height: 40px; width: 40px; background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fpointstore/loading.png?q=101574') no-repeat center center transparent; background-size: 40px;"></div>-->
+                                                <!--                                                </div>-->
+                                            </div>
+                                        </div>
+                                        <div class="fhs_checkout_block_alert"></div>
+                                    </div>
+                                    <!-- Payment method end -->
+
+                                    <!-- Membership Fahasa start -->
+
+                                    <!-- Membership Fahasa end -->
+
+                                    <!-- Promotion start -->
+
+
+                                    <style>
+                                        @media screen and (max-width: 992px) {
+                                            .fhs-input-group-horizontal-coupon > .fhs_label_coupon_label {
+                                                display: none;
+                                            }
+                                        }
+                                    </style>
+                                    <!--                  <div class="fhs_checkout_block fhs_checkout_block_coupon_mobile">-->
+                                    <!--                    <div class="fhs_checkout_block_title" onclick="fhs_promotion.showEventCart();">-->
+                                    <!--                      <img style="padding-right: 8px;" src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_coupon_orange.svg?q=101574">-->
+                                    <!--                      <span>Chọn mã khuyến mãi</span>-->
+                                    <!--                      <div class="fhs_checkout_block_title_icon_viewmore"><img src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/chevron-right.svg?q=101574"></div>-->
+                                    <!--                    </div>-->
+                                    <!--                    <div class="fhs_checkout_block_content" style="display:none;">-->
+                                    <!--                      <div class="fhs_label_coupon_label"></div>-->
+                                    <!--                    </div>-->
+                                    <!--                  </div>-->
+                                    <!-- Promotion end -->
+
+                                    <!-- Source tracking start -->
+                                    <!-- Source tracking end -->
+
+                                    <!-- Other information start -->
+
+                                    <!-- Other information end -->
+
+                                    <!-- checkout start -->
+                                    <div class="fhs_checkout_block">
+                                        <div class="fhs_checkout_block_title">Kiểm tra lại đơn hàng</div>
+                                        <div class="fhs_checkout_block_content">
+                                            <div id="fhs_checkout_products" class="fhs_checkout_products">
+                                                <div th:each="item: ${cart.getCartDetails()}"
+                                                     th:if="${item.isSelected()}" class="fhs_checkout_products_item">
+                                                    <div class="fhs_checkout_products_item_img"><img
+                                                            th:src="${item.product.image}"></div>
+                                                    <div class="fhs_checkout_products_item_detail">
+                                                        <div class="fhs_checkout_products_item_name">
+                                                            <div th:text="${item.product.productName}"></div>
+                                                        </div>
+                                                        <div th:text="${item.product.getFormattedDiscountPrice() + ' đ'}"
+                                                             class="fhs_checkout_products_item_price">
+                                                            <div></div>
+                                                            <div th:text="${item.getProduct().getFormattedPrice() + ' đ'}"
+                                                                 class="fhs_checkout_products_item_original_price"></div>
+                                                        </div>
+                                                        <div class="fhs_checkout_products_item_qty"
+                                                             th:text="${item.quantity}"></div>
+                                                        <div class="fhs_checkout_products_item_total"
+                                                             th:text="${item.getProduct().getFormattedPriceString(item.getProduct().getDiscountPrice() * item.getQuantity()) + ' đ'}"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fhs_checkout_total fhs_checkout_total_mobile">
+                                                <div class="fhs_checkout_total_subtotal">
+                                                    <div>Thành tiền</div>
+                                                    <div th:text="${df.format(cart.totalPrice).replace(',', '.')}"></div>
+                                                </div>
+                                                <div class="fhs_checkout_total_shipping">
+                                                    <div>Phí vận chuyển (Giao hàng tiêu chuẩn)</div>
+                                                    <div>30.000 đ</div>
+                                                </div>
+                                                <div class="fhs_checkout_total_grand_total">
+                                                    <div>Tổng Số Tiền (gồm VAT)</div>
+                                                    <div th:text="${df.format(cart.totalPrice+30000).replace(',', '.')}"></div>
+                                                </div>
+                                            </div>
+                                            <div class="fhs-bsidebar">
+                                                <div class="fhs-bsidebar-content">
+                                                    <div class="container">
+                                                        <div class="fhs_checkout_total fhs_checkout_total_desktop">
+                                                            <div class="fhs_checkout_total_subtotal">
+                                                                <div>Thành tiền</div>
+                                                                <div th:text="${df.format(cart.totalPrice).replace(',', '.')}"></div>
+                                                            </div>
+                                                            <div class="fhs_checkout_total_shipping">
+                                                                <div>Phí vận chuyển (Giao hàng tiêu chuẩn)</div>
+                                                                <div>30.000 đ</div>
+                                                            </div>
+                                                            <div class="fhs_checkout_total_grand_total">
+                                                                <div>Tổng Số Tiền (gồm VAT)</div>
+                                                                <div th:text="${df.format(cart.totalPrice+30000).replace(',', '.')}"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="fhs_checkout_bottom">
+                                                            <div>
+                                                                <div class="fhs_checkout_total_grand_total">
+                                                                    <div>Tổng Số Tiền (gồm VAT)</div>
+                                                                    <div>228.000 đ</div>
+                                                                </div>
+                                                                <div><a href="/user/cart/"><span
+                                                                        style="padding-right: 8px;"><img
+                                                                        src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/btn_back.svg?q=101574"></span><span>Quay về giỏ hàng</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="fhs-btn-box">
+                                                                    <button type="button" title="Xác nhận thanh toán"
+                                                                            class="fhs-btn-confirm fhs-btn-orderconfirm">
+                                                                        <span>Xác nhận thanh toán</span></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="fhs_checkout_block_loading">
+                                                <!--                                                <div>-->
+                                                <!--                                                    <div id="default-icon-loading"-->
+                                                <!--                                                         style="height: 40px; width: 40px; background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fpointstore/loading.png?q=101574') no-repeat center center transparent; background-size: 40px;"></div>-->
+                                                <!--                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <link rel="stylesheet" type="text/css"
+                                          href="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/css/event_cart.css?q=101574"
+                                          media="all">
+                                    <div id="fhs_checkout_block_event_cart" class="fhs_checkout_block"
+                                         style="display: none;">
+                                        <div class="fhs_checkout_block_title">Kiểm tra lại đơn hàng</div>
+                                        <div class="fhs_checkout_block_content">
+                                            <div id="event_cart">
+                                                <input type="hidden" id="event_cart_data" name="event_cart" value="0">
+                                                <div class="event_cart_header">
+                                                </div>
+                                                <div class="event_cart_notificate" style="display: none;">
+                                                    Địa chỉ nhận hàng tại các khu vực sau của nội: <a
+                                                        onclick="fhs_onestepcheckout.openEventCartNotiPopup();">Bấm xem
+                                                    chi tiết</a>
+                                                </div>
+                                                <div class="event_cart_content">
+                                                </div>
+                                                <div class="event_cart_cancel">
+                                                    <input class="event_cart_cancel_btn"
+                                                           onclick="fhs_onestepcheckout.clearChoice();" type="button"
+                                                           value="">
+                                                </div>
+                                                <div class="event_cart_resutl" style="display: none;">
+                                                    <div class="event_cart_resutl_title"></div>
+                                                    <div class="event_cart_resutl_content"></div>
+                                                </div>
+                                                <div class="event_cart_footer" style="display: none;">
+                                                </div>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <div class="fhs_checkout_block_loading">
+                                                <div>
+                                                    <div id="default-icon-loading"
+                                                         style="height: 40px; width: 40px; background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fpointstore/loading.png?q=101574') no-repeat center center transparent; background-size: 40px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="fahasa_dialog_wrapper-cover"
+                                         onclick="$jq('.fahasa_dialog_wrapper').fadeOut();$jq('#fahasa_dialog_wrapper-cover').fadeOut();"></div>
+                                    <div class="fahasa_dialog_wrapper">
+                                        <a class="fahasa_dialog_wrapper_close"
+                                           onclick="$jq('.fahasa_dialog_wrapper').fadeOut();$jq('#fahasa_dialog_wrapper-cover').fadeOut();">
+                                            <div class="fahasa_dialog_wrapper_close_btn">
+                                                <span class="fa fa-times fa-6"></span>
+                                            </div>
+                                        </a>
+                                        <div class="fahasa_dialog">
+                                            <div class="fahasa_dialog_header">CHI TIẾT ĐIỀU KIỆN CHƯA THỎA</div>
+                                            <div class="fahasa_dialog_content fhs_scrollbar">
+                                                <ul class="fahasa_dialog_content_list">
+                                                    <li>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="fahasa_dialog_footer">
+                                                <button type="button" onclick="location.href='/checkout/cart/'"
+                                                        class="fahasa_dialog_footer_btn">
+	    <span>
+		Xem giỏ hàng
+	    </span>
+                                                </button>
+                                                <button type="button"
+                                                        onclick="fhs_onestepcheckout.onclickEventCartConfirmButton();"
+                                                        class="fahasa_dialog_footer_btn confirm">
+	    <span>
+		Xem trang chương trình
+	    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- event cart option type end -->
+
+                                    <!-- Popups start-->
+                                    <!--                                    <div id="popup-default-loading" style="padding-top: 10px;">-->
+                                    <!--                                        <div id="popup-default-loading-icon" style="padding: 15px 0;">-->
+                                    <!--                                            <div id="container-progress-loading"-->
+                                    <!--                                                 style="position: relative;text-align:center;">-->
+                                    <!--                                                <svg viewBox="0 0 100 100" style="height: 90px;">-->
+                                    <!--                                                    <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96"-->
+                                    <!--                                                          stroke="#eee" stroke-width="4" fill-opacity="0"></path>-->
+                                    <!--                                                    <path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96"-->
+                                    <!--                                                          stroke="rgb(247,148,30)" stroke-width="4" fill-opacity="0"-->
+                                    <!--                                                          style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 301.635;"></path>-->
+                                    <!--                                                </svg>-->
+                                    <!--                                                <div class="progressbar-text"-->
+                                    <!--                                                     style="color: rgb(247, 148, 30); position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; font-size: 2.3rem; transform: translate(-50%, -50%);">-->
+                                    <!--                                                    0%-->
+                                    <!--                                                </div>-->
+                                    <!--                                            </div>-->
+                                    <!--                                            &lt;!&ndash;<center><div id="default-icon-loading" style="height: 128px; width: 128px; background: url('https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/fpointstore/loading.png?q=101574') no-repeat center center transparent; background-size: 110px;"></div></center>&ndash;&gt;-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div id="popup-default-loading-logo" class="popup-fahasa-alert-logo"-->
+                                    <!--                                             style="display: none;">-->
+                                    <!--                                            <center><img-->
+                                    <!--                                                    src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo-alert-fail.png">-->
+                                    <!--                                            </center>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="popup-default-loading-content">-->
+                                    <!--                                            <div id="popup-default-loading-context-text"-->
+                                    <!--                                                 class="popup-fahasa-default-content-text" style="padding: 15px;">-->
+                                    <!--                                                Đơn hàng của bạn đã được tiếp nhận và đang xử lý...-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="popup-fahasa-default-footer-small btn-submit col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+                                    <!--                                            <button type="button" onclick="fhs_onestepcheckout.tryLoadOrderStatus();"-->
+                                    <!--                                                    id="popup-default-loading-confirm"-->
+                                    <!--                                                    class="popup-fahasa-default-alert-confirm" style="display: none;">-->
+                                    <!--	    <span>-->
+                                    <!--		Thử lại-->
+                                    <!--	    </span>-->
+                                    <!--                                            </button>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <!--                                    <div id="popup-fahasa-alert">-->
+                                    <!--                                        <div class="popup-fahasa-alert-logo">-->
+                                    <!--                                            <center><img-->
+                                    <!--                                                    src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/logo-alert-fail.png">-->
+                                    <!--                                            </center>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="popup-fahasa-default-alert-content">-->
+                                    <!--                                            <div class="popup-fahasa-default-content-text">-->
+
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
+                                    <!--                                        <div class="popup-fahasa-default-footer-small btn-submit col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+                                    <!--                                            <button type="button"-->
+                                    <!--                                                    onclick="$jq('#popup-fahasa-alert').fadeOut();$jq(' .youama-ajaxlogin-cover').fadeOut();fhs_onestepcheckout.checkRedirect();"-->
+                                    <!--                                                    class="popup-fahasa-default-alert-confirm lg-close">-->
+                                    <!--	    <span>-->
+                                    <!--		Đồng ý-->
+                                    <!--	    </span>-->
+                                    <!--                                            </button>-->
+                                    <!--                                        </div>-->
+                                    <!--                                    </div>-->
+                                    <div id="popup_fahasa_shipping_confirm">
+                                        <div class="popup-fahasa-default-header-small"
+                                             style="text-transform: uppercase;">
+                                            Xác nhận địa chỉ giao hàng
+                                        </div>
+                                        <div class="popup-fahasa-default-content">
+                                            <div id="shipping_address_confirm_content"></div>
+                                        </div>
+                                        <div class="popup-fahasa-default-footer-small btn-submit col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <button id="btn_shipping_confirm_cancel"
+                                                    onclick="$jq('#popup_fahasa_shipping_confirm').fadeOut();$jq(' .youama-ajaxlogin-cover').fadeOut();"
+                                                    type="button"
+                                                    class="popup-fahasa-default-confirm-small cancel lg-close">
+	    <span>
+		Hủy
+	    </span>
+                                            </button>
+                                            <button id="btn_shipping_confirm_confirm" onclick="is_confirm_shipping_addres = false;
+							$jq(' .youama-ajaxlogin-cover').fadeOut();
+							$jq('#popup_fahasa_shipping_confirm').fadeOut();
+							fhs_onestepcheckout.createOrder();" type="button"
+                                                    class="popup-fahasa-default-confirm-small confirm lg-yes">
+	    <span>
+		Xác nhận
+	    </span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                    <script type="text/javascript">
+
+                                        $jq(document).ready(function () {
+                                            jQuery("#duplicated-order-pass").click(function () {
+                                                jQuery("#pass-duplicated-order").val(true);
+                                                jQuery('#duplicated-order').hide();
+                                                jQuery(".duplicated-order-cover").fadeOut();
+                                            });
+
+                                            jQuery("#duplicated-item-pass").click(function () {
+                                                jQuery("#pass-duplicated-item").val(true);
+                                                jQuery('#duplicated-item').hide();
+                                                jQuery(".duplicated-order-cover").fadeOut();
+                                                oscPlaceOrder(this);
+                                            });
+
+
+                                        });
+
+
+                                        /// click icon X to close :
+                                        function closePopupTutorial() {
+                                            if ($jq('#popup-vnpay-tutorial').is(":visible")) {
+                                                $jq('#popup-vnpay-tutorial').fadeOut(0);
+                                                $jq('.youama-ajaxlogin-cover').fadeOut(0);
+                                            }
+                                        }
+                                    </script>
+                                    <!-- check duplicated product start -->
+                                    <div id="popup-vnpay-tutorial" style="display: none;">
+                                        <div class="popup-vnpay-tutorial-detail">
+                                            <div class="popup-vnpay-tutorial-title">
+                                                <div class="fhs-vnpay-title">
+                                                    <div class="fhs-vnpay-title-center">Điều kiện áp dụng</div>
+                                                    <div class="fhs-vnpay-title-right lg-close"
+                                                         onclick="closePopupTutorial();">
+                                                        <div><img
+                                                                src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_delete_gray.svg?q=101574">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="popup-vnpay-tutorial-content">
+                                                <div id="fhs-vnpay-detail-content"
+                                                     class="fhs-vnpay-detail-content"></div>
+                                            </div>
+                                        </div>
+                                        <div class="popup-vnpay-tutorial-bottom">
+                                            <div id="popup-vnpay-tutorial_info_close" class="close-popup-event"
+                                                 style="display: none;">
+                                                <button type="button" title="Đóng" class="btn-close-popup-event"><span>Đóng</span>
+                                                </button>
+                                            </div>
+                                            <!--<div id="popup_event_cart_detail_close" class="close-popup-event" style="display: block;"></div>-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Access Trade Block Begin-->
+                <script src="https://static.accesstrade.vn/js/trackingtag/tracking.min.js"></script>
+                <!-- Asidebar Begin-->
+                <style type="text/css">
+                    .fhs-asidebar {
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        z-index: 1001;
+                        display: flex;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: -webkit-flex;
+                        flex-direction: row;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: flex-start;
+                        -webkit-align-items: flex-start;
+                        -webkit-justify-content: flex-start;
+                        justify-content: flex-start;
+                    }
+
+                    .fhs-asidebar-tab {
+                        position: absolute;
+                        width: 48px;
+                        top: 22vh;
+                        z-index: 1;
+                        -webkit-transform: translate(-100%, 0);
+                        -ms-transform: translate(-100%, 0);
+                        -moz-transform: translate(-100%, 0);
+                        transform: translate(-100%, 0);
+                    }
+
+                    .fhs-asidebar-tab-items {
+                        padding: 0 !important;
+                    }
+
+                    .fhs-asidebar-tab-items > li {
+                        background-color: #7A7E7F;
+                        padding: 8px 0;
+                        position: relative;
+                        cursor: pointer;
+                        user-select: none;
+                        width: 100%;
+                        height: 48px;
+                    }
+
+                    .fhs-asidebar-tab-items > li:first-of-type {
+                        -moz-border-top-left-radius: 8px;
+                        -webkit-border-top-left-radius: 8px;
+                    }
+
+                    .fhs-asidebar-tab-items > li:last-of-type {
+                        -moz-border-radius-bottomleft: 8px;
+                        -webkit-border-bottom-left-radius: 8px;
+                    }
+
+                    .fhs-asidebar-tab-items > li > .icon {
+                        padding: 8px 0;
+                        height: 24px;
+                    }
+
+                    .fhs-asidebar.active.productviewed .fhs-asidebar-tab-items > li.productviewed,
+                    .fhs-asidebar.active.suggestion .fhs-asidebar-tab-items > li.suggestion,
+                    .fhs-asidebar.active.seriesbook .fhs-asidebar-tab-items > li.seriesbook,
+                    .fhs-asidebar-tab-items > li:hover {
+                        background-color: #C92127;
+                    }
+
+                    .fhs-asidebar-tab-items > li:hover .fhs_tooltip_asidebar {
+                        visibility: visible;
+                    }
+
+                    .fhs-asidebar-content {
+                        width: 0;
+                        -webkit-transition: all .1s;
+                        transition: all .1s;
+                        background-color: white;
+                        height: 100%;
+                        overflow: hidden;
+                    }
+
+                    .fhs-asidebar.active > .fhs-asidebar-content {
+                        -webkit-box-shadow: 0 0 10px 2px #6c6c78;
+                        -moz-box-shadow: 0 0 10px 2px #6c6c78;
+                        box-shadow: 0 0 10px 2px #6c6c78;
+                        width: 400px;
+                    }
+
+                    .fhs-asidebar-content-item {
+                        height: 100%;
+                    }
+
+                    .fhs-asidebar-content-item .fhs-product-grid-content {
+                        height: calc(100% - 80px);
+                        overflow-y: scroll;
+                        align-items: flex-start !important;
+                        -webkit-align-items: flex-start !important;
+                        -webkit-justify-content: flex-start !important;
+                        justify-content: flex-start !important;
+                    }
+
+                    .fhs-asidebar-content-item-bottom {
+                        height: 80px;
+                        display: flex;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: -webkit-flex;
+                        flex-direction: column;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -webkit-align-items: center;
+                        -webkit-justify-content: center;
+                        justify-content: center;
+                    }
+
+                    .fhs-asidebar-content-item-bottom button {
+                        display: flex;
+                        justify-content: center;
+                        color: #C92127;
+                        border: 2px solid #C92127;
+                        padding: 6px;
+                        width: 160px;
+                        font-size: 1em;
+                        font-weight: 700;
+                        transition: all 0.3s;
+                        box-shadow: 0px 4px 6px hsl(0, 0%, 90%);
+                        -moz-box-shadow: 0px 4px 6px hsl(0, 0%, 90%);
+                        -webkit-box-shadow: 0px 4px 6px hsl(0, 0%, 90%);
+                        border-radius: 8px;
+                        -moz-border-radius: 8px;
+                        -webkit-border-radius: 8px;
+                        text-transform: uppercase;
+                        transition: all 0.3s;
+                    }
+
+                    .fhs-asidebar-content-item-bottom button:hover {
+                        box-shadow: 0px 6px 8px hsl(0, 0%, 90%);
+                        -moz-box-shadow: 0px 6px 8px hsl(0, 0%, 90%);
+                        -webkit-box-shadow: 0px 6px 8px hsl(0, 0%, 90%);
+                        transform: scale(1.03);
+                    }
+
+                    @media screen and (max-width: 1000px) {
+                        .fhs-asidebar {
+                            display: none;
+                        }
+                    }
+                </style>
+                <div class="fhs-asidebar">
+                    <div class="fhs-asidebar-content">
+                        <div class="fhs-asidebar-content-item ">
+                            <div class="fhs-product-grid-content fhs_scrollbar">
+                                <ul class="fhs-product-grid-list"></ul>
+                            </div>
+                            <div class="fhs-asidebar-content-item-bottom">
+                                <a href="/productviewed">
+                                    <button type="button" is_buynow="true" class="">
+                                        <span>Xem thêm</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript"
+                        src="https://cdn0.fahasa.com/js/lib/personalization.js?q=101574"></script>
+                <script type="text/javascript">
+                    if (typeof personalization === "undefined") {
+                        var personalization = new Personalization();
+                    }
+                </script>
+
+                <script type="text/javascript" src="https://cdn0.fahasa.com/js/lib/seriesbook.js?q=101574"></script>
+                <script type="text/javascript">
+                    if (typeof seriesbook_page === "undefined") {
+                        var seriesbook_page = new SeriesBook();
+                    }
+                </script>
+
+                <script type="text/javascript">
+                    $jq('.fhs-asidebar-tab-items li').click(function () {
+                        if ($jq(this).hasClass('productviewed')) {
+                            if ($jq(".fhs-asidebar").hasClass('active') && $jq(".fhs-asidebar").hasClass('productviewed')) {
+                                $jq(".fhs-asidebar").removeClass('active');
+                            } else {
+                                removeAllAsidebarActive();
+                                $jq(".fhs-asidebar").addClass('active');
+                                $jq(".fhs-asidebar").addClass('productviewed');
+                                $jq('.fhs-asidebar-content-item-bottom a').attr('href', '/productviewed');
+
+                                product_viewed_asidebar.initAsizebar();
+                            }
+                        } else if ($jq(this).hasClass('suggestion')) {
+                            if ($jq(".fhs-asidebar").hasClass('active') && $jq(".fhs-asidebar").hasClass('suggestion')) {
+                                $jq(".fhs-asidebar").removeClass('active');
+                            } else {
+                                removeAllAsidebarActive();
+                                $jq(".fhs-asidebar").addClass('active');
+                                $jq(".fhs-asidebar").addClass('suggestion');
+                                $jq('.fhs-asidebar-content-item-bottom a').attr('href', '/daily-suggestion');
+
+                                personalization.initAsizebar();
+                            }
+                        } else if ($jq(this).hasClass('seriesbook')) {
+                            if ($jq(".fhs-asidebar").hasClass('active') && $jq(".fhs-asidebar").hasClass('seriesbook')) {
+                                $jq(".fhs-asidebar").removeClass('active');
+                            } else {
+                                removeAllAsidebarActive();
+                                $jq(".fhs-asidebar").addClass('active');
+                                $jq(".fhs-asidebar").addClass('seriesbook');
+                                if (fhs_account.isLoggined()) {
+                                    $jq('.fhs-asidebar-content-item-bottom a').attr('href', '/tryout/seriesbook/');
+                                } else {
+                                    $jq('.fhs-asidebar-content-item-bottom a').attr('href', '/all-series.html');
+                                }
+
+                                seriesbook_page.initAsizebar();
+                            }
+                        }
+                    });
+
+                    function removeAllAsidebarActive() {
+                        $jq(".fhs-asidebar").removeClass('productviewed');
+                        $jq(".fhs-asidebar").removeClass('suggestion');
+                        $jq(".fhs-asidebar").removeClass('seriesbook');
+                    }
+
+                    $jq(document).on('click', function (e) {
+                        if ($jq(e.target).closest(".fhs-asidebar").length === 0) {
+                            $jq(".fhs-asidebar").removeClass('active');
+                        }
+                    });
+                </script>
+                <!-- Asidebar End-->
+                <div id="ajaxconfig_info" style="display:none">
+                    <a href="https://www.fahasa.com/"></a>
+                    <div><img src="https://cdn0.fahasa.com/media/theme/default/loader.gif" alt="Loading Image"></div>
+                    <button name="black" value="0.7"></button>
+                    <input type="hidden" id="enable_module" value="1">
+                    <input class="effect_to_cart" type="hidden" value="">
+                    <input class="title_shopping_cart" type="hidden" value="Thanh Toán">
+                    <input class="title_shopping_continue" type="hidden" value="Chọn Thêm">
+                    <input class="title_shopping_wishlist" type="hidden" value="Xem Yêu Thích">
+                    <input class="title_shopping_compare" type="hidden" value="Xem So Sánh">
+                    <input class="confirm_delete_product" type="hidden"
+                           value="Are you sure you would like to remove this item ?">
+                    <input class="title_add_to_cart" type="hidden"
+                           value="Sản phẩm đã được thêm thành công vào giỏ hàng của bạn">
+                    <input class="title_add_to_wishlist" type="hidden"
+                           value="Sản phẩm đã được thêm thành công vào ưa thích của bạn">
+                    <input class="title_add_to_compare" type="hidden"
+                           value="Item was successfully added to your compare">
+                    <input class="using_ssl" type="hidden" value="0">
+
+
+                </div>
+                <div id="ajaxcart-checkout-content" style="display:none;"></div>
+                <div id="productHaveOption" style="display:block;"></div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<th:block layout:insert="~{fragments/client/scriptTag}"/>
+<script>
+    let form = document.getElementById('confirm-form');
+    let btn = document.getElementsByClassName('fhs-btn-orderconfirm')[0];
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        form.submit();
+    });
+</script>
+</body>
+</html>

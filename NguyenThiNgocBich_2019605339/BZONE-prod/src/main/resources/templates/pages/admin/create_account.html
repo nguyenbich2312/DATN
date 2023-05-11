@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BZone</title>
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/admin/create_account.css}">
+    <link rel="icon" href="/image/p.png" type="image/x-icon">
+</head>
+<body>
+<input type="checkbox" id="nav-toggle">
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <h2><span class="lab la-accusoft"></span><span>BZone</span></h2>
+    </div>
+
+    <div class="sidebar-menu">
+        <ul>
+            <li>
+                <a href="/admin"><span class="las la-igloo"></span>
+                    <span>Trang chủ</span></a>
+            </li>
+            <li>
+                <a href="/admin/create-account" class="active"><span class="las la-users"></span>
+                    <span>Tạo tài khoản</span></a>
+            </li>
+            <li>
+                <a href="/admin/view-account"><span class="las la-user-circle"></span>
+                    <span>Xem tài khoản</span></a>
+            </li>
+            <li>
+                <a href="/perform_logout"><span class="las la-sign-out-alt"></span>
+                    <span>Đăng xuất</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
+            Giám đốc
+        </h2>
+
+
+        <div class="user-wrapper">
+            <img src="/image/ico_account_gray.png" width="24px" height="24px" alt="">
+            <div>
+                <h4 th:text="${authen_user.firstName + ' ' + authen_user.lastName}"></h4>
+<!--                <small th:text="${authen_user.role.roleName}"></small>-->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form action="/admin/create-account" method="post">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Tạo tài khoản</span>
+
+                        <div class="fields" th:object="${user}">
+                            <div class="input-field">
+                                <label>Họ</label>
+                                <input th:field="*{lastName}" type="text" placeholder="Nhập họ của bạn" required>
+                                <div class="error-msg">
+                                    <p th:each="err : ${#fields.errors('lastName')}" th:text="${err}"></p>
+
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label>Tên</label>
+                                <input th:field="*{firstName}" type="text" placeholder="Nhập tên của bạn" required>
+                                <div class="error-msg">
+                                    <p th:each="err : ${#fields.errors('firstName')}" th:text="${err}"></p>
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Ngày sinh</label>
+                                <input name="date" type="date" placeholder="Enter birth date" required>
+                                <div class="error-msg"></div>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Email</label>
+                                <input th:field="*{email}" type="email" placeholder="Nhập email" required>
+                                <div class="error-msg">
+                                    <p th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>
+
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Số điện thoại</label>
+                                <input th:field="*{phoneNumber}" type="text" placeholder="Nhập số điện thoại"
+                                       required>
+                                <div class="error-msg">
+                                    <p th:each="err : ${#fields.errors('phoneNumber')}" th:text="${err}"></p>
+                                </div>
+                            </div>
+                            <div class="input-field">
+                                <label>Địa chỉ</label>
+                                <input th:field="*{address}" type="text" placeholder="Nhập địa chỉ"
+                                       required>
+                                <div class="error-msg">
+                                    <p th:each="err : ${#fields.errors('address')}" th:text="${err}"></p>
+                                </div>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Giới tính</label>
+                                <select th:field="*{gender}" required>
+                                    <!--                  <option disabled selected>Select gender</option>-->
+                                    <option value="true">Nữ</option>
+                                    <option value="false">Nam</option>
+                                </select>
+                                <div class="error-msg"></div>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Quyền</label>
+                                <select name="role_id" required>
+<!--                                    <option disabled selected>Select Role</option>-->
+                                    <option th:each="role : ${roles}" th:value="${role.id}"
+                                            th:text="${role.roleName}"></option>
+                                </select>
+                                <div class="error-msg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="details ID">
+                        <button class="nextBtn">
+                            <span class="btnText">Submit</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                        <img th:if="${success}" src="/image/success.png">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>

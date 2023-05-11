@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1, maximun-scale = 1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BZone</title>
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="icon" href="/image/p.png" type="image/x-icon">
+    <style>
+        .statistic {
+            padding: 20px 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bg-red {
+            background: #ff7676 !important;
+            color: #fff;
+        }
+
+        .statistic .icon {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            min-width: 40px;
+            max-width: 40px;
+            color: #fff !important;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .statistic .icon i {
+            color: #fff !important;
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/manager.css}">
+    <script th:src="@{/JS/main.js}"></script>
+</head>
+<body>
+<th:block layout:insert="~{fragments/manager/header}"/>
+<div class="main-content">
+    <header>
+        <h2>
+            <label for="nav-toggle">
+                <span class="las la-bars"></span>
+            </label>
+            Quản lý
+        </h2>
+
+        <div class="user-wrapper">
+            <div>
+                <h4 th:text="${#authentication.getName().split('@')[0]}"></h4>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard content" style="color: black">
+            <div class="statistics row">
+                <div class="statistic shadow col-3">
+                    <div class="icon bg-red">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="text">
+                        <strong th:text="${numCategory}"></strong> <br> <small>Tổng danh mục hiện
+                        có</small>
+                    </div>
+                </div>
+                <div class="statistic shadow col-3">
+                    <div class="icon bg-red">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="text">
+                        <strong th:text="${numProduct}"></strong> <br> <small>Tổng sản phẩm hiện
+                        có</small>
+                    </div>
+                </div>
+                <div class="statistic shadow col-3">
+                    <div class="icon bg-red">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="text">
+                        <strong th:text="${numOrder}"></strong> <br> <small>Tổng đơn hàng hiện
+                        có</small>
+                    </div>
+                </div>
+                <div class="statistic shadow col-3">
+                    <div class="icon bg-red">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="text">
+                        <strong th:text="${numCustomer}"></strong> <br> <small>Tổng số lượng người đã đăng kí</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="revenues">
+                <h4 class="pl-2 pb-3">Thống kê doanh thu</h4>
+                <div class="total-revenue">
+                    <i class="fas fa-money-check-alt"></i> <span>Tổng doanh thu
+						: <span th:text="${sum}"></span>VNĐ</span>
+                </div>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <script
+                        src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+                <script th:inline="javascript">
+                    var ctx = document.getElementById('myChart').getContext(
+                        '2d');
+                    ctx.canvas.width = 1100;
+                    ctx.canvas.height = 500;
+                    var a = /*[[${T1}]]*/ [];
+                    var b = /*[[${T2}]]*/ [];
+                    var c = /*[[${T3}]]*/ [];
+                    var d = /*[[${T4}]]*/ [];
+                    var e = /*[[${T5}]]*/ [];
+                    var f = /*[[${T6}]]*/ [];
+                    var g = /*[[${T7}]]*/ [];
+                    var h = /*[[${T8}]]*/ [];
+                    var i = /*[[${T9}]]*/ [];
+                    var j = /*[[${T10}]]*/ [];
+                    var k = /*[[${T11}]]*/ [];
+                    var l = /*[[${T12}]]*/ [];
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4',
+                                'Tháng 5', 'Tháng 6','Tháng 7','Tháng 8','Tháng 9',
+                                'Tháng 10','Tháng 11','Tháng 12'],
+                            datasets: [{
+                                label: '# of Votes',
+                                data:[a,b,c,d,e,f,g,h,i,j,k,l],
+                                backgroundColor: ['rgba(227, 0, 0, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    'rgba(0,255,255,0.2)',
+                                    'rgba(128,128,128,0.2)',
+                                    'rgba( 184, 134, 11, 0.2)',
+                                    'rgba( 139, 0, 139, 0.2)',
+                                    'rgba( 139, 0, 0, 0.2)',
+                                    'rgba(233, 150, 122, 0.2)',
+                                    ],
+                                borderColor: ['rgba(255, 99, 132, 1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 159, 64, 1)',
+                                    'rgba(255, 159, 64, 1)',],
+                                borderWidth: 1
+                            }]
+                        },
+                    });
+                </script>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

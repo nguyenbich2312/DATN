@@ -1,0 +1,323 @@
+body{
+    background: #f8f6f0 !important;
+    color: #333333 !important;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow-x: hidden !important;
+}
+
+.popup-login-tab-item a {
+    color: #646464;
+    text-decoration: none;
+}
+.main {
+    margin: 0 auto;
+    min-height: 320px;
+    padding: 0px;
+    text-align: left;
+}
+
+.col1-layout .col-main {
+    float: none;
+    width: auto;
+}
+
+body, .login-container, bg-header-con, .ma-menu .login-container {
+    background: #F0F0F0 !important;
+}
+
+.login-container {
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.main .login-container .login-container-inner {
+    padding: 10px 0;
+    padding-top: 0;
+}
+@media (min-width: 768px) {
+    .login-container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .login-container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login-container {
+        width: 1230px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .login-container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.main .login-container .login-container-inner {
+    padding: 10px 0;
+    padding-top: 0;
+}
+
+.fhs_login_form {
+    background-color: white;
+}
+
+.fhs_login_form_content {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background-color: white;
+    padding: 30px;
+}
+
+.youama-login-window {
+    background-color: #fff;
+    position: relative;
+    width: 450px;
+    max-width: calc(100vw - 20px);
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.popup-login-tab {
+    padding: 24px 8px 8px 8px !important;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+.popup-login-tab > .popup-login-tab-item {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 8px;
+    user-select: none;
+    width: calc(50% - 16px);
+}
+
+.popup-login-tab > .popup-login-tab-item:last-child {
+    margin-right: 0 !important;
+}
+.popup-login-tab > .popup-login-tab-item hr {
+    font-size: 2em;
+    margin: 5px 0;
+    border: 1px solid #eee0;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: 20%;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+.popup-login-tab > .popup-login-tab-item:hover hr, .popup-login-tab > .popup-login-tab-item.active hr {
+    border: 1px solid #C92127;
+    width: 100%;
+}
+
+.popup-login-tab > .popup-login-tab-item.active a, .popup-login-tab .popup-login-tab-item:hover a {
+    text-decoration: none;
+    color: #C92127;
+}
+
+.popup-register-content {
+    display: none;
+    padding: 0 32px 16px 32px;
+}
+
+.fhs-input-box {
+    padding: 8px 0;
+    clear: both;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+label {
+    padding: 4px;
+    font-weight: normal;
+    color: #555555;
+}
+
+.youama-login-window label {
+    font-size: 1.1em;
+}
+
+.fhs-input-group {
+    position: relative;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.button, input {
+    height: 39px;
+    line-height: 1.42857;
+}
+.fhs-selectbox, .fhs-textbox {
+    width: 100%;
+    padding: .375rem 1.1em;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.fhs-input-box.fhs-input-send .fhs-input-group > .fhs-selectbox, .fhs-input-box.fhs-input-send .fhs-input-group > .fhs-textbox {
+    padding: .375rem 95px .375rem 1.2em;
+}
+
+.fhs-input-box.fhs-input-display .fhs-input-group > .fhs-input-icon {
+    display: block;
+    position: absolute;
+    right: 12px;
+    color: #2489F4;
+    cursor: pointer;
+    user-select: none;
+}
+.fhs-btn-box {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.fhs-btn-box > button {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 245px;
+    max-width: 100%;
+    font-size: 1.1em;
+    font-weight: 700;
+    transition: all 0.3s;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    padding: 8px 0;
+    margin: 8px 0;
+}
+.fhs-btn-box > .fhs-btn-coupon-copy, .fhs-btn-box > .fhs-btn-goto, .fhs-btn-box > .fhs-btn-confirm, .fhs-btn-box > .fhs-btn-recovery, .fhs-btn-box > .fhs-btn-register, .fhs-btn-box > .fhs-btn-login-link, .fhs-btn-box > .fhs-btn-login {
+    background: #C92127;
+    color: white;
+    border: none;
+}
+
+.fhs-btn-box > button:disabled {
+    background: rgb(224,224,224);
+    background: -moz-linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(224,224,224,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(224,224,224,1) 100%);
+    background: linear-gradient(90deg, rgba(224,224,224,1) 0%, rgba(224,224,224,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e0e0e0",endColorstr="#e0e0e0",GradientType=1);
+    border: none;
+    color: #636363;
+}
+.fhs-input-alert {
+    display: block;
+    margin-top: 8px;
+    color: #dc3545;
+}
+.popup-login-content {
+    padding: 0 32px 16px 32px;
+}
+
+.fhs-forget-pass {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    color: #C92127;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fhs-register-term {
+    text-align: center;
+    padding: 8px 0;
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+.fhs-popup-msg {
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+    color: #dc3545;
+}
+
+.popup-change-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 550;
+    padding: 24px 8px 8px 8px;
+}

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{client-layout}">
+<th:block layout:fragment="content">
+    <th:block layout:insert="~{fragments/client/header}"/>
+    <th:block layout:insert="~{pages/client/header-breadcrumbs}"/>
+    <th:block>
+        <div class="main">
+            <div>
+                <div class="container" style="background-color : transparent!important;">
+                </div>
+            </div>
+            <div class="container">
+                <div class="container-inner">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-left sidebar col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-left: 0px;">
+
+                            <div class="block block-account">
+                                <div class="block-title">
+                                    <strong><span>Tài khoản</span></strong>
+                                </div>
+                                <div class="block-content">
+                                    <ul>
+                                        <li><a th:href="@{/user/account/profile}">Thông tin tài
+                                            khoản</a>
+                                        </li>
+                                        <li class="current"><a th:href="@{/user/account/history}">Đơn hàng của tôi</a>
+                                        </li>
+                                        <li><a
+                                                th:href="@{/user/account/notify}">Thông
+                                            Báo</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-main col-lg-9 col-md-9 col-sm-12 col-xs-12 col-fhs-main-body">
+                            <ul id="admin_messages"></ul>
+                            <style>
+                                .fhs-input-box .fhs-input-group.checked-error .fhs-textbox-alert,
+                                .fhs-input-box.checked-error .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_fail.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+
+                                .fhs-input-box.checked-pass .fhs-input-group .fhs-textbox-alert {
+                                    background: url(https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_success.png) no-repeat center center;
+                                    -webkit-background-size: cover;
+                                    -moz-background-size: cover;
+                                    -o-background-size: cover;
+                                    background-size: cover;
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                }
+                            </style>
+                            <div class="my-tabslider-order">
+                                <style>
+                                    .my-tabslider-order {
+                                        background: white;
+                                    }
+
+                                    /* end css for main template */
+                                    .tab-container-order-history {
+                                        background: white;
+                                        margin-bottom: 10px;
+                                    }
+
+                                    .disabled-tabs-history {
+                                        transform: translate3d(0px, 0, 0) !important;
+                                    }
+
+                                    .tab-history-item {
+                                        text-align: center;
+                                        /*height : 65px;*/
+                                        padding: 10px;
+                                        position: relative;
+                                        cursor: pointer;
+                                    }
+
+                                    .tab-history-item:hover {
+                                        color: #F7941E;
+                                    }
+
+                                    .tab-history-item-text {
+                                        font-size: 14px;
+                                        font-weight: bold;
+
+                                    }
+
+                                    .tab-history-item-number {
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                    }
+
+                                    .tab-history-item-border {
+                                        height: 75%;
+                                        width: 1px;
+                                        background: #e0e0e0;
+                                        position: absolute;
+                                        top: 10px;
+                                        right: 0;
+                                    }
+
+                                    .tab-history-item-border-left {
+                                        height: 75%;
+                                        width: 1px;
+                                        background: #e0e0e0;
+                                        position: absolute;
+                                        top: 10px;
+                                        left: 0;
+                                    }
+
+                                    .tab-history-item-active {
+                                        border-bottom: 2px solid #F7941E;
+                                        color: #F7941E;
+                                    }
+
+                                    .page-title {
+                                        padding: 10px;
+                                    }
+
+                                    .order-history-swiper-button-prev {
+                                        position: absolute;
+                                        top: 40%;
+                                        left: 10px;
+                                        z-index: 1;
+                                        cursor: pointer;
+                                    }
+
+                                    .order-history-swiper-button-next {
+                                        position: absolute;
+                                        top: 40%;
+                                        right: 10px;
+                                        z-index: 1;
+                                        cursor: pointer;
+                                    }
+
+                                    .tab-container-order-history-container {
+                                        padding: 0px 30px 0px 30px;
+                                        position: relative;
+                                    }
+                                </style>
+                                <div class="page-title">
+                                    <h1>Đơn hàng của tôi</h1>
+                                </div>
+                                <div class="tab-container-order-history-container">
+                                    <div class="tab-container-order-history swiper-container swiper-container-horizontal">
+                                        <div class="swiper-wrapper">
+                                            <div class="tab-history-item swiper-slide"
+                                                 onclick="location.href='http://localhost:8080/user/account/history?status=All';"
+                                                 style="width: 166.6px;">
+                                                <div class="tab-history-item-border-left"></div>
+                                                <div class="tab-history-item-number" th:text="${total}"></div>
+                                                <div class="tab-history-item-text">Tất Cả</div>
+                                                <div class="tab-history-item-border"></div>
+                                            </div>
+                                            <div class="tab-history-item swiper-slide"
+                                                 onclick="location.href='http://localhost:8080/user/account/history?status=pending'"
+                                                 style="width: 166.6px;">
+                                                <div class="tab-history-item-number" th:text="${pending}"></div>
+                                                <div class="tab-history-item-text">Chờ xác nhận</div>
+                                                <div class="tab-history-item-border"></div>
+                                            </div>
+                                            <div class="tab-history-item swiper-slide"
+                                                 onclick="location.href='http://localhost:8080/user/account/history?status=processing'"
+                                                 style="width: 166.6px;">
+                                                <div class="tab-history-item-number" th:text="${process}"></div>
+                                                <div class="tab-history-item-text">Đang giao hàng</div>
+                                                <div class="tab-history-item-border"></div>
+                                            </div>
+                                            <div class="tab-history-item swiper-slide"
+                                                 onclick="location.href='http://localhost:8080/user/account/history?status=complete'"
+                                                 style="width: 166.6px;">
+                                                <div class="tab-history-item-number" th:text="${complete}"></div>
+                                                <div class="tab-history-item-text">Hoàn tất</div>
+                                                <div class="tab-history-item-border"></div>
+                                            </div>
+                                            <div class="tab-history-item swiper-slide"
+                                                 onclick="location.href='http://localhost:8080/user/account/history?status=canceled';"
+                                                 style="width: 166.6px;">
+                                                <div class="tab-history-item-number" th:text="${cancel}"></div>
+                                                <div class="tab-history-item-text">Bị hủy</div>
+                                                <div class="tab-history-item-border"></div>
+                                            </div>
+                                        </div>
+                                        <span class="swiper-notification" aria-live="assertive"
+                                              aria-atomic="true"></span>
+                                    </div>
+                                    <div class="order-history-swiper-button-prev swiper-button-disabled" tabindex="0"
+                                         role="button" aria-label="Previous slide" aria-disabled="true"
+                                         style="display: none;"><i class="fa fa-chevron-left"></i></div>
+                                    <div class="order-history-swiper-button-next" tabindex="0" role="button"
+                                         aria-label="Next slide" aria-disabled="false"><i
+                                            class="fa fa-chevron-right"></i>
+                                    </div>
+                                </div>
+
+                                <script type="text/javascript">
+                                    //jQuery(document).ready(function($) {
+                                    //    var mySwiper = new Swiper('.swiper-container', {
+                                    //      slidesPerView: 5,
+                                    //      spaceBetween: 30,
+                                    //    });
+                                    //
+                                    //    $(window).resize(function(){
+                                    //  var ww = $(window).width()
+                                    //  if (ww>992px) mySwiper.params.slidesPerView = 5;
+                                    //  if (ww>468 && ww<=1000) mySwiper.params.slidesPerView = 3;
+                                    //  if (ww<=468) mySwiper.params.slidesPerView = 1;
+                                    //  mySwiper.reInit()
+                                    //})
+                                    //    $(window).trigger('resize')
+                                    //});
+
+                                    // khi load lan dau
+                                    $jq(window).ready(function () {
+                                        updateSliderSwiper();
+                                    })
+
+
+                                    function updateSliderSwiper() {
+                                        let ww = $jq(window).width();
+                                        let mySwiper;
+                                        let maxSlider;
+                                        let countSlider = 6;
+                                        if (ww < 992) {
+                                            maxSlider = 3;
+                                            mySwiper = new Swiper('.swiper-container', {
+                                                slidesPerView: 3,
+                                                navigation: {
+                                                    nextEl: '.order-history-swiper-button-next',
+                                                    prevEl: '.order-history-swiper-button-prev',
+                                                },
+                                            });
+                                            $jq(".tab-history-item").each(function (index) {
+                                                if ($jq(this).hasClass("tab-history-item-active")) {
+                                                    mySwiper.slideTo(index, 300, false);
+                                                }
+                                            });
+                                            // if div class swiper-wrapper want turn off
+                                            //$jq(".swiper-wrapper").removeClass("disabled-tabs-history");
+                                            $jq(".table-order-row").addClass("table-order-touch-mobile");
+                                        } else {
+                                            maxSlider = 5;
+                                            mySwiper = new Swiper('.swiper-container', {
+                                                slidesPerView: 5,
+                                                navigation: {
+                                                    nextEl: '.order-history-swiper-button-next',
+                                                    prevEl: '.order-history-swiper-button-prev',
+                                                },
+                                            });
+                                            $jq(".tab-history-item").each(function (index) {
+                                                if ($jq(this).hasClass("tab-history-item-active")) {
+                                                    mySwiper.slideTo(index, 300, false);
+                                                }
+                                            });
+                                            if ($jq(".table-order-row").hasClass("table-order-touch-mobile")) {
+                                                $jq(".table-order-row").removeClass("table-order-touch-mobile");
+                                            }
+                                            // if div class swiper-wrapper want turn off
+                                            //$jq(".swiper-wrapper").addClass("disabled-tabs-history");
+                                        }
+                                        let index = mySwiper.activeIndex;
+                                        showButtonSwiperHistory(index, maxSlider, countSlider);
+                                        mySwiper.on('slideChange', function () {
+                                            let index = mySwiper.activeIndex;
+                                            showButtonSwiperHistory(index, maxSlider, countSlider);
+                                        });
+
+                                    }
+
+                                    function updateSliderSwiperResize() {
+                                        let ww = $jq(window).width();
+                                        let mySwiper = new Swiper('.swiper-container');
+                                        if (ww < 992) {
+                                            mySwiper.params.slidesPerView = 3;
+                                            //$jq(".swiper-wrapper").removeClass("disabled-tabs-history");
+                                            $jq(".table-order-row").addClass("table-order-touch-mobile");
+                                        } else {
+
+                                            mySwiper.params.slidesPerView = 5;
+                                            if ($jq(".table-order-row").hasClass("table-order-touch-mobile")) {
+                                                $jq(".table-order-row").removeClass("table-order-touch-mobile");
+                                            }
+                                            //$jq(".swiper-wrapper").addClass("disabled-tabs-history");
+                                        }
+                                        mySwiper.updateSlides();
+                                    }
+
+                                    function showButtonSwiperHistory(index, maxSlider, countSlider) {
+                                        let total = index + maxSlider;
+                                        if (total >= countSlider) {
+                                            $jq(".order-history-swiper-button-next").hide();
+                                            $jq(".order-history-swiper-button-prev").show();
+                                        } else {
+                                            $jq(".order-history-swiper-button-next").show();
+                                            $jq(".order-history-swiper-button-prev").show();
+                                            if (index == 0) {
+                                                $jq(".order-history-swiper-button-prev").hide();
+                                            } else {
+                                                $jq(".order-history-swiper-button-prev").show();
+                                            }
+                                        }
+                                    }
+
+                                </script>
+                            </div>
+                            <div class="my-account">
+                                <style>
+                                    /* start css for main template*/
+                                    .col-fhs-main-body {
+                                        background-color: transparent;
+                                    }
+
+                                    .main {
+                                        margin-top: 10px;
+                                    }
+
+                                    /*end css for main template*/
+                                    /*  ****** Responsive Table ***** */
+                                    .table-order-container {
+                                        color: #616161;
+                                        display: table;
+                                        margin: 0 0 1em 0;
+                                        width: 100%;
+                                        border-collapse: collapse;
+                                    }
+
+                                    .table-order-container span.price {
+                                        font-family: sans-serif;
+                                    }
+
+                                    .table-order-container .table-order-row {
+                                        display: table-row;
+                                        border-bottom: 1px solid #E0E0E0;
+                                    }
+
+                                    .table-order-container .table-order-row.table-order-header {
+                                        font-weight: 700;
+                                        background: white;
+                                        font-size: 16px;
+                                    }
+
+                                    .table-order-container .table-order-cell {
+                                        display: table-cell;
+                                        padding: 15px 5px;
+                                        font-size: 14px;
+                                    }
+
+                                    .table-order-link-more {
+                                        color: #F7941E;
+                                        text-align: center;
+                                        cursor: pointer;
+                                    }
+
+                                    .table-order-link-id:hover {
+                                        color: #F7941E;
+                                        cursor: pointer;
+                                    }
+
+                                    .order-history-date-mobile,
+                                    .order-history-person-mobile,
+                                    .order-history-total-mobile,
+                                    .order-history-status-mobile {
+                                        display: none;
+                                    }
+
+                                    .order-history-status-warning {
+                                        color: #DC3545;
+                                    }
+
+                                    @media screen and (max-width: 992px) {
+
+                                        /* start css for main template*/
+                                        .col-fhs-main-body,
+                                        .container {
+                                            padding: 0px;
+                                        }
+
+                                        /* end css for main template*/
+                                        .table-order-container {
+                                            display: block;
+                                        }
+
+                                        .table-order-container .table-order-row {
+                                            display: block;
+                                            padding: 10px 0px;
+                                        }
+
+                                        .table-order-container .table-order-cell {
+                                            display: block;
+                                            padding: 0px 10px;
+                                        }
+
+                                        .table-order-container .table-order-row.table-order-header {
+                                            display: none;
+                                        }
+
+                                        .tab-history-item-text {
+                                            font-size: 1em;
+                                        }
+
+                                        .order-history-date-mobile,
+                                        .order-history-person-mobile,
+                                        .order-history-total-mobile {
+                                            display: unset;
+                                            float: left;
+                                            margin-right: 5px;
+                                            font-size: 12px;
+                                            margin-top: 2px;
+                                        }
+
+                                        .table-order-cell-content-mobile {
+                                            display: flex;
+                                        }
+
+                                        table-order-cell-content-mobile div:first-child {
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                        }
+
+                                        .order-history-status-mobile {
+                                            display: unset;
+                                            border-radius: 20px;
+                                            border: 1px solid;
+                                            padding: 2px 10px 1px 10px;
+                                            font-size: 12px;
+                                            margin-left: 5px;
+                                            font-weight: bold;
+                                        }
+
+                                        .table-order-cell:nth-child(5),
+                                        .table-order-cell:nth-child(6) {
+                                            display: none;
+                                        }
+
+                                        .order-history-id {
+                                            font-size: 1.2em;
+                                            font-weight: bold;
+                                        }
+
+                                        #tab-test {
+                                            cursor: pointer;
+                                        }
+
+                                        .no-orders-css {
+                                            padding-left: 10px;
+                                            height: 30px;
+                                            padding-top: 7px;
+                                        }
+                                    }
+                                </style>
+                                <div class="table-order-container">
+                                    <div class="table-order-row table-order-header">
+                                        <div class="table-order-cell">Mã đơn hàng</div>
+                                        <div class="table-order-cell">Ngày mua</div>
+                                        <div class="table-order-cell">Người nhận</div>
+                                        <div class="table-order-cell">Tổng Tiền</div>
+                                        <div class="table-order-cell">Trạng thái</div>
+                                        <div class="table-order-cell"></div>
+                                    </div>
+                                    <th:block th:each="i : ${list}" th:if="${!list.isEmpty()}">
+                                        <div class="table-order-row">
+                                            <div class="table-order-cell">
+                                                <div class="table-order-cell-content table-order-cell-content-mobile">
+                                                    <div class="order-history-id" th:text="${i.orderId}"></div>
+                                                </div>
+                                            </div>
+                                            <div class="table-order-cell">
+                                                <div class="table-order-cell-content">
+                                                    <div class="order-history-date-mobile">Ngày mua:</div>
+                                                    <div th:text="${i.orderDate}"></div>
+                                                </div>
+                                            </div>
+                                            <div class="table-order-cell" style="max-width:250px;">
+                                                <div class="table-order-cell-content">
+                                                    <div class="order-history-person-mobile">Người nhận:</div>
+                                                    <div th:text="${i.name}"></div>
+                                                </div>
+
+                                            </div>
+                                            <div class="table-order-cell">
+                                                <div class="table-order-cell-content">
+                                                    <div class="order-history-total-mobile">Tổng Tiền:</div>
+                                                    <div><span class="price" th:text="${i.totalPrice}"></span>&nbsp;đ
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="table-order-cell hidden-max-width-992 "
+                                                 th:text="${i.getRecentOrderStatus()}"></div>
+                                            <div class="table-order-cell table-order-link-more hidden-max-width-992">
+                                                <a th:href="@{/user/account/detailOrder(id = ${i.orderId})}">Xem chi
+                                                    tiết</a>
+                                            </div>
+                                        </div>
+                                    </th:block>
+                                    <th:block th:unless="${!list.isEmpty()}">
+                                        <div class="table-order-row">
+                                            <div>Bạn không có đơn hàng nào</div>
+                                        </div>
+                                    </th:block>
+                                </div>
+
+                                <script type="text/javascript">
+                                    $jq(window).ready(function () {
+                                        $jq(".table-order-row.table-order-touch-mobile").on("click", function (event) {
+                                            var item = $jq(".table-order-row.table-order-touch-mobile").index(this);
+                                            event.preventDefault();
+                                            $jq(".table-order-row.table-order-touch-mobile").each(function (index) {
+                                                if (item == index) {
+                                                    window.location = $jq(this).data("hrefs");
+                                                }
+                                            });
+                                        });
+                                    })
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+    <th:block layout:insert="~{fragments/client/footer}"/>
+</th:block>
+</html>
